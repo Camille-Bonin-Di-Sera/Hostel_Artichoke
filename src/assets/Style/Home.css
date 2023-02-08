@@ -1,0 +1,12 @@
+template{
+    background-image: ;
+}
+
+.content{
+    display: flex;
+}
+
+h1{
+    color: aqua;
+    font-size: 5rem;
+}
