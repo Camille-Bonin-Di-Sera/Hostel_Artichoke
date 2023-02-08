@@ -1,14 +1,21 @@
 <template>
   <div>
-    <h1>Nos Promotions</h1>
+    <div>
+      <h1>Nos Superbes Promotions</h1>
+    </div>
     <div v-for="discount of discounts">
-      <p>Titre promo : </p><p> {{discount.title_fr_discount}}</p>
+      <p> {{discount.title_fr_discount}} </p>
+      <p> {{discount.describe_fr}} </p>
+      <p> {{discount.code_discount}} </p>
+      <button>Test</button>
     </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import('../assets/Style/Home.css');
+//import testJs from "@/js/app.js";
 
 export default{
   data() {
@@ -20,11 +27,16 @@ export default{
   created() {
     axios
         .get('http://localhost/api/v1/discounts')
-        .then((response) =>
-          {
-            this.discounts = response.data;
-          })
-    }
+        .then((res) =>
+        {
+          this.discounts = res.data;
+          //console.log(this.discounts);
+        })
+        .catch((error) =>
+        {
+          console.log(error.res.data.value);
+        });
+    },
 };
 </script>
 

@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import DiscountView from '@/views/DiscountView.vue';
-import AdvantageView from "@/views/AdvantageView.vue";
 
 
 const router = createRouter({
@@ -20,11 +19,11 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: DiscountView
     },
-    {
+ /*   {
       path: '/advantages',
       name: 'adv',
       component: AdvantageView
-    },
+    },*/
     {
       path: '/about',
       name: 'about',

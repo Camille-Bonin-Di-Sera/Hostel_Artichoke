@@ -1,14 +1,16 @@
 <template>
   <div>
-    <div v-for="video of videos">
-      <a>Nom : </a><a>{{video.title_fr_video}}</a>
-      <router-view/>
-    </div>
+    <router-view />
   </div>
 </template>
 <script>
 import axios from "axios";
+import DiscountView from "@/views/DiscountView.vue";
+
 export default {
+  components: {DiscountView},
+
+
   data() {
     return {
       videos: []
