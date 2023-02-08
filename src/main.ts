@@ -4,7 +4,7 @@ import router from './router'
 import './index.css'
 import axios from 'axios'
 
-axios.defaults.baseURL = 'http://localhost/api/';
+axios.defaults.baseURL = 'http://localhost:8000/api/v1/';
 
 import './assets/main.css'
 
