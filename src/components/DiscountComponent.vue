@@ -1,13 +1,14 @@
 <template>
   <div>
     <div>
-      <h1>Nos Superbes Promotions</h1>
+      <h1>Nos Promotions</h1>
     </div>
     <div v-for="discount of discounts">
-      <p> {{discount.title_fr_discount}} </p>
-      <p> {{discount.describe_fr}} </p>
+      <img src="./assets/image/bedroom.jpg" alt ="Superbe image"/>
+      <p class="titre"> {{discount.title_fr_discount}} </p>
+      <p class="text-purple-600 debug"> {{discount.describe_fr}} </p>
       <p> {{discount.code_discount}} </p>
-      <button>Test</button>
+      <button>Réservez</button>
     </div>
   </div>
 </template>
@@ -34,12 +35,31 @@ export default{
         })
         .catch((error) =>
         {
-          console.log(error.res.data.value);
+          console.log(error.res.data);
         });
     },
 };
 </script>
 
 <style scoped>
+
+h1 {
+  color: forestgreen;
+}
+
+p.titre{
+  color:forestgreen;
+}
+
+.debug{
+  border:red solid 2px;
+}
+
+button{
+  color:white;
+  background-color: forestgreen;
+  border-radius: 0.25rem;
+  margin-left:0.25rem;
+}
 
 </style>
