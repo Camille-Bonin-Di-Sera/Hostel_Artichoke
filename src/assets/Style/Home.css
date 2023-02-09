@@ -1,0 +1,76 @@
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.randonne, .localisation, .restaurant, .spa{
+    height: 13rem;
+    width: 25rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+
+.adv_rando,.adv_local, .adv_rst, .adv_spa{
+
+    height: 100%;
+    width: 92%;
+    background-image: url("../../assets/Pictures/Advantage/rando.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+    box-shadow: 6px 6px 10px 0px #878787;
+    display: flex;
+    flex-direction: column;
+}
+.adv_local{
+    background-image: url("../../assets/Pictures/Advantage/enplacement.jpeg");
+}
+
+.adv_rst{
+    background-image: url("../../assets/Pictures/Advantage/food-artichoke.jpg");
+}
+
+.adv_spa{
+    background-image: url("../../assets/Pictures/Advantage/spa.jpg");
+}
+.bandeau{
+    background-color: #49a078c4;
+    height: 15%;
+    width: 33%;
+    display: flex;
+    justify-content: center;
+
+}
+p{
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: AdventPro;
+}
+
+.ico-rando, .ico-local, .ico_rst, .ico_spa{
+    background-color: white;
+    height: 32%;
+    width: 18%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 7rem;
+
+}
+
+
+.Description{
+    margin-top: 3rem;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+    border-radius: 5px;
+    box-shadow: 6px 6px 10px 0px #878787;
+}

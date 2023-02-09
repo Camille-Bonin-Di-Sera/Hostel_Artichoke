@@ -26,7 +26,13 @@ module.exports = {
       fontFamily: {
         sans: ['Graphik', 'sans-serif'],
         serif: ['Merriweather', 'serif'],
-      },},
+      },
+      backgroundImage: {
+        'adv_rando': "url('../assets/Pictures/Advantage/rando.jpg')",
+        'footer-texture': "url('/img/footer-texture.png')",
+      }
+
+    },
   },
   plugins: [
       require('tw-elements/dist/plugin')

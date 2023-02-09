@@ -1,90 +1,133 @@
-<script setup lang="ts">
-import('../assets/Style/main.css')
-</script>
 
 <template>
-  <div id="carouselExampleCaptions" class="h-3/6 carousel slide relative" data-bs-ride="carousel">
-    <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
-      <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="0"
-          class="active"
-          aria-current="true"
-          aria-label="Slide 1"
-      ></button>
-      <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="1"
-          aria-label="Slide 2"
-      ></button>
-      <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="2"
-          aria-label="Slide 3"
-      ></button>
+<body>
+<section class="Advantage">
+<h2 id="tilte_adv" class="text-4xl	text-center	text-green mt-12">Nos Avantages</h2>
+<article class="randonne">
+  <aside class="adv_rando">
+    <div class="bandeau">
+      <p>Activité</p>
     </div>
-    <div class="carousel-inner relative w-full overflow-hidden">
-      <div class="carousel-item active relative float-left w-full">
-        <img
-            src="../assets/Pictures/bed-section-hero.jpg"
-            class="block object-cover "
-            alt="..."
-        />
-        <div class="carousel-caption hidden md:block absolute text-center">
-          <h5 class="text-xl">First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
-        </div>
-      </div>
-      <div class="carousel-item relative float-left w-full">
-        <img
-            src="../assets/Pictures/bed2-section-hero.jpg"
-            class="block w-full"
-            alt="..."
-        />
-        <div class="carousel-caption hidden md:block absolute text-center">
-          <h5 class="text-xl">Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
-        </div>
-      </div>
-      <div class="carousel-item relative float-left w-full">
-        <img
-            src="../assets/Pictures/bed3-section-hero.jpg"
-            class="block w-full"
-            alt="..."
-        />
-        <div class="carousel-caption hidden md:block absolute text-center">
-          <h5 class="text-xl">Third slide label</h5>
-          <p>Some representative placeholder content for the third slide.</p>
-        </div>
-      </div>
+    <div class="ico-rando">
+      <img class="border-solid border-2 border-black-500 rounded-full" src="../assets/Pictures/icon/icon-rando.png">
     </div>
-    <button
-        class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
-        type="button"
-        data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="prev"
-    >
-      <span class="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button
-        class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
-        type="button"
-        data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="next"
-    >
-      <span class="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-  <div class='h-20'>
-    <img
-        src="../assets/Pictures/bed3-section-hero.jpg"
-        class="block w-full"
-        alt="..."
-    />
-  </div>
+  </aside>
+</article>
+
+<article class="localisation">
+  <aside class="adv_local">
+    <div class="bandeau">
+      <p>Emplacement</p>
+    </div>
+    <div class="ico-local">
+      <img class="border-solid border-2 border-black-500 rounded-full" src="../assets/Pictures/icon/map.png">
+    </div>
+  </aside>
+</article>
+
+<article class="restaurant">
+  <aside class="adv_rst">
+    <div class="bandeau">
+      <p>Emplacement</p>
+    </div>
+    <div class="ico_rst">
+      <img class="" src="../assets/Pictures/icon/food-ico.png">
+    </div>
+  </aside>
+</article>
+
+<article class="spa">
+  <aside class="adv_spa">
+    <div class="bandeau">
+      <p>Emplacement</p>
+    </div>
+    <div class="ico_spa">
+      <img class="h-28 max-w-[800px]" src="../assets/Pictures/icon/ico-spa.png">
+    </div>
+  </aside>
+</article>
+</section>
+
+<section class="Description">
+  <article class="text">
+    <h3 class="text-3xl	text-center	text-green">Tout ce dont vous avez besoin</h3>
+    <p class="text-black text-center ml-3 mr-3 mt-5">Artichauts, si mystérieux et doux,
+      Garnissent nos plats de leur belle couleur verte.
+      Souvent négligés, mais oh combien précieux,
+      Leur goût délicat nous enchante à chaque crève-faim.</p>
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item bg-white w-88">
+        <h2 class="accordion-header mb-0 " id="headingOne">
+          <button class="
+        text-center
+        text-green
+        accordion-button
+        relative
+        flex
+        items-center
+        w-full
+        py-4
+        px-5
+        text-base text-gray-800 text-left
+        bg-white
+        border-0
+        rounded-none
+        transition
+        focus:outline-none
+      " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                 >
+            Voir Plus
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show"
+             data-bs-parent="#accordionExample">
+          <div class="accordion-body py-4 px-5 font-AdventPro">
+            Les feuilles douces et tendres, une délicatesse,
+            Cachent un coeur tendre et sucré, un véritable trésor.
+            Râpés ou cuits, en salade ou en purée,
+            Ils ajoutent une touche de raffinement à chaque mets.
+
+            Artichauts, symbole de la cuisine italienne,
+            Où ils sont cuits à la vapeur et servis avec de l'huile d'olive.
+            Mais ils sont aussi appréciés en France et en Espagne,
+            Et dans le monde entier, pour leur goût unique et leur texture.
+
+            Ils sont une source de fibres et de nutriments,
+            Et peuvent aider à améliorer la santé de notre corps.
+            Mais plus encore, c'est leur saveur qui nous attire,
+            Et nous fait revenir encore et encore pour en demander plus.
+
+            Alors, ici je vous dis, chers artichauts,
+            Vous êtes plus qu'un simple légume sur notre table.
+            Vous êtes un enchantement culinaire, un véritable don,
+            Et nous vous aimons pour tout ce que vous êtes.
+          </div>
+        </div>
+      </div>
+      </div>
+  </article>
+
+
+  <article class="Comment">
+  </article>
+
+</section>
+
+<section class="Actualite">
+
+</section>
+
+
+
+<section class="Promos">
+
+</section>
+</body>
 </template>
+
+<script>
+
+
+import('../assets/Style/Home.css')
+
+</script>
