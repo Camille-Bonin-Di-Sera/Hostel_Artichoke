@@ -5,7 +5,18 @@
     </div>
     <br />
     <div v-for="discount of discounts">
-      <img src="@/assets/Pictures/bedroom0.jpg" alt ="Superbe image" class="block m-auto w-1/3"/>
+      <div v-if="discount.id === 1">
+        <img src="@/assets/Pictures/bedroom0.jpg" alt ="Superbe image" class="block m-auto w-1/3"/>
+      </div>
+      <div v-else-if="discount.id === 2">
+        <img src="@/assets/Pictures/bedroom1.jpg" alt ="Superbe image" class="block m-auto w-1/3"/>
+      </div>
+      <div v-else-if="discount.id === 3">
+        <img src="@/assets/Pictures/bedroom2.jpg" alt ="Superbe image" class="block m-auto w-1/3"/>
+      </div>
+      <div v-else-if="discount.id === 4">
+        <img src="@/assets/Pictures/bedroom3.jpg" alt ="Superbe image" class="block m-auto w-1/3"/>
+      </div>
       <p class="text-green-700 text-center text-2xl"> {{discount.title_fr_discount}} </p>
       <p class="text-center block m-auto w-1/3"> {{discount.describe_fr_discount}} </p>
       <p class="text-center block m-auto w-1/3"> {{discount.code_discount}} </p>
@@ -18,7 +29,6 @@
 <script>
 import axios from "axios";
 import('../assets/Style/main.css');
-//import testJs from "@/js/app.js";
 
 export default{
   data() {
@@ -33,7 +43,6 @@ export default{
         .then((res) =>
         {
           this.discounts = res.data;
-          //console.log(this.discounts);
         })
         .catch((error) =>
         {
