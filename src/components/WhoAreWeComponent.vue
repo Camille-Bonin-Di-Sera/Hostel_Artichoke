@@ -11,6 +11,7 @@
       <div>
         <img src="@/assets/Pictures/bedroom0.jpg" alt ="Image promo 1" class="block m-auto sm:block sm:m-auto sm:w-1/3"/>
       </div>
+      <br />
       <p class="text-green-700 text-center text-2xl"> Notre Histoire </p>
       <br />
       <p class="text-center block m-auto sm:block sm:m-auto sm:w-1/3"> Nous sommes implémentés dans la région depuis les années 1970. Notre positionnement près de la forêt nous permet de proposer des séjours reposant afin de se relaxer et de se ressourcer en proposant des activités de toursime et de
