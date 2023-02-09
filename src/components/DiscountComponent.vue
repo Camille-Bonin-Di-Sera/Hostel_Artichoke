@@ -25,7 +25,7 @@
       <p class="text-center block m-auto sm:block sm:m-auto sm:w-1/3"> {{discount.describe_fr_discount}} </p>
       <p class="text-center block m-auto w-1/2 sm:block sm:m-auto sm:w-1/3"> {{discount.code_discount}} </p>
       <br />
-      <button class="text-white text-xl bg-green-700 block m-auto w-1/4 rounded">Réservez</button>
+      <button class="text-white text-xl bg-green-700 block m-auto w-1/4 rounded sm:text-3xl">Réservez</button>
       <br />
     </div>
     <div>
