@@ -9,16 +9,16 @@
     <br />
     <div v-for="discount of discounts">
       <div v-if="discount.id === 1">
-        <img src="@/assets/Pictures/bedroom0.jpg" alt ="Superbe image" class="block m-auto sm:block sm:m-auto sm:w-1/3"/>
+        <img src="@/assets/Pictures/bedroom0.jpg" alt ="Image promo 1" class="block m-auto sm:block sm:m-auto sm:w-1/3"/>
       </div>
       <div v-else-if="discount.id === 2">
-        <img src="@/assets/Pictures/bedroom1.jpg" alt ="Superbe image" class="block m-auto sm:block sm:m-auto sm:w-1/3"/>
+        <img src="@/assets/Pictures/bedroom1.jpg" alt ="Image promo 2" class="block m-auto sm:block sm:m-auto sm:w-1/3"/>
       </div>
       <div v-else-if="discount.id === 3">
-        <img src="@/assets/Pictures/bedroom2.jpg" alt ="Superbe image" class="block m-auto sm:block sm:m-auto sm:w-1/3"/>
+        <img src="@/assets/Pictures/bedroom2.jpg" alt ="Image promo 3" class="block m-auto sm:block sm:m-auto sm:w-1/3"/>
       </div>
       <div v-else-if="discount.id === 4">
-        <img src="@/assets/Pictures/bedroom3.jpg" alt ="Superbe image" class="block m-auto sm:block sm:m-auto sm:w-1/3"/>
+        <img src="@/assets/Pictures/bedroom3.jpg" alt ="Image promo 4" class="block m-auto sm:block sm:m-auto sm:w-1/3"/>
       </div>
       <p class="text-green-700 text-center text-2xl"> {{discount.title_fr_discount}} </p>
       <br />
