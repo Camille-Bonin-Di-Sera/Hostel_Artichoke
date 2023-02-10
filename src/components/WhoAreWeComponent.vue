@@ -1,25 +1,23 @@
 <template>
-  <div>
+  <div class="container">
     <div>
       <p class="border-4 border-red-500">Navbar du site</p>
     </div>
-    <div>
-      <h1 class="text-green-700 text-center  text-3xl sm:block sm:m-auto sm:w-1/3 sm:text-5xl">Qui sommes Nous</h1>
-    </div>
-    <br />
-    <div>
-      <div>
-        <img src="@/assets/Pictures/bedroom0.jpg" alt ="Image promo 1" class="block m-auto sm:block sm:m-auto sm:w-1/3"/>
-      </div>
-      <br />
-      <p class="text-green-700 text-center text-2xl"> Notre Histoire </p>
-      <br />
-      <p class="text-center block m-auto sm:block sm:m-auto sm:w-1/3"> Nous sommes implémentés dans la région depuis les années 1970. Notre positionnement près de la forêt nous permet de proposer des séjours reposant afin de se relaxer et de se ressourcer en proposant des activités de toursime et de
-      découverte de la nature aux alentours. Nous proposons également des services en fonction de la saison comme un SPA l'hiver et une piscine en été. La proximité avec des petits villages nous permet également de proposer
-      des activité annexes tel que des pièces de théâtres ou divers spectacle locaux ainsi que des produits issus de notre belle région</p>
+    <section class="content">
+      <article class="image">
 
-      <br />
-    </div>
+      </article>
+      <article>
+        <br />
+          <h1 class="text-green-700 text-center text-2xl sm:text-5xl"> Notre Histoire </h1>
+          <br />
+          <p class="text-justify pl-8 pr-8 block sm:block sm:text-center lg:ml-24 lg:mr-24"> Nous sommes implémentés dans la région depuis les années 1970. Notre positionnement près de la forêt nous permet de proposer des séjours reposant afin de se relaxer et se ressourcer en proposant des activités de toursime et de
+          découverte de la nature aux alentours. Nous proposons également des services en fonction de la saison comme un SPA l'hiver et une piscine en été. La proximité avec des petits villages nous permet également de proposer
+          des activités annexes tel que des pièces de théâtre ou divers spectacles locaux ainsi que des produits issus de notre belle région</p>
+
+          <br />
+      </article>
+    </section>
     <div>
       <p class="border-4 border-red-500">Footer du site</p>
     </div>
@@ -29,6 +27,7 @@
 <script>
 import axios from "axios";
 import('../assets/Style/main.css');
+import('../assets/Style/About.css');
 export default {
   created() {
     axios
