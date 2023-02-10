@@ -48,7 +48,7 @@
 </article>
 </section>
 
-<section class="Description">
+<!-- <section class="Description">
   <article class="text">
     <h3 class="text-3xl	text-center	text-green">Tout ce dont vous avez besoin</h3>
     <p class="text-black text-center ml-3 mr-3 mt-5">Artichauts, si mystérieux et doux,
@@ -106,22 +106,56 @@
       </div>
       </div>
   </article>
+</section>  -->
 
 
-  <article class="Comment">
+<div class=" Comment mt-12 bg-green ">
+  <img
+      src="../assets/Pictures/harold.jpg"
+      class="border rounded-full w-32 mb-4 mx-auto"
+      alt="Avatar"
+  />
+  <h3 class="text-2xl  ml-3 mb-2">Harold</h3>
+  <p class="text-white">It's not a potato it's my son. Oooh is not a potatoooOOOoooOOO is my son</p>
+  <p class="text-left ml-4 mt-6">Note : mettre apis</p>
+</div>
+
+
+
+<section class="Actu">
+  <article class="actu_img">
+    <div class="bandeau"> <p>Théâtre</p></div>
   </article>
-
+  <article class="atcu_discrib ">
+    <p class="text-black text-left">Les pate c'est la vie </p>
+    <div class="flex space-x-2 justify-center">
+      <router-link to="/#" type="button" class=
+          "inline-block
+           px-6 py-2.5
+           bg-green
+           text-white
+           font-medium
+           text-xs
+           leading-tight
+           uppercase
+           rounded
+           shadow-md
+           hover:bg-green
+           hover:shadow-lg
+           focus:bg-green-second
+           focus:shadow-lg
+           focus:outline-none
+           focus:ring-0
+           active:bg-green-second
+           active:shadow-lg
+           transition
+           duration-150
+           ease-in-out">Button</router-link>
+    </div>
+  </article>
 </section>
 
-<section class="Actualite">
 
-</section>
-
-
-
-<section class="Promos">
-
-</section>
 </body>
 </template>
 
