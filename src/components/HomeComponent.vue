@@ -129,7 +129,7 @@
   <article class="atcu_discrib ">
     <p class="text-black text-left">Les pate c'est la vie </p>
     <div class="flex space-x-2 justify-center">
-      <router-link to="/#" type="button" class=
+      <router-link to="/#yourlink" type="button" class=
           "inline-block
            px-6 py-2.5
            bg-green
