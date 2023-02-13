@@ -67,6 +67,7 @@ body{
     }
     .adv_text{
         margin-right: 2vw;
+        width: 21vw;
     }
 }
 .randonne, .localisation, .restaurant, .spa{

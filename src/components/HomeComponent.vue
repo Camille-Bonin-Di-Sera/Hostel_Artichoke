@@ -6,7 +6,16 @@
     <section class="Advantage">
       <div class="adv_text">
         <h2 id="tilte_adv" class="text-6xl	text-left	text-green mt-12">Nos Avantages</h2>
-        <p class="disapear text-black text-left text-AdventPro">fjfrfjfezjidezjidezjiezjidezjdezjuidejuidezjidezjuidqezjuiqe</p>
+        <p class="disapear text-black text-left text-AdventPro mt-4">
+          Un gendarme doit avoir de très bons pieds
+          Mais c'est pas tout, mais c'est pas tout
+          Il lui faut aussi de la sagacité
+          Mais c'est pas tout, mais c'est pas tout
+          Car ce qu'il doit avoir, et surtout
+          C'est d'la tactique, de la tactique dans la pratique
+          Comme la montre a son tic tac, le gendarme a sa tactique
+          Attendez un peu que j'vous explique
+        </p>
       </div>
       <div class="adv_card">
      <div class="card_first">
