@@ -20,24 +20,26 @@
           <br />
           <input type="text" placeholder="Telephone" class="border border-black">
           <br />
-          <input type="password" placeholder="Mot de passe" class="border border-black w-1/3">
           <input type="password" placeholder="Mot de passe" class="border border-black w-1/2">
+          <input type="password" placeholder="Mot de passe" class="border border-black w-1/3">
           <br />
-          <button type="submit" class="text-white text-lg bg-green-700 block m-auto sm:w-1/5 rounded sm:text-2xl"> Creer mon compte </button>
+          <div>
+            <button type="submit" class="text-white pr-2 pl-2 text-lg bg-green-700 block m-auto sm:w-1/2 rounded sm:text-2xl"> Creer mon compte </button>
+          </div>
         </form>
         <br />
       </article>
-      <div class="sm:absolute sm:border-green-700 sm:left-1/3 sm:ml-28 sm:mt-10 sm:h-2/5 sm:border-solid sm:border"></div>
-      <article class="sm:float-left sm:w-1/2">
+      <div class="v-line"></div>
+      <article class="sm:float-left sm:w-1/2 ">
         <h3 class="text-green-700 text-center text-xl sm:text-3xl"> Me connecter </h3>
-        <form class="space-x-4 space-y-4">
+        <form class="space-x-4 space-y-4 md:items-center md:w-3/4 md:ml-44">
           <input type="email" placeholder="E-mail" class="border border-black ml-4">
           <br />
           <input type="password" placeholder="Mot de passe" class="border border-black">
           <br />
           <input type="checkbox"> <label class="text-green-600">Rester connecté</label>
           <br />
-          <button type="submit" class="items-center text-white text-lg bg-green-700 block m-auto sm:w-1/5 rounded sm:text-2xl"> Se connecter </button>
+          <button type="submit" class="pr-2 pl-2 text-white text-lg bg-green-700 block m-auto sm:w-1/2 rounded sm:text-2xl"> Se connecter </button>
         </form>
         <br />
       </article>

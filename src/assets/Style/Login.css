@@ -29,7 +29,14 @@
 {
     border-left: solid;
     border-color: forestgreen;
-    height: 35%;
-    left:39%;
+    height: 50%;
+    left: 42%;
     position: absolute;
+}
+
+@media screen and (max-width: 720px) {
+    .v-line
+    {
+        display:none;
+    }
 }
