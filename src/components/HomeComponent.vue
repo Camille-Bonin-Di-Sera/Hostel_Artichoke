@@ -5,7 +5,7 @@
 
     <section class="Advantage">
       <div class="adv_text">
-        <h2 id="tilte_adv" class="text-6xl	text-left	text-green mt-12">Nos Avantages</h2>
+        <h2 id="tilte_adv" class="text-5xl	text-center md:text-6xl md:text-left	text-green mt-12">Nos Avantages</h2>
         <p class="disapear text-black text-left text-AdventPro mt-4">
           Un gendarme doit avoir de très bons pieds
           Mais c'est pas tout, mais c'est pas tout

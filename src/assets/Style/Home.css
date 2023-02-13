@@ -201,12 +201,12 @@ p{
 
 .ico-rando, .ico-local, .ico_rst, .ico_spa{
     background-color: white;
-    height: 32%;
-    width: 18%;
+    height: 33%;
+    width: 11%;
     justify-content: center;
     align-items: center;
     display: flex;
-    margin-top: 13vh;
+    margin-top: 14vh;
 
 }
 @media (min-width: 728px) {
