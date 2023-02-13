@@ -120,9 +120,8 @@ body{
 
         height: 100%;
         width: 92%;
-        background: white;
         border-radius: 5px;
-        box-shadow: 6px 6px 12px 0px #000000;
+        box-shadow: none;
         display: flex;
         flex-direction: column;
     }
@@ -134,7 +133,7 @@ body{
 }
 @media (min-width: 1025px){
     .adv_rando{
-        background-color: white;
+        background-image: none;
     }
 }
 
@@ -143,7 +142,9 @@ body{
     background-image: url("../../assets/Pictures/Advantage/enplacement.jpeg");
 }
 @media (min-width: 1025px){
-
+    .adv_local{
+        background-image: none;
+    }
 }
 
 
@@ -152,7 +153,9 @@ body{
     background-image: url("../../assets/Pictures/Advantage/food-artichoke.jpg");
 }
 @media (min-width: 1025px){
-
+    .adv_rst{
+        background-image: none;
+    }
 }
 
 
@@ -161,7 +164,9 @@ body{
     background-image: url("../../assets/Pictures/Advantage/spa.jpg");
 }
 @media (min-width: 1025px){
-
+    .adv_spa{
+        background-image: none;
+    }
 }
 
 
@@ -217,6 +222,18 @@ p{
         margin-top: 0vh;
     }
 }
+.card_discribe{
+    display: none;
+}
+@media (min-width: 1025px) {
+    .card_discribe{
+        width: 15vw;
+        display: block;
+        margin-left: 0.5vw;
+    }
+}
+
+
 
 .Description, .Comment{
     margin-top: 3rem;

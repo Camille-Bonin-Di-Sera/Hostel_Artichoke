@@ -5,8 +5,8 @@
 
     <section class="Advantage">
       <div class="adv_text">
-        <h2 id="tilte_adv" class="text-4xl	text-center	text-green mt-12">Nos Avantages</h2>
-        <p class="disapear text-black">fjfrfjfezjidezjidezjiezjidezjdezjuidejuidezjidezjuidqezjuiqe</p>
+        <h2 id="tilte_adv" class="text-6xl	text-left	text-green mt-12">Nos Avantages</h2>
+        <p class="disapear text-black text-left text-AdventPro">fjfrfjfezjidezjidezjiezjidezjdezjuidejuidezjidezjuidqezjuiqe</p>
       </div>
       <div class="adv_card">
      <div class="card_first">
@@ -15,8 +15,14 @@
            <div class="adv_bandeau">
              <p>Activité</p>
            </div>
-           <div class="ico-rando">
-             <img class="border-solid border-2 border-black-500 rounded-full" src="../assets/Pictures/icon/icon-rando.png">
+           <div class="rst_discribe md:flex md:mt-6 ">
+             <div class="ico-rando">
+               <img class="border-solid border-2 border-black-500 rounded-full" src="../assets/Pictures/icon/icon-rando.png">
+             </div>
+             <div class="card_discribe  md:text-center md:text-2xl md:w-4/5">
+               <h4  class="text-green">Découvrez les alentours</h4>
+               <p class="text_card md:text-black md:text-lg md:text-left md:ml-4">Partez en randonnée pédestre  accompagné de nos guides et découvrez la fôret qui entoure notre hôtel.</p>
+             </div>
            </div>
          </aside>
        </article>
@@ -26,9 +32,15 @@
            <div class="adv_bandeau">
              <p>Emplacement</p>
            </div>
-           <div class="ico-local">
-             <img class="border-solid border-2 border-black-500 rounded-full" src="../assets/Pictures/icon/map.png">
+           <div class="rst_discribe md:flex md:mt-6 ">
+             <div class="ico-local">
+               <img class="border-solid border-2 border-black-500 rounded-full" src="../assets/Pictures/icon/map.png">
+             </div>
+           <div class="card_discribe  md:text-center md:text-2xl md:w-4/5">
+             <h4  class="text-green">Découvrez les alentours</h4>
+             <p class="text_card md:text-black md:text-lg md:text-left md:ml-4">Partez en randonnée pédestre  accompagné de nos guides et découvrez la fôret qui entoure notre hôtel.</p>
            </div>
+         </div>
          </aside>
        </article>
      </div>
@@ -38,9 +50,15 @@
         <div class="adv_bandeau">
           <p>Emplacement</p>
         </div>
-        <div class="ico_rst">
-          <img class="" src="../assets/Pictures/icon/food-ico.png">
-        </div>
+       <div class="rst_discribe md:flex md:mt-6 ">
+         <div class="ico_rst">
+           <img class="" src="../assets/Pictures/icon/food-ico.png">
+         </div>
+         <div class="card_discribe  md:text-center md:text-2xl md:w-4/5">
+           <h4  class="text-green">Découvrez les alentours</h4>
+           <p class="text_card md:text-black md:text-lg md:text-left md:ml-4">Partez en randonnée pédestre  accompagné de nos guides et découvrez la fôret qui entoure notre hôtel.</p>
+         </div>
+       </div>
       </aside>
     </article>
 
@@ -49,8 +67,14 @@
         <div class="adv_bandeau">
           <p>Emplacement</p>
         </div>
-        <div class="ico_spa">
-          <img class="h-28 max-w-[800px]" src="../assets/Pictures/icon/ico-spa.png">
+        <div class="rst_discribe md:flex md:mt-6 ">
+          <div class="ico_spa">
+            <img class="" src="../assets/Pictures/icon/ico-spa.png">
+          </div>
+          <div class="card_discribe  md:text-center md:text-2xl md:w-4/5">
+            <h4  class="text-green">Découvrez les alentours</h4>
+            <p class="text_card md:text-black md:text-lg md:text-left md:ml-4">Partez en randonnée pédestre  accompagné de nos guides et découvrez la fôret qui entoure notre hôtel.</p>
+          </div>
         </div>
       </aside>
     </article>
