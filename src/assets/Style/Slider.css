@@ -1,35 +1,16 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.content{
+    height: 48vh;
+    display: none;
+}
+@media (min-width: 728px) {
+    .content{
+        display: inherit;
+    }
 }
 
-.slider{
-    height: 50vh;
-    position: relative;
-}
 
-.slider img{
-    object-fit: cover;
-    height: 100%;
+
+.bed{
+    height: 48vh;
     width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.suivant, .precedent{
-    color: white;
-    font-size: 3rem;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.suivant{
-    right: 1rem;
-}
-
-.precedent{
-    left: 1rem;
 }
