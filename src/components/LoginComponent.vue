@@ -39,7 +39,9 @@
           <br />
           <input type="checkbox"> <label class="text-green-600">Rester connecté</label>
           <br />
-          <button type="submit" class="pr-2 pl-2 text-white text-lg bg-green-700 block m-auto sm:w-1/2 rounded sm:text-2xl"> Se connecter </button>
+          <div>
+            <button type="submit" class="pr-2 pl-2 text-white text-lg bg-green-700 block ml-20 md:ml-4 sm:w-1/2 rounded sm:text-2xl"> Se connecter </button>
+          </div>
         </form>
         <br />
       </article>
