@@ -9,8 +9,6 @@ body{
         justify-content: center;
         background-image: url("../../assets/Pictures/background/bck-forest.jpeg");
         background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
         flex-direction: inherit;
     }
     main{
@@ -187,7 +185,7 @@ body{
 }
 
 @media (min-width: 1025px) {
-    .adv_bandeau, .actu_bandeau, .promo_bandeau {
+    .adv_bandeau, .promo_bandeau {
         display: none;
 
     }
@@ -244,6 +242,13 @@ p{
     color: black;
     box-shadow: 6px 6px 12px 0px #000000;
 }
+
+@media (min-width: 1025px) {
+    .Description, .Comment {
+       display: none;
+    }
+}
+
 .Comment{
     height: 100%;
 }
@@ -268,10 +273,67 @@ p{
     }
 }
 
+@media (min-width:1025px) {
+    .Actu, .Promo {
+        width: 100%;
+        height: 52vh;
+        display: flex;
+        flex-direction: column;
+        box-shadow: none;
+        margin-left: 0;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        margin-top: 0;
+        margin-bottom: 0;
+        border-radius: 0;
 
-.actu_img, .atcu_discrib, .promo_img, .promo_discrib{
+    }
+}
+@media (min-width: 1025px) {
+    .Actu{
+        margin-bottom: 20vh;
+    }
+}
+.disapear_promo{
+    display: none;
+}
+@media (min-width: 1025px) {
+    .disapear_promo{
+        display: block;
+
+    }
+}
+@media (min-width: 1025px) {
+    .disapear_promo, .appear_promo{
+        height: 100%;
+        width: 100%;
+
+    }
+}
+
+
+.actu_img, .actu_discrib, .promo_img, .promo_discrib{
     width: 100%;
     height: 50%;
+}
+
+@media (min-width: 1025px) {
+    .actu_img{
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+
+@media (min-width: 1025px) {
+    .actu_first_card{
+        width: 50vw;
+    }
+}
+@media (min-width: 1025px) { .actu_second_card{
+        width: 25vw;
+    }
 }
 
 .actu_img, .promo_img{

@@ -92,8 +92,8 @@
       </div>
     </section>
 
-    <section class="Description md:w-4/5">
-      <article class="text">
+    <section class="Description md:w-4/5 md:flex md:ml-6	">
+      <article class="text ">
         <h3 class="text-3xl	text-center	text-green">Tout ce dont vous avez besoin</h3>
         <p class="text-black text-center ml-3 mr-3 mt-5">Artichauts, si mystérieux et doux,
           Garnissent nos plats de leur belle couleur verte.
@@ -164,16 +164,21 @@
       <p class="text-left ml-4 mt-6">Note : mettre apis</p>
     </div>
 
-
-    <section class="Actu flex-box">
-      <article class="actu_img">
-        <div class="actu_bandeau"> <p>Théâtre</p></div>
-      </article>
-      <article class="atcu_discrib ">
-        <p class="text-black text-left ml-4 mt-4 mb-12">Les pate c'est la vie </p>
-        <div class="flex space-x-2 justify-center">
-          <router-link to="/#yourlink" type="button" class=
-              "inline-block
+    <section class="Promo mb-16 md:flex md:flex-col md:border-2 md:border-green">
+      <div class="hidden md:block md:flex md:justify-center md:mb-6">
+        <h2  class="text-5xl	text-center md:text-6xl md:text-left	text-green mt-12">Nos Promotions</h2>
+      </div>
+        <div class="md:flex-row md:flex md:gap-2 md:h-96">
+          <div class="appear_promo">
+            <article class="promo_img">
+              <div class="promo_bandeau "> <p>Théâtre</p></div>
+            </article>
+            <article class="promo_discrib ">
+              <title class="hidden md:block md:text-green md:text-3xl md:mt-6"> -10% sur une nuit </title>
+              <p class="text-black text-left ml-4 mt-4 mb-12 md:mb-6 md:mt-2">Les pate c'est la vie </p>
+              <div class="flex space-x-2 justify-center mb-6 md:hidden">
+                <router-link to="/#yourlink" type="button" class=
+                    "inline-block
            px-6 py-2.5
            bg-green
            text-white
@@ -194,19 +199,20 @@
            transition
            duration-150
            ease-in-out">Button</router-link>
-        </div>
-      </article>
-    </section>
+              </div>
+            </article>
+          </div>
 
-    <section class="Promo mb-16">
-      <article class="promo_img">
-        <div class="promo_bandeau"> <p>Théâtre</p></div>
-      </article>
-      <article class="promo_discrib ">
-        <p class="text-black text-left ml-4 mt-4 mb-12 md:mb-6 md:mt-6">Les pate c'est la vie </p>
-        <div class="flex space-x-2 justify-center mb-6">
-          <router-link to="/#yourlink" type="button" class=
-              "inline-block
+          <div class="disapear_promo">
+            <article class="promo_img">
+              <div class="promo_bandeau"> <p>Théâtre</p></div>
+            </article>
+            <article class="promo_discrib ">
+              <title class="hidden md:block md:text-green md:text-3xl md:mt-6"> -10% sur une nuit </title>
+              <p class="text-black text-left ml-4 mt-4 mb-12 md:mb-6 md:mt-2">Les pate c'est la vie </p>
+              <div class="flex space-x-2 justify-center mb-6 md:hidden">
+                <router-link to="/#yourlink" type="button" class=
+                    "inline-block
            px-6 py-2.5
            bg-green
            text-white
@@ -227,9 +233,149 @@
            transition
            duration-150
            ease-in-out">Button</router-link>
+              </div>
+            </article>
+          </div>
+
+          <div class="disapear_promo">
+            <article class="promo_img">
+              <div class="promo_bandeau"> <p>Théâtre</p></div>
+            </article>
+            <article class="promo_discrib ">
+              <title class="hidden md:block md:text-green md:text-3xl md:mt-6"> -10% sur une nuit </title>
+              <p class="text-black text-left ml-4 mt-4 mb-12 md:mb-6 md:mt-2">Les pate c'est la vie </p>
+              <div class="flex space-x-2 justify-center mb-6 md:hidden">
+                <router-link to="/#yourlink" type="button" class=
+                    "inline-block
+           px-6 py-2.5
+           bg-green
+           text-white
+           font-medium
+           text-xs
+           leading-tight
+           uppercase
+           rounded
+           shadow-md
+           hover:bg-green
+           hover:shadow-lg
+           focus:bg-green-second
+           focus:shadow-lg
+           focus:outline-none
+           focus:ring-0
+           active:bg-green-second
+           active:shadow-lg
+           transition
+           duration-150
+           ease-in-out">Button</router-link>
+              </div>
+            </article>
+          </div>
         </div>
-      </article>
     </section>
+
+
+
+      <section class="Actu mb-16 md:flex md:flex-col md:mb-12">
+      <div class="hidden md:block md:flex md:justify-center md:mb-6">
+        <h2  class="text-5xl	text-center md:text-6xl md:text-left	text-green mt-12">Nos Actualités</h2>
+      </div>
+     <div class="hidden md:flex md:flex-row">
+       <div class=" actu_first_card md:flex-row md:flex md:gap-2 md:h-96 bg-blue-300">
+         <article class="actu_img">
+           <div class="actu_bandeau md:items-center"> <p class="md:text-4xl" >Théâtre</p></div>
+         </article>
+         <article class="actu_discrib md:hidden">
+           <p class="text-black text-left ml-4 mt-4 mb-12 md:hidden">Les pate c'est la vie </p>
+           <div class="flex space-x-2 justify-center md:hidden">
+             <router-link to="/#yourlink" type="button" class=
+                 "inline-block
+           px-6 py-2.5
+           bg-green
+           text-white
+           font-medium
+           text-xs
+           leading-tight
+           uppercase
+           rounded
+           shadow-md
+           hover:bg-green
+           hover:shadow-lg
+           focus:bg-green-second
+           focus:shadow-lg
+           focus:outline-none
+           focus:ring-0
+           active:bg-green-second
+           active:shadow-lg
+           transition
+           duration-150
+           ease-in-out">Button</router-link>
+           </div>
+         </article>
+       </div>
+       <div class="actu_second_card md:flex-col md:flex md:gap-2 md:h-96 hidden">
+         <article class="actu_img">
+           <div class="actu_bandeau"> <p>Théâtre</p></div>
+         </article>
+         <article class="actu_discrib md:hidden">
+           <p class="text-black text-left ml-4 mt-4 mb-12">Les pate c'est la vie </p>
+           <div class="flex space-x-2 justify-center md:hidden">
+             <router-link to="/#yourlink" type="button" class=
+                 "inline-block
+           px-6 py-2.5
+           bg-green
+           text-white
+           font-medium
+           text-xs
+           leading-tight
+           uppercase
+           rounded
+           shadow-md
+           hover:bg-green
+           hover:shadow-lg
+           focus:bg-green-second
+           focus:shadow-lg
+           focus:outline-none
+           focus:ring-0
+           active:bg-green-second
+           active:shadow-lg
+           transition
+           duration-150
+           ease-in-out">Button</router-link>
+           </div>
+         </article>
+         <article class="actu_img">
+           <div class="actu_bandeau"> <p>Théâtre</p></div>
+         </article>
+         <article class="actu_discrib md:hidden ">
+           <p class="text-black text-left ml-4 mt-4 mb-12">Les pate c'est la vie </p>
+           <div class="flex space-x-2 justify-center md:hidden">
+             <router-link to="/#yourlink" type="button" class=
+                 "inline-block
+           px-6 py-2.5
+           bg-green
+           text-white
+           font-medium
+           text-xs
+           leading-tight
+           uppercase
+           rounded
+           shadow-md
+           hover:bg-green
+           hover:shadow-lg
+           focus:bg-green-second
+           focus:shadow-lg
+           focus:outline-none
+           focus:ring-0
+           active:bg-green-second
+           active:shadow-lg
+           transition
+           duration-150
+           ease-in-out">Button</router-link>
+           </div>
+         </article>
+       </div>
+     </div>
+      </section>
     </main>
   </body>
 
