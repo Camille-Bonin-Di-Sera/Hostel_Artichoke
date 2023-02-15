@@ -7,13 +7,13 @@
 require('./bootstrap');
 window.Vue = require('vue');
 
-import App from './App.vue';
-import VueAxios from 'vue-axios';
+import App from '@/App.vue';
+//import VueAxios from 'vue-axios';
 import VueRouter from 'vue-router';
 import axios from 'axios';
-import {
+/*import {
     routes
-} from './routes';
+} from './routes';*/
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -34,3 +34,5 @@ const app = new Vue({
     router: router,
     render: h => h(App),
 });
+
+const urlApi = "http://localhost:8000/api/v1/";
