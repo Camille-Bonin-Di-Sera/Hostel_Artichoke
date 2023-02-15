@@ -1,7 +1,7 @@
 
 <template>
-  <body>
-    <main>
+  <body_home>
+    <main_home>
 
     <section class="Advantage">
       <div class="adv_text">
@@ -447,8 +447,8 @@
 
 
 
-    </main>
-  </body>
+    </main_home>
+  </body_home>
 
 </template>
 
