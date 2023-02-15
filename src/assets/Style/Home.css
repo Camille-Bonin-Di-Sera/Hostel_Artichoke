@@ -15,6 +15,8 @@ body{
         width: 74vw;
         flex-direction: column;
         background-color: white;
+        height: 250vh;
+
     }
 
 }
@@ -291,7 +293,7 @@ p{
 }
 @media (min-width: 1025px) {
     .Actu{
-        margin-bottom: 20vh;
+        margin-bottom: 8vh;
     }
 }
 .disapear_promo{
@@ -342,7 +344,38 @@ p{
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 5px;
+    height: 24vh;
 }
+
+@media (min-width: 1025px) {
+    .actu_img{
+        height: 100%;
+    }
+}
+
+
 .promo_img{
     background-image: url("../../assets/Pictures/bed-section-hero.jpg");
 }
+@media (min-width: 1025px) {
+    .Three_comment {
+        height: 38vh;
+        width: 100%;
+
+    }
+}
+
+@media (min-width: 1025px) {
+.Comment_card{
+    width: 22vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+    }
+
+@media (min-width: 1025px) {
+.avatar_comment{
+    width: 4vw;
+    height: 8vh;
+}
+    }

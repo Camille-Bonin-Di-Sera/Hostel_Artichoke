@@ -164,7 +164,7 @@
       <p class="text-left ml-4 mt-6">Note : mettre apis</p>
     </div>
 
-    <section class="Promo mb-16 md:flex md:flex-col md:border-2 md:border-green">
+    <section class="Promo mb-16 md:flex md:flex-col md:border-t-2 md:border-b-2 md:border-green">
       <div class="hidden md:block md:flex md:justify-center md:mb-6">
         <h2  class="text-5xl	text-center md:text-6xl md:text-left	text-green mt-12">Nos Promotions</h2>
       </div>
@@ -243,8 +243,9 @@
             </article>
             <article class="promo_discrib ">
               <title class="hidden md:block md:text-green md:text-3xl md:mt-6"> -10% sur une nuit </title>
-              <p class="text-black text-left ml-4 mt-4 mb-12 md:mb-6 md:mt-2">Les pate c'est la vie </p>
-              <div class="flex space-x-2 justify-center mb-6 md:hidden">
+              <p class="text-black text-left ml-4 mt-4 md:mb-6 md:mt-2">Les pate c'est la vie </p>
+              <div class="flex space-x-2 justify-center mb-12 md:hidden
+                    mb-12">
                 <router-link to="/#yourlink" type="button" class=
                     "inline-block
            px-6 py-2.5
@@ -275,12 +276,12 @@
 
 
 
-      <section class="Actu mb-16 md:flex md:flex-col md:mb-12">
+      <section class="Actu mb-16 md:flex md:flex-col  ">
       <div class="hidden md:block md:flex md:justify-center md:mb-6">
         <h2  class="text-5xl	text-center md:text-6xl md:text-left	text-green mt-12">Nos Actualités</h2>
       </div>
-     <div class="hidden md:flex md:flex-row">
-       <div class=" actu_first_card md:flex-row md:flex md:gap-2 md:h-96 bg-blue-300">
+     <div class=" md:flex md:flex-row">
+       <div class=" actu_first_card md:flex-row md:flex md:gap-2 md:h-96">
          <article class="actu_img">
            <div class="actu_bandeau md:items-center"> <p class="md:text-4xl" >Théâtre</p></div>
          </article>
@@ -288,7 +289,8 @@
            <p class="text-black text-left ml-4 mt-4 mb-12 md:hidden">Les pate c'est la vie </p>
            <div class="flex space-x-2 justify-center md:hidden">
              <router-link to="/#yourlink" type="button" class=
-                 "inline-block
+                 "mb-12
+                 inline-block
            px-6 py-2.5
            bg-green
            text-white
@@ -376,6 +378,75 @@
        </div>
      </div>
       </section>
+
+      <section class="Three_comment hidden md:block md:border-t-2 md:border-green">
+        <h2  class="text-5xl	text-center md:text-6xl text-green mt-12">Votre avis compte</h2>
+       <article class="flex flex-row justify-center gap-3">
+         <aside class=" Comment_card mt-12 bg-green ">
+           <aside class="picture_comment flex justify-center">
+             <img
+                 src="../assets/Pictures/harold.jpg"
+                 class="avatar_comment border rounded-full"
+                 alt="Avatar"
+             />
+           </aside>
+
+
+          <aside class="comment_text">
+            <div class="flex flex-row mt-4 ">
+              <h3 class="text-xl text-white ml-3 mb-2">Harold</h3>
+              <p class="text-left ml-40">Note : mettre API</p>
+            </div>
+            <p class="text-white md:mt-4">It's not a potato it's my son. Oooh is not a potatoooOOOoooOOO is my son</p>
+            <p class="text-left ml-4 mt-6 mb-2 italic">Posté le 15/02/2023</p>
+          </aside>
+         </aside>
+
+         <aside class=" Comment_card mt-12 bg-green ">
+           <aside class="picture_comment flex justify-center">
+             <img
+                 src="../assets/Pictures/harold.jpg"
+                 class="avatar_comment border rounded-full"
+                 alt="Avatar"
+             />
+           </aside>
+           <aside class="comment_text">
+             <div class="flex flex-row mt-4 ">
+               <h3 class="text-xl text-white ml-3 mb-2">Harold</h3>
+               <p class="text-left ml-40">Note : mettre API</p>
+             </div>
+             <p class="text-white md:mt-4">It's not a potato it's my son. Oooh is not a potatoooOOOoooOOO is my son</p>
+             <p class="text-left ml-4 mt-6 mb-2 italic">Posté le 15/02/2023</p>
+           </aside>
+         </aside>
+
+
+
+         <aside class=" Comment_card mt-12 bg-green ">
+           <aside class="picture_comment flex justify-center">
+             <img
+                 src="../assets/Pictures/harold.jpg"
+                 class="avatar_comment border rounded-full"
+                 alt="Avatar"
+             />
+           </aside>
+           <aside class="comment_text">
+             <div class="flex flex-row mt-4 ">
+               <h3 class="text-xl text-white ml-3 mb-2">Harold</h3>
+               <p class="text-left ml-40">Note : mettre API</p>
+             </div>
+             <p class="text-white md:mt-4">It's not a potato it's my son. Oooh is not a potatoooOOOoooOOO is my son</p>
+             <p class="text-left ml-4 mt-6 mb-2 italic">Posté le 15/02/2023</p>
+           </aside>
+         </aside>
+
+
+       </article>
+
+      </section>
+
+
+
     </main>
   </body>
 
