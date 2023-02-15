@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Carousel from '../components/Carousel.vue'
 
 import HomeComponent from "@/components/HomeComponent.vue";
 
@@ -7,7 +6,6 @@ import HomeComponent from "@/components/HomeComponent.vue";
 
 <template>
   <main>
-    <Carousel/>
     <HomeComponent />
   </main>
 </template>
