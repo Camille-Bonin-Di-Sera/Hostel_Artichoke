@@ -5,7 +5,6 @@ import WhoAreWeView from '@/views/WhoAreWeView.vue';
 import LoginView from '@/views/LoginView.vue';
 import WhoAreWeComponent from "@/components/WhoAreWeComponent.vue";
 
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -14,6 +13,7 @@ const router = createRouter({
       name: 'home',
       component: HomeView
     },
+
     {
       path: '/discounts',
       name: 'discounts',
@@ -42,7 +42,7 @@ const router = createRouter({
       path: '/advantages',
       name: 'adv',
       component: AdvantageView
-    },*/
+    },
     {
       path: '/about',
       name: 'about',

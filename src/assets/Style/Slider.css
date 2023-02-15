@@ -1,0 +1,16 @@
+.content{
+    height: 48vh;
+    display: none;
+}
+@media (min-width: 728px) {
+    .content{
+        display: inherit;
+    }
+}
+
+
+
+.bed{
+    height: 48vh;
+    width: 100%;
+}
