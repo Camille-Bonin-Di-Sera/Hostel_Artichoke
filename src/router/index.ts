@@ -41,7 +41,7 @@ const router = createRouter({
       path: '/advantages',
       name: 'adv',
       component: AdvantageView
-    },
+    },*/
     {
       path: '/about',
       name: 'about',
