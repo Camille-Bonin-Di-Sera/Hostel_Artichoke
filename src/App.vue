@@ -2,6 +2,9 @@
       <router-view/>
 </template>
 <script>
+
+
+//A garder pour pouvoir run build sur le serveur
 export default {
 
 }
