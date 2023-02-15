@@ -92,7 +92,7 @@
       </div>
     </section>
 
-    <section class="Description md:w-4/5 md:flex md:ml-6	">
+    <section class="Description md:w-4/5 md:flex md:ml-6 md:hidden	">
       <article class="text ">
         <h3 class="text-3xl	text-center	text-green">Tout ce dont vous avez besoin</h3>
         <p class="text-black text-center ml-3 mr-3 mt-5">Artichauts, si mystérieux et doux,
@@ -379,7 +379,7 @@
      </div>
       </section>
 
-      <section class="Three_comment hidden md:block md:border-t-2 md:border-green">
+      <section class="Three_comment hidden md:block md:border-t-2 md:border-green md:mb-80">
         <h2  class="text-5xl	text-center md:text-6xl text-green mt-12">Votre avis compte</h2>
        <article class="flex flex-row justify-center gap-3">
          <aside class=" Comment_card mt-12 bg-green ">
