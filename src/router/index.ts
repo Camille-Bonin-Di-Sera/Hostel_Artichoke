@@ -3,8 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import DiscountView from '@/views/DiscountView.vue';
 import WhoAreWeView from '@/views/WhoAreWeView.vue';
 import LoginView from '@/views/LoginView.vue';
-import WhoAreWeComponent from "@/components/WhoAreWeComponent.vue";
-
+import 'tw-elements';
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [

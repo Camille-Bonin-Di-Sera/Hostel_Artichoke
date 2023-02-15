@@ -1,5 +1,3 @@
-
-    
 .container{
     background-image: url("../../assets/Pictures/imageBackground.jpg");
     background-position: center;
@@ -16,8 +14,7 @@
     height:50%;
 }
 
-.image
-{
+.image {
     width: 100%;
     background-image: url("../../assets/Pictures/bedroom0.jpg");
     background-position: center;
