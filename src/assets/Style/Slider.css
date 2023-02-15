@@ -1,6 +1,8 @@
 .content{
     height: 48vh;
     display: none;
+    background-image: url("../../assets/Pictures/bed-section-hero.jpg");
+    background-size: cover;
 }
 @media (min-width: 728px) {
     .content{
