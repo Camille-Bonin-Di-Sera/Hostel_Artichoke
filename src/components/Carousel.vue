@@ -5,4 +5,8 @@
 </template>
 <script>
 import("../assets/Style/Slider.css")
+
+export default {
+
+}
 </script>
