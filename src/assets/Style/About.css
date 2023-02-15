@@ -1,6 +1,33 @@
+<<<<<<< HEAD
+.container{
+    background-image: url("../../assets/Pictures/imageBackground.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.content
+{
+    background-color: white;
+    flex-direction: column;
+    margin: auto;
+    width:80%;
+    height:50%;
+}
+
+.image
+{
+    width: 100%;
+    background-image: url("../../assets/Pictures/bedroom0.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+=======
 *{
     background-image: url("../../assets/Pictures/background/bck-forest.jpeg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+>>>>>>> 81cf169cd5777324c2bcf2b7f0a5458fb7957b36
 }

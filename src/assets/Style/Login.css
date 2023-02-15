@@ -1,0 +1,42 @@
+.container{
+    background-image: url("../../assets/Pictures/imageBackground.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.content
+{
+    background-color: white;
+    flex-direction: row;
+    margin: auto;
+    width:80%;
+    height:50%;
+}
+
+.image
+{
+    width: 100%;
+    background-image: url("../../assets/Pictures/bedroom0.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+}
+
+
+.v-line
+{
+    border-left: solid;
+    border-color: forestgreen;
+    height: 40%;
+    left: 42.5%;
+    position: absolute;
+}
+
+@media screen and (max-width: 720px) {
+    .v-line
+    {
+        display:none;
+    }
+}
