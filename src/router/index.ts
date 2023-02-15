@@ -37,11 +37,6 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: LoginView
     },
-    /*   {
-         path: '/advantages',
-         name: 'adv',
-         component: AdvantageView
-       },*/
     {
       path: '/about',
       name: 'about',
