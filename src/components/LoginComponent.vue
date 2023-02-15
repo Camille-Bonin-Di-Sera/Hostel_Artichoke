@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <p class="border-4 border-red-500">Navbar du site</p>
+      <p class=" text-black border-4 border-red-500">Navbar du site</p>
     </div>
     <div class="content">
       <h1 class="text-green-700 text-center text-2xl sm:text-5xl"> Mon compte </h1>
@@ -47,7 +47,7 @@
       </article>
     </section>
     <div>
-      <p class="border-4 border-red-500">Footer du site</p>
+      <p class="text-black border-4 border-red-500">Footer du site</p>
     </div>
   </div>
 </template>
