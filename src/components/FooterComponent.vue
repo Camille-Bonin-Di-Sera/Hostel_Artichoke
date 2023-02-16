@@ -25,10 +25,10 @@
           <h3 class="text-white text-left ml-4 md:ml-48 text-xl sm:text-3xl"> Menu </h3>
           <br />
           <ul>
-            <li class="text-white"><p class="text-left ml-2 md:ml-48">Accueil</p></li>
-            <li class="text-white"><p class="text-left ml-2 md:ml-48">Réservation</p></li>
-            <li class="text-white"><p class="text-left ml-2 md:ml-48">Qui Sommes Nous</p></li>
-            <li class="text-white"><p class="text-left ml-2 md:ml-48">Mentions Légales</p></li>
+            <li class="text-white"><a href="http://localhost:5174"><p class="text-left ml-2 md:ml-48 hover:underline">Accueil</p></a></li>
+            <li class="text-white"><a href="http://localhost:5174/Reservation"><p class="text-left ml-2 md:ml-48 hover:underline">Réservation</p></a></li>
+            <li class="text-white"><a href="http://localhost:5174/WhoAreWe"><p class="text-left ml-2 md:ml-48 hover:underline">Qui Sommes Nous</p></a></li>
+            <li class="text-white"><a href="http://localhost:5174/mentionsLegales"><p class="text-left ml-2 md:ml-48 hover:underline">Mentions Légales</p></a></li>
           </ul>
           <br />
         </article>

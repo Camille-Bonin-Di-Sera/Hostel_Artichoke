@@ -3,13 +3,13 @@
     <div>
       <p class="text-black border-4 border-red-500">Navbar du site</p>
     </div>
-    <section class="content">
+    <section class="contentAbout">
       <article class="image">
 
       </article>
       <article>
         <br />
-          <h1 class="text-green-700 text-center text-2xl sm:text-5xl"> Notre Histoire </h1>
+          <h3 class="text-green-700 text-center text-2xl sm:text-5xl"> Notre Histoire </h3>
           <br />
           <p class=" text-black text-justify pl-8 pr-8 block sm:block sm:text-center lg:ml-24 lg:mr-24"> Nous sommes implémentés dans la région depuis les années 1970. Notre positionnement près de la forêt nous permet de proposer des séjours reposant afin de se relaxer et se ressourcer en proposant des activités de toursime et de
           découverte de la nature aux alentours. Nous proposons également des services en fonction de la saison comme un SPA l'hiver et une piscine en été. La proximité avec des petits villages nous permet également de proposer
