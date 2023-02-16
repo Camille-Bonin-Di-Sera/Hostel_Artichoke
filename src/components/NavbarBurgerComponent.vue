@@ -1,18 +1,34 @@
 <template>
 
-
   <nav role="navigation">
+    <div class="link">
+      <div>
+        <img src="../assets/Pictures/icon/flag-fr.png" alt="" class="inline md:mr-6 md:h-12">
+        <img src="../assets/Pictures/icon/flag-eng.png" alt="" class="inline md:mr-2 md:h-12">
+      </div>
+      <a class="md:hover:border-b-2 md:hover:border-green md:text-2xl" href="/">Reserver</a>
+      <div>
+      <img src="../assets/Pictures/icon/flag-fr.png" alt="" class="inline md:mr-6 md:h-12">
+      <img src="../assets/Pictures/icon/flag-eng.png" alt="" class="inline md:mr-2 md:h-12">
+    </div>
+    </div>
+
     <div id="menuToggle">
       <input type="checkbox" />
       <span></span>
       <span></span>
       <span></span>
       <ul id="menu">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Info</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a class="hover:border-b-2 hover:border-green" href="/">Accueil</a></li>
+        <li><a class="hover:border-b-2 hover:border-green" href="/discounts">Chambre</a></li>
+        <li><a class="hover:border-b-2 hover:border-green" href="/WhoAreWe">Reserver</a></li>
+        <li><a class="hover:border-b-2 hover:border-green" href="#">Nous contacter</a></li>
+        <li>
+          <img src="../assets/Pictures/icon/flag-fr.png" alt="" class="flag inline mr-6">
+          <img src="../assets/Pictures/icon/flag-eng.png" alt="" class="flag inline mr-2">
+        </li>
       </ul>
+      
     </div>
   </nav>
 

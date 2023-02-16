@@ -1,8 +1,13 @@
 <template>
+
+  <NavbarBurgerComponent/>
       <router-view/>
 </template>
 <script>
+import NavbarBurgerComponent from "@/components/NavbarBurgerComponent.vue";
+
 export default {
+  components: {NavbarBurgerComponent}
 
 }
 </script>
