@@ -1,16 +1,23 @@
 <template>
 
   <nav role="navigation">
-    <div class="link">
+    <div class="link hidden md:block">
       <div>
-        <img src="../assets/Pictures/icon/flag-fr.png" alt="" class="inline md:mr-6 md:h-12">
-        <img src="../assets/Pictures/icon/flag-eng.png" alt="" class="inline md:mr-2 md:h-12">
+        <img src="../assets/Pictures/icon/phone-logo.png" alt="" class="inline md:mr-6 md:h-12">
+        <img src="../assets/Pictures/icon/mail.png" alt="" class="inline md:mr-2 md:h-12">
       </div>
       <a class="md:hover:border-b-2 md:hover:border-green md:text-2xl" href="/">Reserver</a>
       <div>
       <img src="../assets/Pictures/icon/flag-fr.png" alt="" class="inline md:mr-6 md:h-12">
       <img src="../assets/Pictures/icon/flag-eng.png" alt="" class="inline md:mr-2 md:h-12">
     </div>
+    </div>
+
+    <div class="link_mobile flex flex-col ">
+      <div class="img_arti">
+        <img src="../assets/Pictures/icon/articho-logo.png" alt="" class="arti inline md:mr-6 md:h-12">
+      </div>
+      <a class=" slogan" href="/">Un Hotel en NatureS</a>
     </div>
 
     <div id="menuToggle">

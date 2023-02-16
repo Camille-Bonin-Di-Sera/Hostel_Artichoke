@@ -1,13 +1,14 @@
 <template>
-
+<MobileNavbarBurgerComponent/>
   <NavbarBurgerComponent/>
       <router-view/>
 </template>
 <script>
 import NavbarBurgerComponent from "@/components/NavbarBurgerComponent.vue";
+import MobileNavbarBurgerComponent from "@/components/MobileNavbarBurgerComponent.vue";
 
 export default {
-  components: {NavbarBurgerComponent}
+  components: {MobileNavbarBurgerComponent, NavbarBurgerComponent}
 
 }
 </script>

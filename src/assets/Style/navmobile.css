@@ -1,0 +1,43 @@
+
+.top_phone-flag {
+    z-index: 9;
+    height: 14%;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: black;
+    justify-content: space-evenly;
+    background-color: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(4px);
+}
+
+@media (min-width: 1025px) {
+    .top_phone-flag {
+        z-index: 0;
+        display: none;
+    }
+}
+.picture{
+    width: 12%;
+    gap: 20px;
+    display: flex;
+}
+
+.flag_white{
+    max-width: 100%;
+    height: auto;
+}
+.flag_white:hover{
+    height: auto;
+    filter: drop-shadow(0 0 0.75rem #04fc04);
+}
+
+
+
+
+
+
+
+
+
