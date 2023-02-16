@@ -1,17 +1,17 @@
-body{
+body_home{
     display: flex;
     flex-direction: column;
 }
 
 @media (min-width: 1025px) {
-    body{
+    body_home{
         display: flex;
         justify-content: center;
         background-image: url("../../assets/Pictures/background/bck-forest.jpeg");
         background-position: center;
         flex-direction: inherit;
     }
-    main{
+    main_home{
         width: 74vw;
         flex-direction: column;
         background-color: white;
@@ -379,3 +379,4 @@ p{
     height: 8vh;
 }
     }
+
