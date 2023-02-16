@@ -1,16 +1,19 @@
 <template>
 <MobileNavbarBurgerComponent/>
   <NavbarBurgerComponent/>
+  <Popup/>
       <router-view/>
 </template>
 <script>
 import NavbarBurgerComponent from "@/components/NavbarBurgerComponent.vue";
 import MobileNavbarBurgerComponent from "@/components/MobileNavbarBurgerComponent.vue";
+import Popup from "@/components/PopUpComponent.vue";
 
 export default {
-  components: {MobileNavbarBurgerComponent, NavbarBurgerComponent}
+  components: {Popup,MobileNavbarBurgerComponent, NavbarBurgerComponent}
 
 }
+
 </script>
 <style>
 @font-face {
