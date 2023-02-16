@@ -1,32 +1,13 @@
 <template>
-  <div>
-    <router-view />
-  </div>
+      <router-view/>
 </template>
 <script>
-import axios from "axios";
-import DiscountView from "@/views/DiscountView.vue";
 
+
+//A garder pour pouvoir run build sur le serveur
 export default {
-  components: {DiscountView},
 
-
-  data() {
-    return {
-      videos: []
-    };
-  },
-  // Pulls posts when the component is created.
-  created() {
-    axios
-        .get(`http://localhost/api/v1/videos`)
-        .then((response) => {
-          // JSON responses are automatically parsed.
-          this.videos = response.data;
-        })
-  }
-};
-
+}
 </script>
 <style>
 @font-face {

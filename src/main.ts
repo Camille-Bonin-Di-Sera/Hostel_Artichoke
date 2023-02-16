@@ -16,3 +16,7 @@ app.use(router)
 app.mount('#app')
 
 
+
+export default {
+
+}
