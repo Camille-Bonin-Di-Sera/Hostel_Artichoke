@@ -1,0 +1,38 @@
+.container{
+    background-image: url("../../assets/Pictures/imageBackground.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.content
+{
+    background-color: black;
+    flex-direction: row;
+    margin: auto;
+    width:100%;
+    height:50%;
+}
+
+horizontale
+{
+    background-color: white;
+    width:100%
+}
+
+h1
+{
+    font-family: Nature;
+}
+
+h3
+{
+    font-family: AdventPro;
+}
+
+@media screen and (max-width: 720px) {
+    .v-line
+    {
+        display:none;
+    }
+}
