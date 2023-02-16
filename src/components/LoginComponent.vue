@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
+  <div class="containerLogin">
     <div>
       <p class=" text-black border-4 border-red-500">Navbar du site</p>
     </div>
-    <div class="content">
-      <h1 class="text-green-700 text-center text-2xl sm:text-5xl"> Mon compte </h1>
+    <div class="contentLogin">
+      <h3 class="text-green-700 text-center text-2xl sm:text-5xl"> Mon compte </h3>
       <br />
     </div>
     <section class="sm:flex flex-column sm:flex-row bg-white w-4/5 m-auto">
@@ -46,9 +46,6 @@
         <br />
       </article>
     </section>
-    <div>
-      <p class="text-black border-4 border-red-500">Footer du site</p>
-    </div>
   </div>
 </template>
 

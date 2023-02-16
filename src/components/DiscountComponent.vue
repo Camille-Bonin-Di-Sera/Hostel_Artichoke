@@ -28,9 +28,6 @@
       <button class="text-white text-xl bg-green-700 block m-auto w-1/4 rounded sm:text-3xl">Réservez</button>
       <br />
     </div>
-    <div>
-      <p class="text-black border-4 border-red-500">Footer du site</p>
-    </div>
   </div>
 </template>
 
@@ -38,26 +35,40 @@
 import axios from "axios";
 import('../assets/Style/main.css');
 
+
+
 export default{
   data() {
     return {
-      discounts: []
+      discounts: [],
+      local: import.meta.env.VITE_URL_API,
     };
+  },
+
+  mounted() {
+    console.log(import.meta.env);
   },
 
   created() {
     axios
-        .get('http://localhost/api/v1/discounts')
+        .get(this.local + '/v1/discounts')
         .then((res) =>
         {
-          this.discounts = res.data;
+          try{
+            this.discounts = res.data;
+            console.log("bonjour : ", res);
+          }
+          catch (err) {
+            console.log("erreur discount : ", err);
+          }
         })
         .catch((error) =>
         {
-          console.log(error.res.data.value);
+          console.log("bonjour : ", error.res.data.value);
         });
     },
 };
+
 </script>
 
 <style scoped>

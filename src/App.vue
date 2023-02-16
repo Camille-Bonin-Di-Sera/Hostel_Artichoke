@@ -3,6 +3,11 @@
 </template>
 <script>
 
+
+//A garder pour pouvoir run build sur le serveur
+export default {
+
+}
 </script>
 <style>
 @font-face {

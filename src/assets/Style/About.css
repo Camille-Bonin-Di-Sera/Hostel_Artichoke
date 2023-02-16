@@ -1,11 +1,11 @@
-.container{
+.containerAbout{
     background-image: url("../../assets/Pictures/imageBackground.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.content
+.contentAbout
 {
     background-color: white;
     flex-direction: column;
