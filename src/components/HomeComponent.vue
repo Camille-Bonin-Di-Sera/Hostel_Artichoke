@@ -457,4 +457,9 @@
 
 import('../assets/Style/Home.css')
 
+export default {
+
+}
+
+
 </script>
