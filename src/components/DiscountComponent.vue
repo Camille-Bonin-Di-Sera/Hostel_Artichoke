@@ -28,9 +28,6 @@
       <button class="text-white text-xl bg-green-700 block m-auto w-1/4 rounded sm:text-3xl">Réservez</button>
       <br />
     </div>
-    <div>
-      <p class="text-black border-4 border-red-500">Footer du site</p>
-    </div>
   </div>
 </template>
 

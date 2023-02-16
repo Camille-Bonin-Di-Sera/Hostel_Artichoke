@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import WhoAreWeComponent from "@/components/WhoAreWeComponent.vue";
+import FooterComponent from "@/components/FooterComponent.vue";
 
 
 </script>
@@ -8,4 +9,7 @@ import WhoAreWeComponent from "@/components/WhoAreWeComponent.vue";
   <main>
     <WhoAreWeComponent />
   </main>
+  <footer>
+    <FooterComponent />
+  </footer>
 </template>

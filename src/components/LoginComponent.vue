@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="containerLogin">
     <div>
       <p class=" text-black border-4 border-red-500">Navbar du site</p>
     </div>
@@ -46,9 +46,6 @@
         <br />
       </article>
     </section>
-    <div>
-      <p class="text-black border-4 border-red-500">Footer du site</p>
-    </div>
   </div>
 </template>
 
