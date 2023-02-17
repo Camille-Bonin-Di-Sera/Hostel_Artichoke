@@ -7,8 +7,9 @@ body_home{
     body_home{
         display: flex;
         justify-content: center;
-        background-image: url("../../assets/Pictures/background/bck-forest.jpeg");
+        background-image: url("../../assets/Pictures/background/bk-forest4.jpg");
         background-position: center;
+        background-size: cover;
         flex-direction: inherit;
     }
     main_home{
@@ -263,7 +264,8 @@ p{
 
 @media (min-width: 1025px) {
 .Actu{
-}
+    margin-bottom: 8vh;
     }
+}
 
 
