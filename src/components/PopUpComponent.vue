@@ -3,7 +3,7 @@
     <button
         class="
         dropdown-toggle
-        inline-block px-14 py-3 bg-black text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-green hover:shadow-lg focus:bg-green focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green active:shadow-lg transition duration-150 ease-in-out
+        inline-block  px-14 py-3 bg-green-btn backdrop-blur-sm	 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-green hover:shadow-lg focus:bg-green focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green active:shadow-lg transition duration-150 ease-in-out
         flex
         items-center
         whitespace-nowrap
