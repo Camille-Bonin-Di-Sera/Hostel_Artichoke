@@ -1,0 +1,97 @@
+
+.promo_bandeau{
+    background-color: #49a078c4;
+    height: 15%;
+    width: 33%;
+    display: flex;
+    justify-content: center;
+
+}
+
+@media (min-width: 1025px) {
+.promo_bandeau {
+        display: none;
+
+    }
+}
+p{
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: AdventPro;
+}
+
+
+@media (min-width:1025px) {
+    .Promo {
+        width: 100%;
+        height: 52vh;
+        display: flex;
+        flex-direction: column;
+        box-shadow: none;
+        margin-left: 0;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        margin-top: 0;
+        margin-bottom: 0;
+        border-radius: 0;
+
+    }
+}
+
+.disapear_promo{
+    display: none;
+}
+@media (min-width: 1025px) {
+    .disapear_promo{
+        display: block;
+        height: 100%;
+        width: 100%;
+
+
+    }
+}
+
+
+    .appear_promo{
+        margin-top: 10vh;
+        width: 90%;
+        margin-left: 4vw;
+        box-shadow: 5px 5px 15px 5px #000000;
+
+    }
+@media (min-width: 1025px) {
+    .appear_promo{
+        width: 21vw;
+        margin-top: 0;
+        margin-left: 0;
+        box-shadow: none;
+
+    }
+}
+
+
+.promo_img{
+    width: 100%;
+    height: 50%;
+}
+
+
+
+.promo_img{
+    background-image: url("../../../assets/Pictures/theatre.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+    height: 24vh;
+}
+
+
+
+.promo_img{
+    background-image: url("../../../assets/Pictures/bed-section-hero.jpg");
+}
+
+
+

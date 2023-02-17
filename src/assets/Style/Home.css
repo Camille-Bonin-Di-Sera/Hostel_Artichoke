@@ -174,27 +174,6 @@ body_home{
 }
 
 
-
-
-.actu{
-    background-color: white;
-    height: 100%;
-}
-.adv_bandeau, .actu_bandeau, .promo_bandeau{
-    background-color: #49a078c4;
-    height: 15%;
-    width: 33%;
-    display: flex;
-    justify-content: center;
-
-}
-
-@media (min-width: 1025px) {
-    .adv_bandeau, .promo_bandeau {
-        display: none;
-
-    }
-}
 p{
     color: white;
     text-align: center;
@@ -258,108 +237,6 @@ p{
     height: 100%;
 }
 
-.Actu, .Promo{
-    margin-top: 4rem;
-    height: 45vh;
-    width: 94%;
-    margin-left: 4%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: 5px;
-    box-shadow: 6px 6px 12px 0px #000000;
-}
-
-@media (min-width: 728px) {
-    .Actu, .Promo {
-        height: 69vh;
-        width: 90%;
-
-    }
-}
-
-@media (min-width:1025px) {
-    .Actu, .Promo {
-        width: 100%;
-        height: 52vh;
-        display: flex;
-        flex-direction: column;
-        box-shadow: none;
-        margin-left: 0;
-        padding-left: 1vw;
-        padding-right: 1vw;
-        margin-top: 0;
-        margin-bottom: 0;
-        border-radius: 0;
-
-    }
-}
-@media (min-width: 1025px) {
-    .Actu{
-        margin-bottom: 8vh;
-    }
-}
-.disapear_promo{
-    display: none;
-}
-@media (min-width: 1025px) {
-    .disapear_promo{
-        display: block;
-
-    }
-}
-@media (min-width: 1025px) {
-    .disapear_promo, .appear_promo{
-        height: 100%;
-        width: 100%;
-
-    }
-}
-
-
-.actu_img, .actu_discrib, .promo_img, .promo_discrib{
-    width: 100%;
-    height: 50%;
-}
-
-@media (min-width: 1025px) {
-    .actu_img{
-        width: 100%;
-        height: 100%;
-    }
-
-}
-
-
-@media (min-width: 1025px) {
-    .actu_first_card{
-        width: 50vw;
-    }
-}
-@media (min-width: 1025px) { .actu_second_card{
-        width: 25vw;
-    }
-}
-
-.actu_img, .promo_img{
-    background-image: url("../../assets/Pictures/theatre.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 5px;
-    height: 24vh;
-}
-
-@media (min-width: 1025px) {
-    .actu_img{
-        height: 100%;
-    }
-}
-
-
-.promo_img{
-    background-image: url("../../assets/Pictures/bed-section-hero.jpg");
-}
 @media (min-width: 1025px) {
     .Three_comment {
         height: 38vh;
@@ -382,4 +259,11 @@ p{
     height: 8vh;
 }
     }
+
+
+@media (min-width: 1025px) {
+.Actu{
+}
+    }
+
 

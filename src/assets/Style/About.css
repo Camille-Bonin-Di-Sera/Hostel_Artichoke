@@ -11,12 +11,11 @@
     flex-direction: column;
     margin: auto;
     width:80%;
-    height:50%;
+    height:75vh;
 }
-
+/
 .image {
     width: 100%;
-    background-image: url("../../assets/Pictures/bedroom0.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

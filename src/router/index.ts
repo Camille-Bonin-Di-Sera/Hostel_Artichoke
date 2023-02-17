@@ -6,6 +6,7 @@ import LoginView from '@/views/LoginView.vue';
 import NavbarView from '@/views/TestView.vue';
 import FooterView from '@/views/FooterView.vue';
 import 'tw-elements';
+import CardActu from "@/components/CardsComponent/Actualite/CardActu.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,6 +15,11 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView
+    },
+    {
+      path: '/card',
+      name: 'card',
+      component: CardActu
     },
     {
       path: '/discounts',
