@@ -10,7 +10,7 @@
     <section class="sm:flex flex-column sm:flex-row bg-white w-4/5 m-auto">
       <article class="sm:w-1/2">
         <h3 class="colorText text-center text-2xl sm:text-3xl"> Créer un compte </h3>
-        <form class="space-x-4 space-y-4" v-on:submit.prevent="register" action="http://localhost:5174/">
+        <form class="space-x-4 space-y-4" v-on:submit.prevent="register">
           <input type="text" placeholder=" Prénom" class="border border-black ml-4 w-1/2">
           <input type="text" placeholder=" Nom" class="border border-black w-1/3">
           <br />
@@ -51,7 +51,6 @@
 
 <script>
 import axios from "axios";
-import EventBus from "../components/EventBus";
 import router from "../router/index.ts"
 import('../assets/Style/main.css');
 import('../assets/Style/Login.css');
@@ -87,7 +86,7 @@ export default {
           })
           .then((result) => {
             console.log(result)
-            router.push({name:'Login'})
+            router.push({name:'home'})
           })
           .catch((erreur) =>
           {
@@ -106,17 +105,11 @@ export default {
             localStorage.setItem('usertoken', result.data.token)
                 this.email = ''
                 this.password = ''
-                router.push({name: 'Profile'})
+                router.push({name: 'home'})
           })
           .catch((err) => {
             console.log(err)
           })
-
-      this.emitMethod()
-    },
-
-    emitMethod() {
-      EventBus.$emit('logged-in', 'loggedin');
     },
   },
 

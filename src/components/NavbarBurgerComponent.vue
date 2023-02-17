@@ -42,7 +42,20 @@
 
 </template>
 <script>
+
 import('../assets/Style/nav.css')
 export  default {
+  data() {
+    return {
+      auth: '',
+      user: '',
+    }
+  },
+
+  methods: {
+    logout() {
+      localStorage.removeItem('userToken')
+    }
+  },
 }
 </script>
