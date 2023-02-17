@@ -1,0 +1,13 @@
+.familyText
+{
+    font-family: AdventPro;
+}
+
+.contentReservation
+{
+    background-color: white;
+    flex-direction: row;
+    margin: auto;
+    width:80%;
+    height:50%;
+}
