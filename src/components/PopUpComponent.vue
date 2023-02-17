@@ -97,8 +97,8 @@
           <label for="start" class="text-white">Date d'arrivé :   </label>
 
           <input type="date" id="start" name="trip-start"
-                 value="2018-07-22"
-                 min="2018-01-01" max="2018-12-31">
+                 value="2023-07-22"
+                 min="2023-01-01" max="2100-12-31">
         </div>
 
       </li>
@@ -122,8 +122,8 @@
           <label for="start" class="text-white" >Date de départ : </label>
 
           <input type="date" id="start" name="trip-start"
-                 value="2018-07-22"
-                 min="2018-01-01" max="2018-12-31">
+                 value="2023-07-22"
+                 min="2023-01-01" max="2100-12-31">
         </div>
 
       </li>
