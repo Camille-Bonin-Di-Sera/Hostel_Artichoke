@@ -30,7 +30,7 @@
         ></path>
       </svg>
     </button>
-    <ul
+    <div
         class="
         px-4
         dropdown-menu
@@ -51,11 +51,34 @@
         m-0
         bg-clip-padding
         border-none
+        bg-black
       "
         aria-labelledby="dropdownMenuLargeButton"
     >
+
       <li>
-        <a
+       <a class="
+        dropdown-item
+        text-sm
+        py-2
+        px-4
+        font-normal
+        block
+        w-full
+        whitespace-nowrap
+        bg-transparent
+        text-gray-700
+        hover:bg-gray-100
+        italic
+        text-white
+        text-center
+        ">Choisissez une date
+
+       </a>
+      </li>
+
+      <li>
+        <div
             class="
             dropdown-item
             text-sm
@@ -70,11 +93,17 @@
             hover:bg-gray-100
           "
             href="#"
-        >Action</a
         >
+          <label for="start" class="text-white">Date d'arrivé :   </label>
+
+          <input type="date" id="start" name="trip-start"
+                 value="2018-07-22"
+                 min="2018-01-01" max="2018-12-31">
+        </div>
+
       </li>
       <li>
-        <a
+        <div
             class="
             dropdown-item
             text-sm
@@ -89,29 +118,16 @@
             hover:bg-gray-100
           "
             href="#"
-        >Another action</a
         >
+          <label for="start" class="text-white" >Date de départ : </label>
+
+          <input type="date" id="start" name="trip-start"
+                 value="2018-07-22"
+                 min="2018-01-01" max="2018-12-31">
+        </div>
+
       </li>
-      <li>
-        <a
-            class="
-            dropdown-item
-            text-sm
-            py-2
-            px-4
-            font-normal
-            block
-            w-full
-            whitespace-nowrap
-            bg-transparent
-            text-gray-700
-            hover:bg-gray-100
-          "
-            href="#"
-        >Something else here</a
-        >
-      </li>
-    </ul>
+    </div>
   </div>
 </template>
 
