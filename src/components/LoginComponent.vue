@@ -51,7 +51,7 @@
 
 <script>
 import axios from "axios";
-import router from "../router/index.ts"
+import router from "../router"
 import('../assets/Style/main.css');
 import('../assets/Style/Login.css');
 export default {
