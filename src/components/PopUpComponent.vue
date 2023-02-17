@@ -1,5 +1,5 @@
 <template>
-  <div class="dropdown relative">
+  <div class="dropdown relative hidden md:block">
     <button
         class="
         dropdown-toggle
