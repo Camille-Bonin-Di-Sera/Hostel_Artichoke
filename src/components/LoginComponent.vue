@@ -11,20 +11,20 @@
       <article class="sm:w-1/2">
         <h3 class="colorText text-center text-2xl sm:text-3xl"> Créer un compte </h3>
         <form class="space-x-4 space-y-4" v-on:submit.prevent="register">
-          <input type="text" placeholder=" Prénom" class="border border-black ml-4 w-1/2">
-          <input type="text" placeholder=" Nom" class="border border-black w-1/3">
+          <input id="firstName" v-model="firstName" name="firstName" type="text" placeholder=" Prénom" class="border border-black ml-4 w-1/2">
+          <input id="lastName" v-model="lastName" name="lastName" type="text" placeholder=" Nom" class="border border-black w-1/3">
           <br />
-          <input type="text" placeholder=" Pseudo" class="border border-black">
+          <input id="Pseudo" v-model="Pseudo" name="Pseudo" type="text" placeholder=" Pseudo" class="border border-black">
           <br />
-          <input type="email" placeholder=" E-mail" class="border border-black">
+          <input id="email" v-model="email" name="email" type="email" placeholder=" E-mail" class="border border-black">
           <br />
-          <input type="text" placeholder=" Telephone" class="border border-black">
+          <input id="phone" v-model="phone" name="phone" type="text" placeholder=" Telephone" class="border border-black">
           <br />
-          <input type="password" placeholder=" Mot de passe" class="border border-black w-1/2">
-          <input type="password" placeholder=" Mot de passe" class="border border-black w-1/3">
+          <input id="password" v-model="password" name="password" type="password" placeholder=" Mot de passe" class="border border-black w-1/2">
+          <input id="password" v-model="passwordConfirm" name="password" type="password" placeholder=" Mot de passe" class="border border-black w-1/3">
           <br />
           <div class="fontButton">
-            <button type="submit" class="text-white pr-2 pl-2 text-xl backgroundButton block m-auto sm:w-1/2 rounded sm:text-3xl"> Créer mon compte </button>
+            <button class="text-white pr-2 pl-2 text-xl backgroundButton block m-auto sm:w-1/2 rounded sm:text-3xl"> Créer mon compte </button>
           </div>
         </form>
         <br />
@@ -33,9 +33,9 @@
       <article class="sm:float-left sm:w-1/2 ">
         <h3 class="colorText text-center text-2xl sm:text-3xl"> Me connecter </h3>
         <form class="space-x-4 space-y-6 md:items-center md:w-3/4 md:ml-44" v-on:submit.prevent="login">
-          <input type="email" placeholder=" E-mail" class="border border-black ml-4">
+          <input id="email" v-model="emailLog" name="email" type="email" placeholder=" E-mail" class="border border-black ml-4">
           <br />
-          <input type="password" placeholder=" Mot de passe" class="border border-black">
+          <input id="password" v-model="passwordLog" name="password" type="password" placeholder=" Mot de passe" class="border border-black">
           <br />
           <input type="checkbox"> <label class="colorText fontButton text-xl">Rester connecté</label>
           <br />
@@ -56,32 +56,35 @@ import('../assets/Style/main.css');
 import('../assets/Style/Login.css');
 export default {
   created() {
-    axios
-        .get('http://localhost/api/v1/Login')
+    /*axios
+        .get('http://localhost/api/v1/Login')*/
   },
 
 
   data()
   {
     return {
-      firstName:'',
-      lastName:'',
-      pseudo:'',
-      email:'',
-      telephone:'',
-      password:'',
+      firstName: '',
+      lastName: '',
+      Pseudo: '',
+      email: '',
+      phone: '',
+      password: '',
+      passwordConfirm: '',
+      emailLog: '',
+      passwordLog: '',
     }
   },
 
   methods: {
     register() {
-      axios.post('/api/v1/Users',
+      axios.post('/v1/users',
           {
               firstname:this.firstName,
               lastname:this.lastName,
-              pseudo:this.pseudo,
+              pseudo:this.Pseudo,
               email:this.email,
-              phone:this.telephone,
+              phone:this.phone,
               password:this.password,
           })
           .then((result) => {
@@ -96,15 +99,16 @@ export default {
 
 
     login() {
-      axios.post('api/v1/Users',
+      axios.post('/v1/users',
           {
-            email:this.email,
-            password:this.password,
+            emailLog:this.emailLog,
+            passwordLog:this.passwordLog,
           })
           .then((result) => {
             localStorage.setItem('usertoken', result.data.token)
-                this.email = ''
-                this.password = ''
+                console.log(result);
+                this.emailLog = ''
+                this.passwordLog = ''
                 router.push({name: 'home'})
           })
           .catch((err) => {
