@@ -36,12 +36,15 @@ body_home{
 
 }
 
-
+.Advantage{
+    margin-top: 60vh;
+}
 
 @media (min-width: 1025px) {
     .Advantage{
         display: flex;
         flex-direction: row-reverse;
+        margin-top: 0vh;
     }
 }
 
@@ -71,7 +74,7 @@ body_home{
     }
 }
 .randonne, .localisation, .restaurant, .spa{
-    height: 24vh;
+    height: 38vh;
     width: 100vw;
     margin: auto;
     display: flex;
@@ -206,7 +209,7 @@ p{
     justify-content: center;
     align-items: center;
     display: flex;
-    margin-top: 14vh;
+    margin-top: 22vh;
 
 }
 @media (min-width: 728px) {
