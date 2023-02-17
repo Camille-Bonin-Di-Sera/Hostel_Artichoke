@@ -36,17 +36,20 @@
 
 @media (min-width: 1025px) {
     .actu_first_card{
-        width: 42vw;
+        width: 48vw;
         box-shadow: none;
         border-radius: 0px;
         margin-top: 2vh;
-        height: 40vh;
+        height: 49vh;
+        margin-left: 36px;
     }
+
 }
 
 @media (min-width: 1025px) {
     .actu_second_card{
-    width: 25vw;
+        width: 22vw;
+        height: 48vh;
     }
 }
 
