@@ -1,0 +1,31 @@
+h1
+{
+    font-family: Nature;
+}
+
+h3
+{
+    font-family: AdventPro;
+}
+
+p
+{
+    font-family: AdventPro;
+    font-size: 1.0em;
+}
+
+.v-line-footer
+{
+    background-color: white;
+    border-left: solid;
+    height: 100%;
+    left: 30%;
+}
+
+
+@media screen and (max-width: 720px) {
+    .v-line-footer
+    {
+        display:none;
+    }
+}
