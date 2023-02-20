@@ -8,6 +8,6 @@
 </template>
 <script setup lang="ts">
 import('../../../assets/Style/Cards/CardsPromo.css')
-import CardActuDesktop from "@/components/CardsComponent/Actualite/CardActuDesktop.vue";
-import CardActuMobile from "@/components/CardsComponent/Actualite/CardActuMobile.vue";
+import CardActuDesktop from "../Actualite/CardActuDesktop.vue";
+import CardActuMobile from "../Actualite/CardActuMobile.vue";
 </script>
