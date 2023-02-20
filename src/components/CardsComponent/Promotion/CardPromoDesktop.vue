@@ -38,9 +38,9 @@
   </section>
 </template>
 <script>
+import('../../../assets/Style/Cards/CardsPromo.css')
 import axios from "axios";
 
-import('../../../assets/Style/Cards/CardsPromo.css')
 export default{
   data() {
     return {

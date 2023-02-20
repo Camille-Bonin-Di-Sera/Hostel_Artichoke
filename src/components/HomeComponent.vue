@@ -199,6 +199,7 @@ import CardPromo from "../components/CardsComponent/Promotion/CardPromo.vue";
 import CardActu from "../components/CardsComponent/Actualite/CardActu.vue";
 import Comment from "../components/CardsComponent/Commentaire/Comment.vue";
 
+
 import('../assets/Style/Home.css')
 export default {
   components: {Comment, CardActu, CardPromo},
