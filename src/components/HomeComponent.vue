@@ -4,7 +4,7 @@
     <main_home>
       <div>
         <button class="flag inline mr-6" v-on:click="testChange"><img src="../assets/Pictures/icon/flag-fr.png" alt=""></button>
-        <p class="colorText text-center text-4xl"> {{ this.testLang ? "Promotion pour 10 nits" : "Discount for 10 nights" }} </p>
+        <p class="colorText text-center text-4xl"> {{ this.testLang ? "Promotion pour 10 nuits" : "Discount for 10 nights" }} </p>
       </div>
     <section class="Advantage">
       <div class="adv_text">
