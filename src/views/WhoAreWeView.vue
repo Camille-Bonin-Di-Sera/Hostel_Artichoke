@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import WhoAreWeComponent from "@/components/WhoAreWeComponent.vue";
-import FooterComponent from "@/components/FooterComponent.vue";
 
 
 </script>
@@ -9,7 +8,4 @@ import FooterComponent from "@/components/FooterComponent.vue";
   <main>
     <WhoAreWeComponent />
   </main>
-  <footer>
-    <FooterComponent />
-  </footer>
 </template>

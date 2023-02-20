@@ -31,8 +31,8 @@
         <li><a class="hover:border-b-2 hover:border-green" href="/WhoAreWe">Reserver</a></li>
         <li><a class="hover:border-b-2 hover:border-green" href="#">Nous contacter</a></li>
         <li>
-          <img src="../assets/Pictures/icon/flag-fr.png" alt="" class="flag inline mr-6">
-          <img src="../assets/Pictures/icon/flag-eng.png" alt="" class="flag inline mr-2">
+          <button class="flag inline mr-6" v-on:click="changeFR"><img src="../assets/Pictures/icon/flag-fr.png" alt=""></button>
+          <button class="flag inline mr-2" v-on:click="changeEN"><img src="../assets/Pictures/icon/flag-eng.png" alt=""></button>
         </li>
       </ul>
       
@@ -45,17 +45,33 @@
 
 import('../assets/Style/nav.css')
 export  default {
+
+
   data() {
     return {
       auth: '',
       user: '',
+
+      lang_fr: true,
     }
   },
 
   methods: {
     logout() {
       localStorage.removeItem('userToken')
-    }
+    },
+
+    changeFR()
+    {
+      this.lang_fr = true;
+      console.log("français : ", this.lang_fr);
+    },
+
+    changeEN()
+    {
+      this.lang_fr = false;
+      console.log("français : ", this.lang_fr);
+    },
   },
 }
 </script>
