@@ -98,7 +98,7 @@
       <section>
             <h3 class="colorText text-center text-2xl sm:text-3xl"> Coordonnées bancaires </h3>
             <br />
-            <div class="border border-blac familyText text-xl mb-4">
+            <div class="border border-black familyText text-xl mb-4">
               <label>&nbsp;  Payer avec : </label>
               <img src="../assets/Pictures/paypal.png" alt ="logo carte bancaire " class="inline w-20 border border-black ml-20">
               <img src="../assets/Pictures/visa-credit-card.png" alt =" logo paypal" class="inline w-20 border border-black ml-20">
