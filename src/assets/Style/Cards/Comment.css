@@ -21,7 +21,7 @@
 
 @media (min-width: 1025px) {
     .Three_comment {
-        height: 38vh;
+        height: auto;
         width: 100%;
 
     }
