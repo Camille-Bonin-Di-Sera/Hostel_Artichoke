@@ -6,10 +6,10 @@
   <footerComponent />
 </template>
 <script>
-import NavbarBurgerComponent from "@/components/NavbarBurgerComponent.vue";
-import MobileNavbarBurgerComponent from "@/components/MobileNavbarBurgerComponent.vue";
-import FooterComponent from "@/components/FooterComponent.vue";
-import Popup from "@/components/PopUpComponent.vue";
+import NavbarBurgerComponent from "./components/NavbarBurgerComponent.vue";
+import MobileNavbarBurgerComponent from "./components/MobileNavbarBurgerComponent.vue";
+import FooterComponent from "./components/FooterComponent.vue";
+import Popup from "./components/PopUpComponent.vue";
 
 export default {
   components: {FooterComponent, Popup,MobileNavbarBurgerComponent, NavbarBurgerComponent}
