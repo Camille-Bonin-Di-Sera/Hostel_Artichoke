@@ -1,0 +1,27 @@
+.familyText
+{
+    font-family: AdventPro;
+}
+
+.contentReservation
+{
+    background-color: white;
+    flex-direction: row;
+    margin: auto;
+    width:80%;
+    height:50%;
+}
+
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+//display: none;
+//-webkit-appearance: none;
+    width: 15px;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 10px;
+}
+
+.custom-inpt {
+padding: 10px !important;
+}

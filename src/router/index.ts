@@ -5,6 +5,7 @@ import WhoAreWeView from '@/views/WhoAreWeView.vue';
 import LoginView from '@/views/LoginView.vue';
 import NavbarView from '@/views/TestView.vue';
 import FooterView from '@/views/FooterView.vue';
+import ReservationView from '@/views/ReservationView.vue';
 import 'tw-elements';
 import CardActu from "@/components/CardsComponent/Actualite/CardActu.vue";
 
@@ -60,6 +61,15 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: FooterView
+    },
+
+    {
+      path: '/Reservation',
+      name: 'Reservation',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: ReservationView
     },
   ]
 })

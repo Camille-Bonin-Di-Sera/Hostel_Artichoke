@@ -4,7 +4,8 @@ import router from  './router'
 import  './index.css'
 import axios from  'axios'
 
-axios.defaults.baseURL = 'http://localhost:8000/api/v1/' ;
+axios.defaults.baseURL = import.meta.env.VITE_URL_API;
+
 
 import './assets/Style/main.css'
 
