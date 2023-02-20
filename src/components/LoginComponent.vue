@@ -1,7 +1,8 @@
 <template>
   <div class="containerLogin">
     <div>
-      <p class=" text-black border-4 border-red-500">Navbar du site</p>
+      <img src="../assets/Pictures/bedroom0.jpg" alt="image Login" class="w-4/5 m-auto"> <!-- Solution temporaire pour que la page prenne toute la place
+      Il n'y est pas censé avoir d'image sur cette page !-->
     </div>
     <div class="contentLogin colorText">
       <h3 class="text-center text-4xl sm:text-5xl"> Mon compte </h3>

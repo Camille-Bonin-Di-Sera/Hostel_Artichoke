@@ -1,9 +1,6 @@
 <template>
   <div>
     <div>
-      <p class="text-black border-4 border-red-500">Navbar du site</p>
-    </div>
-    <div>
       <h3 class="colorText text-center  text-3xl sm:block sm:m-auto sm:w-1/3 sm:text-5xl">Nos Promotions</h3>
     </div>
     <br />

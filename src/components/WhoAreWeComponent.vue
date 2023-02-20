@@ -1,8 +1,5 @@
 <template>
   <div class="containerAbout">
-    <div>
-      <p class="text-black border-4 border-red-500">Navbar du site</p>
-    </div>
     <section class="contentAbout">
       <article class="image">
 
