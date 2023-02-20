@@ -4,9 +4,6 @@
       <h3 class="colorText text-center  text-3xl sm:block sm:m-auto sm:w-1/3 sm:text-5xl">Nos Promotions</h3>
     </div>
     <br />
-    <div>
-      <button class="flag inline mr-6" v-on:click="testChange"><img src="../assets/Pictures/icon/flag-fr.png" alt=""></button>
-    </div>
       <div v-for="discount of discounts">
         <div v-if="discount.id === 1">
           <img src="@/assets/Pictures/bedroom0.jpg" alt ="Image promo 1" class="block m-auto sm:block sm:m-auto sm:w-1/3"/>
@@ -20,7 +17,7 @@
         <div v-else-if="discount.id === 4">
           <img src="@/assets/Pictures/bedroom3.jpg" alt ="Image promo 4" class="block m-auto sm:block sm:m-auto sm:w-1/3"/>
         </div>
-        <p class="colorText text-center text-4xl"> {{ this.testLang }}  {{ this.testLang ? discount.title_fr_discount : discount.title_ang_discount }} </p>
+        <p class="colorText text-center text-4xl"> {{ this.testLang ? discount.title_fr_discount : discount.title_ang_discount }} </p>
         <br />
         <p class="text-center text-black block m-auto sm:block sm:m-auto sm:w-1/3"> {{ discount.describe_fr_discount }} </p>
         <p class="text-center text-black block m-auto w-1/2 sm:block sm:m-auto sm:w-1/3"> {{ discount.code_discount }} </p>

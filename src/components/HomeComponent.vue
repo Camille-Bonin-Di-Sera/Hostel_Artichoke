@@ -2,7 +2,10 @@
 <template>
   <body_home>
     <main_home>
-
+      <div>
+        <button class="flag inline mr-6" v-on:click="testChange"><img src="../assets/Pictures/icon/flag-fr.png" alt=""></button>
+        <p class="colorText text-center text-4xl"> {{ this.testLang ? "Promotion pour 10 nits" : "Discount for 10 nights" }} </p>
+      </div>
     <section class="Advantage">
       <div class="adv_text">
         <h2 id="tilte_adv" class="text-5xl	text-center md:text-6xl md:text-left	text-green mt-12">Nos Avantages</h2>
@@ -198,7 +201,19 @@ import Comment from "@/components/CardsComponent/Commentaire/Comment.vue";
 
 import('../assets/Style/Home.css')
 export default {
-  components: {Comment, CardActu, CardPromo}
+  components: {Comment, CardActu, CardPromo},
+
+  data() {
+    return {
+      testLang:true,
+    };
+  },
+
+  methods:{
+    testChange() {
+      this.testLang = !this.testLang;
+    }
+  }
 
 }
 </script>
