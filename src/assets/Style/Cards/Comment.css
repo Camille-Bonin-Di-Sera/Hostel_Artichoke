@@ -1,0 +1,43 @@
+
+
+ .Comment{
+    margin-top: 3rem;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+    border-radius: 5px;
+    color: black;
+    box-shadow: 6px 6px 12px 0px #000000;
+}
+
+@media (min-width: 1025px) {
+    .Comment {
+        display: none;
+    }
+}
+
+.Comment{
+    height: 100%;
+}
+
+@media (min-width: 1025px) {
+    .Three_comment {
+        height: 38vh;
+        width: 100%;
+
+    }
+}
+
+@media (min-width: 1025px) {
+    .Comment_card{
+        width: 22vw;
+        padding-left: 1vw;
+        padding-right: 1vw;
+    }
+}
+
+@media (min-width: 1025px) {
+    .avatar_comment{
+        width: 4vw;
+        height: 8vh;
+    }
+}
