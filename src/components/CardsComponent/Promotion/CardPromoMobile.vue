@@ -36,10 +36,10 @@
       </div>
 </template>
 <script>
-import {defineComponent} from "vue";
+import('../../../assets/Style/Cards/CardsPromo.css')
 import axios from "axios";
 
-import('../../../assets/Style/Cards/CardsPromo.css')
+import {defineComponent} from "vue";
 export default{
   data() {
     return {
