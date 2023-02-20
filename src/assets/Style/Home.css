@@ -39,6 +39,8 @@ body_home{
 
 .Advantage{
     margin-top: 60vh;
+    padding-bottom: 2%;
+    height: auto;
 }
 
 @media (min-width: 1025px) {
@@ -46,6 +48,8 @@ body_home{
         display: flex;
         flex-direction: row-reverse;
         margin-top: 0vh;
+        padding-bottom: 2%;
+        height: auto;
     }
 }
 
@@ -53,22 +57,34 @@ body_home{
     .Advantage{
         display: flex;
         flex-direction: row-reverse;
-        height: 52vh;
+        height: auto;
         margin-top: 6vh;
+
     }
     .adv_card {
         display: flex;
-        height: 100%;
+        height: 80vh;
         width: 59%;
         grid-gap: 10vw;
         margin-right: 6vw;
     }
+
+    @media (min-width: 1025px) {
+    .adv_card {
+        display: flex;
+        height: auto;
+        width: 59%;
+        grid-gap: 10vw;
+        margin-right: 6vw;
+    }
+    }
     .card_first, .card_second{
-        height: 50vh;
+        height: 90%;
         width: 17vw;
         display: flex;
         flex-direction: column;
     }
+
     .adv_text{
         margin-right: 2vw;
         width: 21vw;
@@ -264,7 +280,8 @@ p{
 
 @media (min-width: 1025px) {
 .Actu{
-    margin-bottom: 8vh;
+    padding-bottom: 2%;
+    height: auto;
     }
 }
 
