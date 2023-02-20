@@ -1,13 +1,13 @@
 <template>
-  <section class="Promo mb-16 md:flex md:flex-col ">
+  <section class="Promo mb-16 md:flex md:flex-col " >
     <div class="md:flex-row md:flex md:gap-2 md:h-96">
       <div class="disapear_promo">
         <article class="promo_img">
           <div class="promo_bandeau"> <p>Théâtre</p></div>
         </article>
-        <article class="promo_discrib ">
-          <title class="hidden md:block md:text-green md:text-3xl md:mt-6"></title>
-          <p class="text-black text-left ml-4 mt-4 mb-12 md:mb-6 md:mt-2">Les pate c'est la vie </p>
+        <article class="promo_discrib"  v-for="discount of discounts">
+          <title class="hidden md:block md:text-green md:text-3xl md:mt-6" v-if="discount.id === 1">{{ discount.title_fr_discount}}</title>
+          <p class="text-black text-left ml-4 mt-4 mb-12 md:mb-6 md:mt-2" v-if="discount.id === 1">{{ discount.describe_fr_discount}} </p>
           <div class="flex space-x-2 justify-center mb-6 md:hidden">
             <router-link to="/#yourlink" type="button" class=
                 "inline-block
@@ -38,8 +38,37 @@
   </section>
 </template>
 <script>
-import('../../../assets/Style/Cards/CardsPromo.css')
+import axios from "axios";
 
+import('../../../assets/Style/Cards/CardsPromo.css')
+export default{
+  data() {
+    return {
+      discounts: [],
+      local: import.meta.env.VITE_URL_API,
+    };
+  },
+
+
+  created() {
+    axios
+        .get(this.local + '/v1/discounts')
+        .then((res) =>
+        {
+          try{
+            this.discounts = res.data;
+            console.log("bonjour : ", res);
+          }
+          catch (err) {
+            console.log("erreur discount : ", err);
+          }
+        })
+        .catch((error) =>
+        {
+          console.log("bonjour : ", error.res.data.value);
+        });
+  },
+};
 
 
 </script>

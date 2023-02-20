@@ -1,5 +1,5 @@
 <template>
-  <section class="Actu mb-16 md:flex md:flex-col  ">
+  <section class="Actu mb-16 md:flex md:flex-col" >
     <div class="hidden md:block md:flex md:justify-center md:mb-6">
     </div>
     <div class=" md:flex md:flex-row">
@@ -70,6 +70,7 @@
 </template>
 <script>
 import('../../../assets/Style/Cards/CardsActu.css')
+import axios from "axios";
 
 
 
