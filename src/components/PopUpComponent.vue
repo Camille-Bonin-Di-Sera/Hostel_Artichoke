@@ -32,12 +32,12 @@
     </button>
     <div
         class="
+        bg-black
         px-4
         dropdown-menu
         min-w-max
         absolute
         hidden
-        bg-white
         text-base
         z-50
         float-left
@@ -51,7 +51,6 @@
         m-0
         bg-clip-padding
         border-none
-        bg-black
       "
         aria-labelledby="dropdownMenuLargeButton"
     >
