@@ -69,6 +69,6 @@
   </section>
 </template>
 <script>
-import('../../../assets/Style/Cards/CardsActu.css')
+import('../../../assets/Style/Cards/CardsActu.css');
 import axios from "axios";
 </script>
