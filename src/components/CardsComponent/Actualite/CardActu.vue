@@ -7,7 +7,7 @@
   </section>
 </template>
 <script setup lang="ts">
-  import CardActuDesktop from '../Actualite/CardActuDesktop.vue';
-  import CardActuMobile from '../Actualite/CardActuMobile.vue';
+  import CardActuDesktop from "/CardActuDesktop.vue";
+  import CardActuMobile from "/CardActuMobile.vue";
   import('../../../assets/Style/Cards/CardsPromo.css');
 </script>
