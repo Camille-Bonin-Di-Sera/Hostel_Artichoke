@@ -36,5 +36,36 @@
     </div>
 </template>
 <script>
+  import axios from "axios";
   import('../../../assets/Style/Cards/CardsActu.css')
+
+  export default{
+    data() {
+      return {
+        discounts: [],
+        local: import.meta.env.VITE_URL_API,
+      };
+    },
+
+
+    created() {
+      axios
+          .get(this.local + '/v1/news')
+          .then((res) =>
+          {
+            try{
+              this.discounts = res.data;
+              console.log("bonjour : ", res);
+            }
+            catch (err) {
+              console.log("erreur news : ", err);
+            }
+          })
+          .catch((error) =>
+          {
+            console.log("bonjour : ", error.res.data.value);
+          });
+    },
+  };
+
 </script>

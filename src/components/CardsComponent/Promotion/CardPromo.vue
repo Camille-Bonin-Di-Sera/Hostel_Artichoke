@@ -8,7 +8,7 @@
   </section>
 </template>
 <script setup lang="ts">
-import('../../../assets/Style/Cards/CardsPromo.css')
-import CardPromoDesktop from "../Promotion/CardPromoDesktop.vue";
-import CardPromoMobile from "../Promotion/CardPromoMobile.vue";
+  import('../../../assets/Style/Cards/CardsPromo.css');
+  import CardPromoDesktop from "../Promotion/CardPromoDesktop.vue";
+  import CardPromoMobile from "../Promotion/CardPromoMobile.vue";
 </script>
