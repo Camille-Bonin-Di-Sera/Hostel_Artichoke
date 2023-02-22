@@ -7,7 +7,6 @@
     </div>
   </div>
 
-<NavbarBurgerComponent/>
 
 </template>
 <script>

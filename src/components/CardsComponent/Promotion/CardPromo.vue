@@ -2,6 +2,7 @@
   <section class="Promo mb-16 md:flex md:flex-col ">
     <div class="md:flex-row md:flex md:gap-2 md:h-96">
       <CardPromoDesktop/>
+      <CardPromoDesktop/>
       <CardPromoMobile/>
     </div>
   </section>
