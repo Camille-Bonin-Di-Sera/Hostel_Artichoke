@@ -1,7 +1,7 @@
 <template>
 
   <nav role="navigation">
-    <div class="link hidden md:block">
+    <div class="link hidden">
       <div>
         <img src="../assets/Pictures/icon/phone-logo.png" alt="" class="inline md:mr-6 md:h-12">
         <img src="../assets/Pictures/icon/mail.png" alt="" class="inline md:mr-2 md:h-12">
@@ -13,11 +13,9 @@
     </div>
     </div>
 
-    <div class="link_mobile flex flex-col ">
-      <div class="img_arti">
+    <div class="link_mobile flex flex-row-reverse">
         <img src="../assets/Pictures/icon/articho-logo.png" alt="" class="arti inline md:mr-6 md:h-12">
-      </div>
-      <a class=" slogan" href="/">Un Hotel en NatureS</a>
+         <a class=" slogan" href="/">Un Hotel en NatureS</a>
     </div>
 
     <div id="menuToggle">

@@ -1,9 +1,9 @@
 nav {
         z-index: 10;
         margin-top: 14vh;
-        position: fixed;
+        position: absolute;
         background-color: rgb(3, 0, 0);
-        height: 40%;
+        height: 16%;
         width: 100%;
     }
 @media (min-width: 1025px) {
@@ -39,9 +39,8 @@ nav {
     }
 }
 .link_mobile{
-    height: 59%;
-    width: 50%;
-    margin-left: 35vw;
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     color: white;
@@ -63,19 +62,21 @@ nav {
 }
 
 .arti{
-    width: 28%;
-    height: 100%;
+    width: 22%;
+    height: 86%;
 }
+
 .slogan{
-    width: 88vw;
-    font-size: 1.8rem;
+    width: 54%;
+    font-size: 1.4rem;
     margin-top: 4vh;
+    margin-left: 20vw
 }
 #menuToggle {
         display: flex;
         flex-direction: column;
-        position: relative;
-        top: -79px;
+        position: fixed;
+        top: 22vh;
         left: 25px;
         z-index: 9;
         -webkit-user-select: none;
