@@ -6,7 +6,7 @@
         <img src="../assets/Pictures/icon/phone-logo.png" alt="" class="inline md:mr-6 md:h-12 ">
         <img src="../assets/Pictures/icon/mail.png" alt="" class="inline md:mr-2 md:h-12">
       </div>
-      <a class="md:hover:border-b-2 md:hover:border-green md:text-2xl" href="/">Reserver</a>
+      <a class="md:hover:border-b-2 md:hover:border-green md:text-2xl" href="/Reservation">Reserver</a>
       <div>
       <img src="../assets/Pictures/icon/flag-fr.png" alt="" class="inline md:mr-6 md:h-12">
       <img src="../assets/Pictures/icon/flag-eng.png" alt="" class="inline md:mr-2 md:h-12">
@@ -25,9 +25,9 @@
       <span></span>
       <ul id="menu">
         <li><a class="hover:border-b-2 hover:border-green" href="/">Accueil</a></li>
-        <li><a class="hover:border-b-2 hover:border-green" href="/discounts">Chambre</a></li>
-        <li><a class="hover:border-b-2 hover:border-green" href="/WhoAreWe">Reserver</a></li>
+        <li><a class="hover:border-b-2 hover:border-green" href="/Reservation">Reserver</a></li>
         <li><a class="hover:border-b-2 hover:border-green" href="#">Nous contacter</a></li>
+        <li><a class="hover:border-b-2 hover:border-green" href="/Login">Se connecter</a></li>
         <li>
           <button class="flag inline mr-6" v-on:click="changeFR"><img src="../assets/Pictures/icon/flag-fr.png" alt=""></button>
           <button class="flag inline mr-2" v-on:click="changeEN"><img src="../assets/Pictures/icon/flag-eng.png" alt=""></button>

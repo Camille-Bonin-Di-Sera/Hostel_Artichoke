@@ -58,7 +58,7 @@ import('../assets/Style/Login.css');
 export default {
   created() {
     /*axios
-        .get('http://localhost/api/v1/Login')*/
+        .get('https://localhost/api/v1/Login')*/
   },
 
 
