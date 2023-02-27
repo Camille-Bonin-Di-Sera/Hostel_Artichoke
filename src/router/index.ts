@@ -2,12 +2,12 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import DiscountView from '@/views/DiscountView.vue';
 import WhoAreWeView from '@/views/WhoAreWeView.vue';
-import LoginView from '@/views/LoginView.vue';
 import NavbarView from '@/views/TestView.vue';
 import FooterView from '@/views/FooterView.vue';
 import ReservationView from '@/views/ReservationView.vue';
-import 'tw-elements';
 import CardActu from "@/components/CardsComponent/Actualite/CardActu.vue";
+import CountView from "@/components/MyCountComponent.vue";
+import 'tw-elements';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -33,42 +33,27 @@ const router = createRouter({
     {
       path: '/WhoAreWe',
       name: 'WhoAreWe',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: WhoAreWeView
     },
     {
-      path: '/Login',
-      name: 'Login',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: LoginView
+      path: '/MyCount',
+      name: 'MyCount',
+      component: CountView
 
     },  {
       path: '/Nav',
       name: 'Navbar',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: NavbarView
     },
     {
       path: '/Footer',
       name: 'Footer',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: FooterView
     },
 
     {
       path: '/Reservation',
       name: 'Reservation',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: ReservationView
     },
   ]

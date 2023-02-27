@@ -1,8 +1,7 @@
 <template>
   <div class="containerLogin">
     <div>
-      <img src="../assets/Pictures/bedroom0.jpg" alt="image Login" class="w-4/5 m-auto"> <!-- Solution temporaire pour que la page prenne toute la place
-      Il n'y est pas censé avoir d'image sur cette page !-->
+      <img src="../assets/Pictures/bedroom0.jpg" alt="image Login" class="w-4/5 m-auto">
     </div>
     <div class="contentLogin colorText">
       <h3 class="text-center text-4xl sm:text-5xl"> Mon compte </h3>

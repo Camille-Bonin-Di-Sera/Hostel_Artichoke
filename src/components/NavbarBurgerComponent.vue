@@ -7,6 +7,7 @@
         <img src="../assets/Pictures/icon/mail.png" alt="" class="inline md:mr-2 md:h-12">
       </div>
       <a class="md:hover:border-b-2 md:hover:border-green md:text-2xl" href="/">{{ this.lang_fr ? "Réserver" : "Book" }}</a>
+
       <div>
         <button v-on:click="$emit('changeFR')"><img src="../assets/Pictures/icon/flag-fr.png" alt="" class="inline md:mr-6 md:h-12"></button>
         <button v-on:click="$emit('changeFR')"><img src="../assets/Pictures/icon/flag-eng.png" alt="" class="inline md:mr-2 md:h-12"></button>
