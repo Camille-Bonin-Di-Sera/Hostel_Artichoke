@@ -5,7 +5,7 @@
     <div class=" md:flex md:flex-row">
       <div class="actu_second_card md:flex-col md:flex md:gap-2 md:h-96 hidden">
         <article class="actu_img">
-          <div class="actu_bandeau"> <p>Théâtre</p></div>
+          <div class="actu_bandeau"> <p>{{ this.lang_fr ? "Théâtre" : "Theater" }}</p></div>
         </article>
         <article class="actu_discrib md:hidden">
           <p class="text-black text-left ml-4 mt-4 mb-12">Les pate c'est la vie </p>
@@ -73,6 +73,8 @@
   import('../../../assets/Style/Cards/CardsActu.css');
 
 export default{
+  props : ['lang_fr'],
+
   data() {
     return {
       discounts: [],

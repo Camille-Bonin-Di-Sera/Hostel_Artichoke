@@ -13,7 +13,7 @@
         data-bs-toggle="dropdown"
         aria-expanded="false"
     >
-      Reserver
+      {{ this.lang_fr ? "Réserver" : "Book" }}
       <svg
           aria-hidden="true"
           focusable="false"
@@ -71,7 +71,7 @@
         italic
         text-white
         text-center
-        ">Choisissez une date
+        ">{{ this.lang_fr ? "Choisissez une date" : "Choose a date" }}
 
        </a>
       </li>
@@ -93,7 +93,7 @@
           "
             href="#"
         >
-          <label for="start" class="text-white">Date d'arrivé :   </label>
+          <label for="start" class="text-white">{{this.lang_fr ? "Date d'arrivée : " : "Arrival date : "}} </label>
 
           <input type="date" id="start" name="trip-start"
                  value="2023-07-22"
@@ -118,7 +118,7 @@
           "
             href="#"
         >
-          <label for="start" class="text-white" >Date de départ : </label>
+          <label for="start" class="text-white" >{{this.lang_fr ? "Date de départ : " : "Departure date : " }}</label>
 
           <input type="date" id="start" name="trip-start"
                  value="2023-07-22"

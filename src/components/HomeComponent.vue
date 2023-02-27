@@ -1,13 +1,9 @@
 <template>
   <body_home>
     <main_home>
-      <div>
-        <button class="flag inline mr-6" v-on:click="testChange"><img src="../assets/Pictures/icon/flag-fr.png" alt=""></button>
-        <p class="colorText text-center text-4xl"> {{ this.testLang ? "Promotion pour 10 nuits" : "Discount for 10 nights" }} </p>
-      </div>
       <section class="Advantage">
         <div class="adv_text">
-          <h2 id="tilte_adv" class="text-5xl	text-center md:text-6xl md:text-left	text-green mt-12">Nos Avantages</h2>
+          <h2 id="tilte_adv" class="text-5xl	text-center md:text-6xl md:text-left	text-green mt-12">{{ this.lang_fr ? "Nos Avantages" : "Our Advantages" }}</h2>
           <p class="disapear text-black text-left text-AdventPro mt-4">
             Un gendarme doit avoir de très bons pieds
             Mais c'est pas tout, mais c'est pas tout
@@ -31,8 +27,9 @@
                      <img class="border-solid border-2 border-black-500 rounded-full" src="../assets/Pictures/icon/icon-rando.png">
                    </div>
                    <div class="card_discribe  md:text-center md:text-2xl md:w-4/5">
-                     <h4  class="text-green">Découvrez les alentours</h4>
-                     <p class="text_card md:text-black md:text-lg md:text-left md:ml-4">Partez en randonnée pédestre  accompagné de nos guides et découvrez la fôret qui entoure notre hôtel.</p>
+                     <h4  class="text-green">{{ this.lang_fr ? "Découvrez les alentours" : "Discover what's around" }}</h4>
+                     <p class="text_card md:text-black md:text-lg md:text-left md:ml-4">{{ this.lang_fr ? "Partez en randonnée pédestre  accompagné de nos guides et découvrez la fôret qui entoure notre hôtel." :
+                         "Take a hike with our guides and discover forest around the hotel" }}</p>
                    </div>
                  </div>
                </aside>
@@ -48,8 +45,9 @@
                      <img class="border-solid border-2 border-black-500 rounded-full" src="../assets/Pictures/icon/map.png">
                     </div>
                     <div class="card_discribe  md:text-center md:text-2xl md:w-4/5">
-                      <h4  class="text-green">Découvrez les alentours</h4>
-                      <p class="text_card md:text-black md:text-lg md:text-left md:ml-4">Partez en randonnée pédestre  accompagné de nos guides et découvrez la fôret qui entoure notre hôtel.</p>
+                      <h4  class="text-green">{{ this.lang_fr ? "Découvrez les alentours" : "Discover what's around" }}</h4>
+                      <p class="text_card md:text-black md:text-lg md:text-left md:ml-4">{{ this.lang_fr ? "Partez en randonnée pédestre  accompagné de nos guides et découvrez la fôret qui entoure notre hôtel." :
+                          "Take a hike with our guides and discover forest around the hotel" }}</p>
                     </div>
                  </div>
                </aside>
@@ -66,8 +64,9 @@
                    <img class="" src="../assets/Pictures/icon/food-ico.png">
                  </div>
                  <div class="card_discribe  md:text-center md:text-2xl md:w-4/5">
-                   <h4  class="text-green">Découvrez les alentours</h4>
-                   <p class="text_card md:text-black md:text-lg md:text-left md:ml-4">Partez en randonnée pédestre  accompagné de nos guides et découvrez la fôret qui entoure notre hôtel.</p>
+                   <h4  class="text-green">{{ this.lang_fr ? "Découvrez les alentours" : "Discover what's around" }}</h4>
+                   <p class="text_card md:text-black md:text-lg md:text-left md:ml-4">{{ this.lang_fr ? "Partez en randonnée pédestre  accompagné de nos guides et découvrez la fôret qui entoure notre hôtel." :
+                       "Take a hike with our guides and discover forest around the hotel" }}</p>
                  </div>
                </div>
               </aside>
@@ -83,8 +82,9 @@
                     <img class="" src="../assets/Pictures/icon/ico-spa.png">
                   </div>
                   <div class="card_discribe  md:text-center md:text-2xl md:w-4/5">
-                    <h4  class="text-green">Découvrez les alentours</h4>
-                    <p class="text_card md:text-black md:text-lg md:text-left md:ml-4">Partez en randonnée pédestre  accompagné de nos guides et découvrez la fôret qui entoure notre hôtel.</p>
+                    <h4  class="text-green">{{ this.lang_fr ? "Découvrez les alentours" : "Discover what's around" }}</h4>
+                    <p class="text_card md:text-black md:text-lg md:text-left md:ml-4">{{ this.lang_fr ? "Partez en randonnée pédestre  accompagné de nos guides et découvrez la fôret qui entoure notre hôtel." :
+                        "Take a hike with our guides and discover forest around the hotel" }}</p>
                   </div>
                 </div>
               </aside>
@@ -165,14 +165,14 @@
       </div>
 
       <section class="Promo mb-16 md:flex md:flex-col md:border-t-2 md:border-b-2 md:border-green ">
-        <h2 id="tilte_adv" class="hidden md:block text-5xl text-center md:mb-12 md:text-6xl text-green mt-12">Nos Promotion</h2>
-        <CardPromo/>
+        <h2 id="tilte_adv" class="hidden md:block text-5xl text-center md:mb-12 md:text-6xl text-green mt-12">{{ this.lang_fr ? "Nos promotions" : "Our discounts" }}</h2>
+        <CardPromo v-bind:lang_fr="lang_fr"/>
       </section>
       <section class="Actu mb-16 md:flex md:flex-col  ">
         <div class="hidden md:block md:flex md:justify-center md:mb-6">
-          <h2  class="text-5xl	text-center md:text-6xl md:text-left	text-green mt-12">Nos Actualités</h2>
+          <h2  class="text-5xl	text-center md:text-6xl md:text-left	text-green mt-12">{{ this.lang_fr ? "Nos Actualités" : "Our News" }}</h2>
         </div>
-        <CardActu/>
+        <CardActu v-bind:lang_fr="lang_fr"/>
       </section>
       <section class="Three_comment hidden md:block md:border-t-2 md:border-green md:mb-80">
         <Comment/>
@@ -193,18 +193,6 @@ import('../assets/Style/Home.css')
 export default {
   components: {Comment, CardActu, CardPromo},
   props: ['lang_fr'],
-
-  data() {
-    return {
-      testLang:true,
-    };
-  },
-
-  methods:{
-    testChange() {
-      this.testLang = !this.testLang;
-    }
-  }
 
 }
 </script>
