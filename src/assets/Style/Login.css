@@ -1,5 +1,5 @@
 .containerLogin{
-    background-image: url("../../assets/Pictures/imageBackground.jpg");
+    background-image: url("../../assets/Pictures/background/bk-count.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -16,12 +16,39 @@
     height:50%;
 }
 .other_content{
-
+    background-color: rgb(255 255 255 / 15%);
+    backdrop-filter: blur(8px);
     display: flex;
+    margin-top: 36vh;
     flex-direction: column;
+    height: 60vh;
 }
-.title_count{
+@media (min-width: 1025px) {
+ .other_content{
+    margin-top: 10vh;
+    }
+}
+
+/*--------------------------------------*/
+
+.connection{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+h2{
+    font-family: AdventPro;
+    text-shadow: 3px 5px 2px #474747;
+}
+.title_count, .title-connect{
     width: 100%;
+    text-shadow: 3px 5px 2px #474747;
+
 }
 
 .form_resa{

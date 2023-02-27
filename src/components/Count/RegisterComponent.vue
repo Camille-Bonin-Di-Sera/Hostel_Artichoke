@@ -1,0 +1,68 @@
+<template>
+        <aside class="sm:w-1/2">
+          <div>
+            <h3 class="title_count text-white text-center text-4xl sm:text-4xl"> Créer un compte </h3>
+          </div>
+          <form class="form_resa" v-on:submit.prevent="register">
+            <input id="Pseudo" v-model="Pseudo" name="Pseudo" type="text" placeholder=" Pseudo" class="border border-black w-1/2">
+            <br />
+            <input id="email" v-model="email" name="email" type="email" placeholder=" E-mail" class="border border-black w-1/2">
+            <br />
+            <input id="password" v-model="password" name="password" type="password" placeholder=" Mot de passe" class="border border-black w-1/2">
+
+            <br />
+            <div class="fontButton">
+              <button class="text-white pr-2 pl-2 text-xl backgroundButton block m-auto sm:w-1/2 rounded sm:text-3xl"> Créer mon compte </button>
+            </div>
+          </form>
+          <br />
+        </aside>
+</template>
+
+<script>
+import axios from "axios";
+import router from "../../router"
+import('../../assets/Style/Login.css');
+export default {
+  created() {
+    /*axios
+        .get('https://localhost/api/v1/Login')*/
+  },
+
+
+  data()
+  {
+    return {
+      Pseudo: '',
+      email: '',
+      password: '',
+      emailLog: '',
+      passwordLog: '',
+    }
+  },
+
+  methods: {
+    register() {
+      axios.post('/register',
+          {
+              pseudo:this.Pseudo,
+              email:this.email,
+              password:this.password,
+          })
+          .then((result) => {
+            console.log(result)
+            router.push({name:'home'})
+          })
+          .catch((erreur) =>
+          {
+            console.log(erreur)
+          })
+    },
+  },
+
+};
+</script>
+
+<style scoped>
+
+</style>

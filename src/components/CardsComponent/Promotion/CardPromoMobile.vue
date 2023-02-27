@@ -51,7 +51,7 @@ export default{
 
   created() {
     axios
-        .get(this.local + 'api/v1/discounts')
+        .get(this.local + '/v1/discounts')
         .then((res) =>
         {
           try{

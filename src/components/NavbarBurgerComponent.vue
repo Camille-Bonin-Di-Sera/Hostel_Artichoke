@@ -27,7 +27,7 @@
         <li><a class="hover:border-b-2 hover:border-green" href="/">Accueil</a></li>
         <li><a class="hover:border-b-2 hover:border-green" href="/Reservation">Reserver</a></li>
         <li><a class="hover:border-b-2 hover:border-green" href="#">Nous contacter</a></li>
-        <li><a class="hover:border-b-2 hover:border-green" href="/Login">Se connecter</a></li>
+        <li><a class="hover:border-b-2 hover:border-green" href="/MyCount">Se connecter</a></li>
         <li>
           <button class="flag inline mr-6" v-on:click="changeFR"><img src="../assets/Pictures/icon/flag-fr.png" alt=""></button>
           <button class="flag inline mr-2" v-on:click="changeEN"><img src="../assets/Pictures/icon/flag-eng.png" alt=""></button>
