@@ -192,6 +192,7 @@ import Comment from "../components/CardsComponent/Commentaire/Comment.vue";
 import('../assets/Style/Home.css')
 export default {
   components: {Comment, CardActu, CardPromo},
+  props: ['lang_fr'],
 
   data() {
     return {

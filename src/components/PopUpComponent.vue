@@ -132,4 +132,8 @@
 
 <script>
 import('../assets/Style/popup.css')
+
+export default{
+  props: ['lang_fr'],
+}
 </script>

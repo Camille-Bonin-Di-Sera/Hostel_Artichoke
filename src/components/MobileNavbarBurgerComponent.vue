@@ -12,5 +12,8 @@
 import('../assets/Style/navmobile.css')
 import NavbarBurgerComponent from '../components/NavbarBurgerComponent.vue'
 export  default {
+
+  props: ['lang_fr'],
+
 }
 </script>

@@ -55,7 +55,10 @@
 import('../assets/Style/main.css');
 import('../assets/Style/Footer.css');
 export default {
+  props: ['lang_fr'],
+
   name: "FooterComponent"
+
 }
 </script>
 

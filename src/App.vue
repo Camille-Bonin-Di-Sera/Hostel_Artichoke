@@ -1,5 +1,5 @@
 <template>
-<MobileNavbarBurgerComponent v-bind:lang_fr="lang_fr"/>
+<MobileNavbarBurgerComponent v-bind:lang_fr="lang_fr" v-on:changeFR="changeFR"/>
   <NavbarBurgerComponent  v-bind:lang_fr="lang_fr" v-on:changeFR="changeFR"/>
   <Popup/>
       <router-view v-bind:lang_fr="lang_fr"/>

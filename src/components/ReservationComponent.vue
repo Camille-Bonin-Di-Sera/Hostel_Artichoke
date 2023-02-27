@@ -107,6 +107,8 @@ import('../assets/Style/main.css');
 import('../assets/Style/Reservation.css');
 export default {
 
+  props: ['lang_fr'],
+
   created() {
     axios
         .get('http://localhost/api/v1/Reservation')

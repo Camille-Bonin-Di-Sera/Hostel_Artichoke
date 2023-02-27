@@ -22,6 +22,8 @@ import axios from "axios";
 import('../assets/Style/main.css');
 import('../assets/Style/About.css');
 export default {
+  props: ['lang_fr'],
+
   created() {
     axios
         .get('http://localhost/api/v1/WhoAreWe')
