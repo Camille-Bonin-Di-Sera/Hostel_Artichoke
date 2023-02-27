@@ -3,6 +3,8 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    height: 80vh;
+    display: flex;
 }
 
 .contentLogin
@@ -13,10 +15,29 @@
     width:80%;
     height:50%;
 }
+.other_content{
+
+    display: flex;
+    flex-direction: column;
+}
+.title_count{
+    width: 100%;
+}
+
+.form_resa{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 7Vw;
+    margin-top: 2vh;
+}
 
 .fontButton
 {
     font-family: AdventPro;
+    width: 90%;
 }
 
 .colorText

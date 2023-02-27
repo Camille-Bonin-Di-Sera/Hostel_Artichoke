@@ -5,8 +5,8 @@
           <div class="promo_bandeau "> <p>Théâtre</p></div>
         </article>
         <article class="promo_discrib " v-for="discount of discounts">
-          <title class="hidden md:block md:text-green md:text-3xl md:mt-6" v-if="discount.id === 1">{{ discount.title_fr_discount }}</title>
-          <p class="text-black text-left ml-4 mt-4 mb-12 md:mb-6 md:mt-2" v-if="discount.id === 1">{{ discount.describe_fr_discount}}</p>
+          <title class="hidden md:block text-black md:text-green md:text-3xl md:mt-6" v-if="discount.id === 1">{{ discount.title_fr_discount }}</title>
+          <p class="text-black text-black text-left ml-4 mt-4 mb-12 md:mb-6 md:mt-2" v-if="discount.id === 1">{{ discount.describe_fr_discount}}</p>
           <div class="flex space-x-2 justify-center mb-6 md:hidden">
             <router-link  v-if="discount.id === 1" to="/#yourlink" type="button" class=
                 "inline-block
@@ -51,7 +51,7 @@ export default{
 
   created() {
     axios
-        .get(this.local + '/v1/discounts')
+        .get(this.local + 'api/v1/discounts')
         .then((res) =>
         {
           try{
