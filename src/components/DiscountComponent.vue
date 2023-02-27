@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <h3 class="colorText text-center  text-3xl sm:block sm:m-auto sm:w-1/3 sm:text-5xl">Nos Promotions</h3>
+      <h3 class="colorText text-center  text-3xl sm:block sm:m-auto sm:w-1/3 sm:text-5xl">{{ this.lang_fr ? "Nos Promotions" : "Our discounts" }}</h3>
     </div>
     <br />
       <div v-for="discount of discounts">
@@ -22,7 +22,7 @@
         <p class="text-center text-black block m-auto sm:block sm:m-auto sm:w-1/3"> {{ this.lang_fr ? discount.describe_fr_discount : discount.describe_ang_discount }} </p>
         <p class="text-center text-black block m-auto w-1/2 sm:block sm:m-auto sm:w-1/3"> {{ discount.code_discount }} </p>
         <br />
-        <button class="fontButton text-white text-2xl backgroundButton block m-auto w-1/4 rounded sm:text-4xl">Réservez</button>
+        <button class="fontButton text-white text-2xl backgroundButton block m-auto w-1/4 rounded sm:text-4xl">{{ this.lang_fr ? "Réservez" : "Book" }}</button>
         <br />
       </div>
     </div>

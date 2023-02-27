@@ -1,14 +1,14 @@
 <template>
   <div class="containerReservation">
     <div class="contentReservation colorText">
-      <h3 class="text-center text-4xl sm:text-5xl"> Nos chambres </h3>
+      <h3 class="text-center text-4xl sm:text-5xl"> {{ this.lang_fr ? "Nos chambres" : "Our chambers" }}</h3>
       <br />
     </div>
     <div class="imageResa">
 
     </div>
     <form class="space-x-4 space-y-4 contentReservation" v-on:submit.prevent="">
-      <h3 class="colorText text-center text-2xl sm:text-4xl"> Réserver </h3>
+      <h3 class="colorText text-center text-2xl sm:text-4xl"> {{ this.lang_fr ? "Réserver" : "Book" }} </h3>
       <section class="sm:flex flex-column sm:flex-row bg-white m-auto">
         <article class="sm:w-1/2 space-y-4">
           <div class="ml-4 familyText text-xl">
@@ -74,10 +74,10 @@
         </article>
       </section>
       <section>
-        <h3 class="colorText text-center text-2xl sm:text-3xl"> Options Supplémentaire </h3>
+        <h3 class="colorText text-center text-2xl sm:text-3xl"> {{ this.lang_fr ? "Options supplémentaires" : "Additional options" }} </h3>
       </section>
       <section>
-            <h3 class="colorText text-center text-2xl sm:text-3xl"> Coordonnées bancaires </h3>
+            <h3 class="colorText text-center text-2xl sm:text-3xl"> {{ this.lang_fr ? "Coordonnées bancaires" : "Bank details" }} </h3>
             <br />
             <div class="border border-black familyText text-xl mb-4">
               <label>&nbsp;  Payer avec : </label>

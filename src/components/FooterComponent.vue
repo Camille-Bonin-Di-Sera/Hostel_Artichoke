@@ -21,15 +21,15 @@
           <h3 class="text-white text-left ml-4 md:ml-20 text-2xl sm:text-3xl"> Menu </h3>
           <br />
           <ul class="ml-2 pl-2 md:ml-20">
-            <li class="text-white"><a href="http://localhost:5174"><p class="text-left hover:underline">Accueil</p></a></li>
-            <li class="text-white"><a href="http://localhost:5174/Reservation"><p class="text-left hover:underline">Réservation</p></a></li>
-            <li class="text-white"><a href="http://localhost:5174/WhoAreWe"><p class="text-left hover:underline">Qui Sommes Nous</p></a></li>
-            <li class="text-white"><a href="http://localhost:5174/mentionsLegales"><p class="text-left hover:underline">Mentions Légales</p></a></li>
+            <li class="text-white"><a href="http://localhost:5174"><p class="text-left hover:underline"> {{ this.lang_fr ?"Accueil" : "Home" }}</p></a></li>
+            <li class="text-white"><a href="http://localhost:5174/Reservation"><p class="text-left hover:underline"> {{ this.lang_fr ? "Réservation" : "Booking" }}</p></a></li>
+            <li class="text-white"><a href="http://localhost:5174/WhoAreWe"><p class="text-left hover:underline">{{ this.lang_fr ? "Qui Sommes Nous" : "About us" }}</p></a></li>
+            <li class="text-white"><a href="http://localhost:5174/mentionsLegales"><p class="text-left hover:underline">{{ this.lang_fr ? "Mentions Légales" : "legal notice" }}</p></a></li>
           </ul>
           <br />
         </article>
         <article class="w-3/5 md:w-1/2">
-          <h3 class="text-white md:text-left ml-4 md:ml-12 text-2xl sm:text-3xl"> Nous Contacter </h3>
+          <h3 class="text-white md:text-left ml-4 md:ml-12 text-2xl sm:text-3xl"> {{ this.lang_fr ? "Nous Contacter" : "Contact us" }} </h3>
           <br />
           <ul class="ml-2 pl-2 md:ml-4">
             <li class="text-white"><p class="text-left">Téléphone : +33 1234567890</p></li>
