@@ -1,39 +1,23 @@
 <template>
-  <div class="containerLogin">
+  <div class="containerReservation">
     <div class="contentReservation colorText">
       <h3 class="text-center text-4xl sm:text-5xl"> Nos chambres </h3>
-      <img src="../assets/Pictures/suite-chambre.jpg" alt="Suite">
       <br />
     </div>
+    <div class="imageResa">
+
+    </div>
     <form class="space-x-4 space-y-4 contentReservation" v-on:submit.prevent="">
-      <h3 class="colorText text-center text-2xl sm:text-3xl"> Réservez </h3>
+      <h3 class="colorText text-center text-2xl sm:text-4xl"> Réserver </h3>
       <section class="sm:flex flex-column sm:flex-row bg-white m-auto">
         <article class="sm:w-1/2 space-y-4">
-          <div class="border border-black ml-4 familyText text-xl">
-            <label>Arrivée : </label><label>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Départ : </label>
-            <br />
+          <div class="ml-4 familyText text-xl">
+            <label>&nbsp; Arrivée : </label><br />
             <input type="date">
-
-            <img src="../assets/Pictures/Calendrier.png" alt="calendrier" class="w-1/6 inline">
-
-            <input type="date">
-            <img src="../assets/Pictures/Calendrier.png" alt="calendrier" class="w-1/6 inline">
           </div>
-          <div class="ml-4 familyText text-xl">
-            <img src="../assets/Pictures/promo_icon.png" alt="logo Promo" class="w-1/6 inline">
-            <input type="text" placeholder=" Entrer votre code promotionnel" class="border border-black ml-8">
-          </div>
-          <div class="ml-4 familyText text-xl">
-            <input type="text" placeholder=" Prénom" class="border border-black">
-          </div>
-          <div class="ml-4 familyText text-xl">
-            <input type="password" placeholder=" Nom" class="border border-black">
-          </div>
-        </article>
-        <article class="sm:w-1/2 space-y-4">
-          <div class="border border-black ml-4 mr-4 familyText text-xl">
-            <label>Nombre de personnes : </label>
-            <select>
+          <div class="bg-gray-800 border border-black ml-4 mr-4 familyText text-xl">
+            <label>&nbsp; Nombre de personnes : </label>
+            <select class="ml-20">
               <option>0</option>
               <option>1</option>
               <option>2</option>
@@ -49,7 +33,19 @@
             </select>
             <img src="../assets/Pictures/personne.png" alt="personne" class="inline">
             <br />
-            <label>Nombre de chambres : </label>
+          </div>
+          <div class="ml-4 familyText text-xl border border-black">
+            <input type="text" placeholder=" Entrer votre code promotionnel" class="">
+            <img src="../assets/Pictures/promo_icon.png" alt="logo Promo" class="w-10 inline ml-8">
+          </div>
+        </article>
+        <article class="sm:w-1/2 space-y-4">
+          <div class="ml-4 familyText text-xl">
+            <label> &nbsp; Départ : </label> <br />
+            <input type="date">
+          </div>
+          <div class="border border-black ml-4 familyText text-xl">
+            <label>&nbsp; Nombre de chambres : </label>
             <select>
               <option>0</option>
               <option>1</option>
@@ -65,35 +61,20 @@
               <option>11</option>
             </select>
             <img src="../assets/Pictures/Lit.png" alt="chambre" class="inline">
+          </div>
+          <div class="border border-black ml-4 familyText text-xl">
             <br />
-            <label>Type de chambres : </label>
+            <label>&nbsp; Type de chambres : </label>
             <select>
               <option>Standard</option>
               <option>Suite</option>
               <option>Luxe</option>
             </select>
           </div>
-          <div class="border border-black ml-4 mr-4 familyText text-xl">
-            <label>Petit déjeuner</label>
-            <select>
-              <option>0</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-            </select>
-            <img src="../assets/Pictures/breakfast.png" alt="petit Dej" class="inline">
-          </div>
-          <input type="email" placeholder=" E-mail" class="ml-4 border border-black">
-          <br />
-          <input type="text" placeholder=" Téléphone" class="ml-4 border border-black">
         </article>
+      </section>
+      <section>
+        <h3 class="colorText text-center text-2xl sm:text-3xl"> Options Supplémentaire </h3>
       </section>
       <section>
             <h3 class="colorText text-center text-2xl sm:text-3xl"> Coordonnées bancaires </h3>
