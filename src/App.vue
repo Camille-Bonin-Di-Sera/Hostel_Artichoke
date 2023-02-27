@@ -1,8 +1,8 @@
 <template>
-<MobileNavbarBurgerComponent/>
-  <NavbarBurgerComponent/>
+<MobileNavbarBurgerComponent v-bind:lang_fr="lang_fr"/>
+  <NavbarBurgerComponent  v-bind:lang_fr="lang_fr" v-on:changeFR="changeFR"/>
   <Popup/>
-      <router-view/>
+      <router-view v-bind:lang_fr="lang_fr"/>
   <footerComponent />
 </template>
 <script>
@@ -11,8 +11,22 @@ import MobileNavbarBurgerComponent from "./components/MobileNavbarBurgerComponen
 import FooterComponent from "./components/FooterComponent.vue";
 import Popup from "./components/PopUpComponent.vue";
 
+
 export default {
-  components: {FooterComponent, Popup,MobileNavbarBurgerComponent, NavbarBurgerComponent}
+  components: {FooterComponent, Popup,MobileNavbarBurgerComponent, NavbarBurgerComponent},
+
+  data() {
+    return {
+      lang_fr:true,
+    };
+  },
+
+  methods: {
+    changeFR() {
+      this.lang_fr = !this.lang_fr;
+      console.log("français : ", this.lang_fr);
+    },
+  },
 
 }
 

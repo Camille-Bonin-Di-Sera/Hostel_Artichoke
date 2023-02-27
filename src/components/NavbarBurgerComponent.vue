@@ -15,7 +15,7 @@
 
     <div class="link_mobile flex flex-row-reverse md:hidden">
         <img src="../assets/Pictures/icon/articho-logo.png" alt="" class="arti inline md:mr-6 md:h-12">
-         <a class=" slogan" href="/">Un Hotel en NatureS</a>
+         <a class=" slogan" href="/">Un Hotel en Nature</a>
     </div>
 
     <div id="menuToggle">
@@ -24,13 +24,13 @@
       <span></span>
       <span></span>
       <ul id="menu">
-        <li><a class="hover:border-b-2 hover:border-green" href="/">Accueil</a></li>
-        <li><a class="hover:border-b-2 hover:border-green" href="/discounts">Chambre</a></li>
-        <li><a class="hover:border-b-2 hover:border-green" href="/WhoAreWe">Reserver</a></li>
-        <li><a class="hover:border-b-2 hover:border-green" href="#">Nous contacter</a></li>
+        <li><a class="hover:border-b-2 hover:border-green" href="/">{{ this.lang_fr ? "Accueil" : "Home" }} </a></li>
+        <li><a class="hover:border-b-2 hover:border-green" href="/discounts">{{ this.lang_fr ? "Chambre" : "Chamber" }}</a></li>
+        <li><a class="hover:border-b-2 hover:border-green" href="/WhoAreWe">{{ this.lang_fr ? "Reserver" : "Book" }}</a></li>
+        <li><a class="hover:border-b-2 hover:border-green" href="#">{{ this.lang_fr ? "Nous contacter" : "Contact us" }}</a></li>
         <li>
-          <button class="flag inline mr-6" v-on:click="changeFR"><img src="../assets/Pictures/icon/flag-fr.png" alt=""></button>
-          <button class="flag inline mr-2" v-on:click="changeEN"><img src="../assets/Pictures/icon/flag-eng.png" alt=""></button>
+          <button class="flag inline mr-6" v-on:click="$emit('changeFR')"><img src="../assets/Pictures/icon/flag-fr.png" alt=""></button>
+          <button class="flag inline mr-2" v-on:click="$emit('changeFR')"><img src="../assets/Pictures/icon/flag-eng.png" alt=""></button>
         </li>
       </ul>
       
@@ -44,31 +44,19 @@
 import('../assets/Style/nav.css')
 export  default {
 
+  props: ['lang_fr'],
 
   data() {
     return {
       auth: '',
       user: '',
 
-      lang_fr: true,
     }
   },
 
   methods: {
     logout() {
       localStorage.removeItem('userToken')
-    },
-
-    changeFR()
-    {
-      this.lang_fr = true;
-      console.log("français : ", this.lang_fr);
-    },
-
-    changeEN()
-    {
-      this.lang_fr = false;
-      console.log("français : ", this.lang_fr);
     },
   },
 }

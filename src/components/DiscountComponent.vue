@@ -17,9 +17,9 @@
         <div v-else-if="discount.id === 4">
           <img src="@/assets/Pictures/bedroom3.jpg" alt ="Image promo 4" class="block m-auto sm:block sm:m-auto sm:w-1/3"/>
         </div>
-        <p class="colorText text-center text-4xl"> {{ this.testLang ? discount.title_fr_discount : discount.title_ang_discount }} </p>
+        <p class="colorText text-center text-4xl">{{ this.lang_fr ? discount.title_fr_discount : discount.title_ang_discount }} </p>
         <br />
-        <p class="text-center text-black block m-auto sm:block sm:m-auto sm:w-1/3"> {{ discount.describe_fr_discount }} </p>
+        <p class="text-center text-black block m-auto sm:block sm:m-auto sm:w-1/3"> {{ this.lang_fr ? discount.describe_fr_discount : discount.describe_ang_discount }} </p>
         <p class="text-center text-black block m-auto w-1/2 sm:block sm:m-auto sm:w-1/3"> {{ discount.code_discount }} </p>
         <br />
         <button class="fontButton text-white text-2xl backgroundButton block m-auto w-1/4 rounded sm:text-4xl">Réservez</button>
@@ -37,11 +37,7 @@ import('../assets/Style/discounts.css');
 
 export default{
 
-    props: {
-      lang_fr: {
-        type: Boolean,
-      }
-    },
+  props: ['lang_fr'],
 
   data() {
     return {
@@ -49,7 +45,6 @@ export default{
       local: import.meta.env.VITE_URL_API,
 
 
-      testLang:true,
     };
   },
 
@@ -75,13 +70,6 @@ export default{
           console.log("bonjour : ", error.res.data.value);
         });
     },
-
-
-  methods:{
-    testChange() {
-      this.testLang = !this.testLang;
-    }
-  }
 };
 
 </script>
