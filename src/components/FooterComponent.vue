@@ -42,7 +42,7 @@
       <div class="v-line-footer"></div>
       <section class="flex flex-column bg-black md:w-1/3">
           <article>
-            <h3 class="text-white text-center text-xl sm:text-3xl"> Nous Suivre </h3>
+            <h3 class="text-white text-center text-xl sm:text-3xl"> {{ this.lang_fr ? "Nous Suivre" : "Follow us" }}</h3>
             <a href="#"><img src="../assets/Pictures/facebook.png" alt="Facebook" class="w-1/6 ml-20 md:ml-40 inline"></a>
             <a href="#"><img src="../assets/Pictures/instagram.png" alt="Instagram" class="w-1/6 ml-12 inline"></a>
           </article>
