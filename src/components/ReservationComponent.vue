@@ -1,12 +1,14 @@
 <template>
-  <div class="containerLogin">
+  <div class="containerReservation">
     <div class="contentReservation colorText">
       <h3 class="text-center text-4xl sm:text-5xl"> Nos chambres </h3>
-      <img src="../assets/Pictures/suite-chambre.jpg" alt="Suite" class="imageHaut">
       <br />
     </div>
+    <div class="imageResa">
+
+    </div>
     <form class="space-x-4 space-y-4 contentReservation" v-on:submit.prevent="">
-      <h3 class="colorText text-center text-2xl sm:text-3xl"> Réservez </h3>
+      <h3 class="colorText text-center text-2xl sm:text-4xl"> Réserver </h3>
       <section class="sm:flex flex-column sm:flex-row bg-white m-auto">
         <article class="sm:w-1/2 space-y-4">
           <div class="ml-4 familyText text-xl">
@@ -15,7 +17,7 @@
           </div>
           <div class="bg-gray-800 border border-black ml-4 mr-4 familyText text-xl">
             <label>&nbsp; Nombre de personnes : </label>
-            <select>
+            <select class="ml-20">
               <option>0</option>
               <option>1</option>
               <option>2</option>

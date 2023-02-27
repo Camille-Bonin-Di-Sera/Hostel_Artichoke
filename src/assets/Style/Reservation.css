@@ -13,8 +13,20 @@
 }
 
 
-.imageHaut
+.containerReservation{
+    background-image: url("../../assets/Pictures/imageBackground.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.imageResa
 {
-    width: 70%;
-    height: 30%;
+    width: 80%;
+    height: 50vh;
+    background-image: url("../../assets/Pictures/suite-chambre.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
 }
