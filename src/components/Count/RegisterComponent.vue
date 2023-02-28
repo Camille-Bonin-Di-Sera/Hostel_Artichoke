@@ -12,7 +12,7 @@
 
             <br />
             <div class="fontButton">
-              <button class="text-white pr-2 pl-2 text-xl backgroundButton block m-auto w-2/4 rounded sm:text-3xl"> {{ this.lang_fr ? "Créer mon compte" : "Sign up" }} </button>
+              <button class="text-white pr-2 pl-2 text-xl backgroundButton block m-auto w-full rounded sm:text-3xl"> {{ this.lang_fr ? "Créer mon compte" : "Sign up" }} </button>
             </div>
           </form>
           <br />
