@@ -6,7 +6,6 @@ import NavbarView from '@/views/TestView.vue';
 import FooterView from '@/views/FooterView.vue';
 import ReservationView from '@/views/ReservationView.vue';
 import CardActu from "@/components/CardsComponent/Actualite/CardActu.vue";
-import CountView from "@/components/MyCountComponent.vue";
 import userProfileView from "@/views/UserProfileView.vue";
 import RegisterLogin from "@/components/RegisterLogin.vue";
 import ContactView from "@/views/ContactView.vue";
@@ -39,11 +38,13 @@ const router = createRouter({
       component: WhoAreWeView
     },
     {
-      path: '/MyCount',
-      name: 'MyCount',
-      component: CountView
+      path: '/Register-Login',
+      name: 'Register-Login',
+      component: RegisterLogin
 
-    },  {
+    },
+
+    {
       path: '/Nav',
       name: 'Navbar',
       component: NavbarView
@@ -76,3 +77,4 @@ const router = createRouter({
 })
 
 export default router
+
