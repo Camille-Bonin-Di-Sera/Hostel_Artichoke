@@ -1,7 +1,7 @@
 <template>
         <div class="v-line"></div>
-        <aside class="mt-4 float-left flex flex-col justify-center items-center w-full h-max		 ">
-          <h3 class="title-connect text-white text-center text-4xl sm:text-3xl"> {{ this.lang_fr ? "Me connecter" : "Log in" }} </h3>
+        <aside class="float-left flex flex-col justify-center items-center w-full h-max		 ">
+          <h3 class="title-connect text-white text-center text-4xl"> {{ this.lang_fr ? "Me connecter" : "Log in" }} </h3>
           <form class="connection   mt-4" v-on:submit.prevent="login">
             <input id="email" v-model="emailLog" name="email" type="email" placeholder=" E-mail" class="border border-black ">
             <br />

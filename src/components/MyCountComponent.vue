@@ -2,7 +2,7 @@
   <div class="containerLogin">
     <section class="other_content colorText bg-white w-4/5 m-auto">
       <h2 class="My_count text-center text-6xl text-white md:text-5xl"> Mon compte </h2>
-      <article class="flex flex-col mt-24 w-full h-full">
+      <article class="flex flex-col sm:flex-row mt-24 w-full h-full">
         <Regis v-bind:lang_fr="lang_fr"/>
         <Login v-bind:lang_fr="lang_fr"/>
       </article>

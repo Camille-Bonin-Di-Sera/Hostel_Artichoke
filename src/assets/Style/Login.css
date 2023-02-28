@@ -6,37 +6,28 @@
     height: 168vh;
     display: flex;
 }
+@media (min-width: 640px) {
+.containerLogin{
+    background-image: url("../../assets/Pictures/background/bk-count.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 120vh;
+    display: flex;
+    }
+}
+
 @media (min-width: 1025px) {
 .containerLogin{
     background-image: url("../../assets/Pictures/background/bk-count.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 80vh;
     display: flex;
     }
 }
 /******************************************************************/
-.contentLogin
-{
-    background-color: white;
-    flex-direction: row;
-    margin: auto;
-    width:80%;
-    height:50%;
-}
 
-@media (min-width: 1025px) {
-.contentLogin
-{
-    background-color: white;
-    flex-direction: row;
-    margin: auto;
-    width:80%;
-    height:50%;
-    }
-}
-/***************************************************/
 .other_content{
     background-color: rgb(255 255 255 / 15%);
     backdrop-filter: blur(8px);
@@ -45,12 +36,21 @@
     flex-direction: column;
     height:76%;
 }
-@media (min-width: 1025px) {
+@media (min-width: 640px) {
  .other_content{
      background-color: rgb(255 255 255 / 15%);
      backdrop-filter: blur(8px);
      display: flex;
      margin-top: 36vh;
+     flex-direction: column;
+     height: 48%;
+    }
+}
+@media (min-width: 1025px) {
+ .other_content{
+     background-color: rgb(255 255 255 / 15%);
+     backdrop-filter: blur(8px);
+     display: flex;
      flex-direction: column;
      height: 60vh;
     }
@@ -92,15 +92,6 @@
 
 
 /************************************************************************/
-
-.form_resa{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 6vh;
-}
 
 
 @media (min-width: 1025px) {
