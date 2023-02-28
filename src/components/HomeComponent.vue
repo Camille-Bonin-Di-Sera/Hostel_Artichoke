@@ -5,52 +5,47 @@
         <div class="adv_text">
           <h2 id="tilte_adv" class="text-5xl	text-center md:text-6xl md:text-left	text-green mt-12">{{ this.lang_fr ? "Nos Avantages" : "Our Advantages" }}</h2>
           <p class="disapear text-black text-left text-AdventPro mt-4">
-            Un gendarme doit avoir de très bons pieds
-            Mais c'est pas tout, mais c'est pas tout
-            Il lui faut aussi de la sagacité
-            Mais c'est pas tout, mais c'est pas tout
-            Car ce qu'il doit avoir, et surtout
-            C'est d'la tactique, de la tactique dans la pratique
-            Comme la montre a son tic tac, le gendarme a sa tactique
-            Attendez un peu que j'vous explique
+            {{ this.lang_fr ? "Rendez- vous au coeur de l'Artichaut, l'hotêl idéal pour vous reposer et vous détendre dans le calme. Nous proposons aussi une activité randonnée dans les environs de la forêt qui entoure l'hôtel" +
+              "mais aussi des prix avantageux, des services tels qu'un jacuzzi et un hammam pour maximiser votre bien-être" : "Head to the heart of the Artichaut, the ideal hotel to rest and relaxe with calm. We propose hike to discover the forest around the hotel, " +
+              "and also affordable price, services like jacuzzi or hammam to maximise your well-being."}}
           </p>
         </div>
         <div class="adv_card">
           <div class="card_first">
             <article class="randonne">
-               <aside class="adv_rando">
-                 <div class="adv_bandeau">
-                   <p>Activité</p>
-                 </div>
-                 <div class="rst_discribe md:flex md:mt-6 ">
-                   <div class="ico-rando">
-                     <img class="border-solid border-2 border-black-500 rounded-full" src="../assets/Pictures/icon/icon-rando.png">
-                   </div>
-                   <div class="card_discribe  md:text-center md:text-2xl md:w-4/5">
-                     <h4  class="text-green">{{ this.lang_fr ? "Découvrez les alentours" : "Discover what's around" }}</h4>
-                     <p class="text_card md:text-black md:text-lg md:text-left md:ml-4">{{ this.lang_fr ? "Partez en randonnée pédestre  accompagné de nos guides et découvrez la fôret qui entoure notre hôtel." :
-                         "Take a hike with our guides and discover forest around the hotel" }}</p>
-                   </div>
-                 </div>
-               </aside>
+              <aside class="adv_rando">
+                <div class="adv_bandeau">
+                  <p>Activité</p>
+                </div>
+                <div class="rst_discribe md:flex md:mt-6 ">
+                  <div class="ico-rando">
+                    <img class="border-solid border-2 border-black-500 rounded-full" src="../assets/Pictures/icon/icon-rando.png" alt="rando">
+                  </div>
+                  <div class="card_discribe  md:text-center md:text-2xl md:w-4/5">
+                    <h4  class="text-green">{{ this.lang_fr ? "Découvrez les alentours" : "Discover what's around" }}</h4>
+                    <p class="text_card md:text-black md:text-lg md:text-left md:ml-4">{{ this.lang_fr ? "Partez en randonnée pédestre accompagné de nos guides et découvrez la fôret qui entoure l'hôtel." :
+                        "Take a hike with our guides and discover forest around the hotel" }}</p>
+                  </div>
+                </div>
+              </aside>
             </article>
 
             <article class="localisation">
-               <aside class="adv_local">
-                 <div class="adv_bandeau">
-                   <p>Emplacement</p>
-                 </div>
-                 <div class="rst_discribe md:flex md:mt-6 ">
-                    <div class="ico-local">
-                     <img class="border-solid border-2 border-black-500 rounded-full" src="../assets/Pictures/icon/map.png">
-                    </div>
-                    <div class="card_discribe  md:text-center md:text-2xl md:w-4/5">
-                      <h4  class="text-green">{{ this.lang_fr ? "Découvrez les alentours" : "Discover what's around" }}</h4>
-                      <p class="text_card md:text-black md:text-lg md:text-left md:ml-4">{{ this.lang_fr ? "Partez en randonnée pédestre  accompagné de nos guides et découvrez la fôret qui entoure notre hôtel." :
-                          "Take a hike with our guides and discover forest around the hotel" }}</p>
-                    </div>
-                 </div>
-               </aside>
+              <aside class="adv_local">
+                <div class="adv_bandeau">
+                  <p>Emplacement</p>
+                </div>
+                <div class="rst_discribe md:flex md:mt-6 ">
+                  <div class="ico-local">
+                    <img class="border-solid border-2 border-black-500 rounded-full" src="../assets/Pictures/icon/map.png" alt="map">
+                  </div>
+                  <div class="card_discribe  md:text-center md:text-2xl md:w-4/5">
+                    <h4  class="text-green">{{ this.lang_fr ? " Détente " : "Relaxation" }}</h4>
+                    <p class="text_card md:text-black md:text-lg md:text-left md:ml-4">{{ this.lang_fr ? "Un jacuzzi et un hammam sont mis à disposition pour que vous puissiez profiter de votre séjour en toute sérénité" :
+                        "A jacuzzi and a hammam are available to you so you can enjoy your stay with serenity" }}</p>
+                  </div>
+                </div>
+              </aside>
             </article>
           </div>
           <div class="card_second">
@@ -59,16 +54,16 @@
                 <div class="adv_bandeau">
                   <p>Emplacement</p>
                 </div>
-               <div class="rst_discribe md:flex md:mt-6 ">
-                 <div class="ico_rst">
-                   <img class="" src="../assets/Pictures/icon/food-ico.png">
-                 </div>
-                 <div class="card_discribe  md:text-center md:text-2xl md:w-4/5">
-                   <h4  class="text-green">{{ this.lang_fr ? "Découvrez les alentours" : "Discover what's around" }}</h4>
-                   <p class="text_card md:text-black md:text-lg md:text-left md:ml-4">{{ this.lang_fr ? "Partez en randonnée pédestre  accompagné de nos guides et découvrez la fôret qui entoure notre hôtel." :
-                       "Take a hike with our guides and discover forest around the hotel" }}</p>
-                 </div>
-               </div>
+                <div class="rst_discribe md:flex md:mt-6 ">
+                  <div class="ico_rst">
+                    <img class="" src="../assets/Pictures/icon/food-ico.png" alt="food">
+                  </div>
+                  <div class="card_discribe  md:text-center md:text-2xl md:w-4/5">
+                    <h4  class="text-green">{{ this.lang_fr ? " Ingrédients locaux " : "Local products" }}</h4>
+                    <p class="text_card md:text-black md:text-lg md:text-left md:ml-4">{{ this.lang_fr ? "Les légumes sont cultivés dans notre jardin et nous sommes partenaires de producteurs locaux pour vous préparer et vous proposer des plats authentiques" :
+                        "Vegetables are grown in our garden, and we are in contact with local producer to offer you authentic dishes" }}</p>
+                  </div>
+                </div>
               </aside>
             </article>
 
@@ -79,12 +74,12 @@
                 </div>
                 <div class="rst_discribe md:flex md:mt-6 ">
                   <div class="ico_spa">
-                    <img class="" src="../assets/Pictures/icon/ico-spa.png">
+                    <img class="" src="../assets/Pictures/icon/ico-spa.png" alt="spa">
                   </div>
                   <div class="card_discribe  md:text-center md:text-2xl md:w-4/5">
-                    <h4  class="text-green">{{ this.lang_fr ? "Découvrez les alentours" : "Discover what's around" }}</h4>
-                    <p class="text_card md:text-black md:text-lg md:text-left md:ml-4">{{ this.lang_fr ? "Partez en randonnée pédestre  accompagné de nos guides et découvrez la fôret qui entoure notre hôtel." :
-                        "Take a hike with our guides and discover forest around the hotel" }}</p>
+                    <h4  class="text-green">{{ this.lang_fr ? "Prix avantageux" : "Great prices" }}</h4>
+                    <p class="text_card md:text-black md:text-lg md:text-left md:ml-4">{{ this.lang_fr ? "Des prix abordables pour une qualité de rêve" :
+                        "Affordable price for a dream quality" }}</p>
                   </div>
                 </div>
               </aside>

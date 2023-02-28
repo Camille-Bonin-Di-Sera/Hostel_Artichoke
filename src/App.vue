@@ -33,7 +33,6 @@ export default {
   methods: {
     changeFR() {
       this.lang_fr = !this.lang_fr;
-      console.log("français : ", this.lang_fr);
     },
   },
 
