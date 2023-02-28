@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import Regis from "@/components/Count/RegisterComponent.vue"
-import Login from "@/components/Count/LoginComponent.vue"
+import Regis from "@/components/Register-Login/RegisterComponent.vue"
+import Login from "@/components/Register-Login/LoginComponent.vue"
 import('../assets/Style/Login.css');
 export default {
   props: ['lang_fr'],
