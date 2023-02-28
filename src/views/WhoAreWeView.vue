@@ -1,3 +1,10 @@
+<script lang="ts">
+export default {
+  props: ['lang_fr'],
+}
+
+</script>
+
 <script setup lang="ts">
 import WhoAreWeComponent from "@/components/WhoAreWeComponent.vue";
 
@@ -6,6 +13,6 @@ import WhoAreWeComponent from "@/components/WhoAreWeComponent.vue";
 
 <template>
   <main>
-    <WhoAreWeComponent />
+    <WhoAreWeComponent v-bind:lang_fr="lang_fr"/>
   </main>
 </template>

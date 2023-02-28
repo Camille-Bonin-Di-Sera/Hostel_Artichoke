@@ -21,15 +21,15 @@
           <h3 class="text-white text-left ml-4 md:ml-20 text-2xl sm:text-3xl"> Menu </h3>
           <br />
           <ul class="ml-2 pl-2 md:ml-20">
-            <li class="text-white"><a href="http://localhost:5174"><p class="text-left hover:underline">Accueil</p></a></li>
-            <li class="text-white"><a href="http://localhost:5174/Reservation"><p class="text-left hover:underline">Réservation</p></a></li>
-            <li class="text-white"><a href="http://localhost:5174/WhoAreWe"><p class="text-left hover:underline">Qui Sommes Nous</p></a></li>
-            <li class="text-white"><a href="http://localhost:5174/mentionsLegales"><p class="text-left hover:underline">Mentions Légales</p></a></li>
+            <li class="text-white"><a href="http://localhost:5174"><p class="text-left hover:underline"> {{ this.lang_fr ?"Accueil" : "Home" }}</p></a></li>
+            <li class="text-white"><a href="http://localhost:5174/Reservation"><p class="text-left hover:underline"> {{ this.lang_fr ? "Réservation" : "Booking" }}</p></a></li>
+            <li class="text-white"><a href="http://localhost:5174/WhoAreWe"><p class="text-left hover:underline">{{ this.lang_fr ? "Qui Sommes Nous" : "About us" }}</p></a></li>
+            <li class="text-white"><a href="http://localhost:5174/mentionsLegales"><p class="text-left hover:underline">{{ this.lang_fr ? "Mentions Légales" : "legal notice" }}</p></a></li>
           </ul>
           <br />
         </article>
         <article class="w-3/5 md:w-1/2">
-          <h3 class="text-white md:text-left ml-4 md:ml-12 text-2xl sm:text-3xl"> Nous Contacter </h3>
+          <h3 class="text-white md:text-left ml-4 md:ml-12 text-2xl sm:text-3xl"> {{ this.lang_fr ? "Nous Contacter" : "Contact us" }} </h3>
           <br />
           <ul class="ml-2 pl-2 md:ml-4">
             <li class="text-white"><p class="text-left">Téléphone : +33 1234567890</p></li>
@@ -42,7 +42,7 @@
       <div class="v-line-footer"></div>
       <section class="flex flex-column bg-black md:w-1/3">
           <article>
-            <h3 class="text-white text-center text-xl sm:text-3xl"> Nous Suivre </h3>
+            <h3 class="text-white text-center text-xl sm:text-3xl"> {{ this.lang_fr ? "Nous Suivre" : "Follow us" }}</h3>
             <a href="#"><img src="../assets/Pictures/facebook.png" alt="Facebook" class="w-1/6 ml-20 md:ml-40 inline"></a>
             <a href="#"><img src="../assets/Pictures/instagram.png" alt="Instagram" class="w-1/6 ml-12 inline"></a>
           </article>
@@ -55,7 +55,10 @@
 import('../assets/Style/main.css');
 import('../assets/Style/Footer.css');
 export default {
+  props: ['lang_fr'],
+
   name: "FooterComponent"
+
 }
 </script>
 
