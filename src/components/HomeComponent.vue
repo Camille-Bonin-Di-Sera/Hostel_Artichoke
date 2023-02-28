@@ -3,6 +3,7 @@
     <main_home>
       <section class="Advantage">
         <div class="adv_text">
+          <!-- On teste si le booleen est vrai. Si oui, on affiche le texte en français, sinon, on l'affiche en anglais -->
           <h2 id="tilte_adv" class="text-5xl	text-center md:text-6xl md:text-left	text-green mt-12">{{ this.lang_fr ? "Nos Avantages" : "Our Advantages" }}</h2>
           <p class="disapear text-black text-left text-AdventPro mt-4">
             {{ this.lang_fr ? "Rendez- vous au coeur de l'Artichaut, l'hotêl idéal pour vous reposer et vous détendre dans le calme. Nous proposons aussi une activité randonnée dans les environs de la forêt qui entoure l'hôtel" +
@@ -201,7 +202,7 @@ import Comment from "../components/CardsComponent/Commentaire/Comment.vue";
 import('../assets/Style/Home.css')
 export default {
   components: {Comment, CardActu, CardPromo},
-  props: ['lang_fr'],
+  props: ['lang_fr'], // on récupère la propriété qui nous est passée depuis la View
 
 }
 </script>
