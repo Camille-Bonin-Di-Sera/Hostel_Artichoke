@@ -2,7 +2,7 @@
   <div class="containerLogin">
     <section class="other_content colorText flex flex-column  bg-white w-4/5 m-auto">
       <h2 class="My_Count text-center text-6xl md:text-4xl text-white"> Mon compte </h2>
-      <article class="flex  sm:flex-col md:flex-row mt-24 w-full">
+      <article class="flex  xs:flex-col md:flex-row mt-24 w-full">
         <Register/>
         <Login/>
       </article>
