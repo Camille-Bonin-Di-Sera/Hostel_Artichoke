@@ -11,7 +11,7 @@
             <input id="password" v-model="password" name="password" type="password" placeholder=" Mot de passe" class="border border-black w-1/2">
 
             <br />
-            <div class="fontButton">
+            <div id="button_register" class="fontButton">
               <button class="text-white pr-2 pl-2 text-xl backgroundButton block m-auto sm:w-1/2 rounded sm:text-3xl"> Créer mon compte </button>
             </div>
           </form>

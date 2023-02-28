@@ -3,25 +3,54 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 80vh;
+    height: 200vh;
     display: flex;
+
 }
 
-.contentLogin
-{
+@media (min-width: 1025px) {
+.containerLogin{
+    background-image: url("../../assets/Pictures/background/bk-count.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80vh;
+    display: flex;
+    }
+}
+
+
+/****************************************************************/
+
+.contentLogin {
+    background-color: white;
+    flex-direction: row;
+    margin: auto;
+    width: 80%;
+    height: 50%;
+}
+
+@media (min-width: 1025px) {
+    .contentLogin {
     background-color: white;
     flex-direction: row;
     margin: auto;
     width:80%;
     height:50%;
+
+    }
 }
+
+
+/**--------------------------------------------**/
+
 .other_content{
     background-color: rgb(255 255 255 / 15%);
     backdrop-filter: blur(8px);
     display: flex;
     margin-top: 36vh;
     flex-direction: column;
-    height: 60vh;
+    height: 80%;
 }
 @media (min-width: 1025px) {
  .other_content{
@@ -37,15 +66,17 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    margin-top: 2vh;
+    margin-left: 10.5vw;
 }
 
 
 
-h2{
+.My_Count{
     font-family: AdventPro;
     text-shadow: 3px 5px 2px #474747;
 }
-.title_count, .title-connect{
+.title_count {
     width: 100%;
     text-shadow: 3px 5px 2px #474747;
 
@@ -61,7 +92,7 @@ h2{
     margin-top: 2vh;
 }
 
-.fontButton
+#button_register
 {
     font-family: AdventPro;
     width: 90%;
