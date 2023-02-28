@@ -21,9 +21,9 @@
           <h3 class="text-white text-left ml-4 md:ml-20 text-2xl sm:text-3xl"> Menu </h3>
           <br />
           <ul class="ml-2 pl-2 md:ml-20">
-            <li class="text-white"><a href="http://localhost:5174"><p class="text-left hover:underline"> {{ this.lang_fr ?"Accueil" : "Home" }}</p></a></li>
-            <li class="text-white"><a href="http://localhost:5174/Reservation"><p class="text-left hover:underline"> {{ this.lang_fr ? "Réservation" : "Booking" }}</p></a></li>
-            <li class="text-white"><a href="http://localhost:5174/WhoAreWe"><p class="text-left hover:underline">{{ this.lang_fr ? "Qui Sommes Nous" : "About us" }}</p></a></li>
+            <li class="text-white"><a href="/"><p class="text-left hover:underline"> {{ this.lang_fr ?"Accueil" : "Home" }}</p></a></li>
+            <li class="text-white"><a href="/Reservation"><p class="text-left hover:underline"> {{ this.lang_fr ? "Réservation" : "Booking" }}</p></a></li>
+            <li class="text-white"><a href="/WhoAreWe"><p class="text-left hover:underline">{{ this.lang_fr ? "Qui Sommes Nous" : "About us" }}</p></a></li>
             <li class="text-white"><a href="http://localhost:5174/mentionsLegales"><p class="text-left hover:underline">{{ this.lang_fr ? "Mentions Légales" : "legal notice" }}</p></a></li>
           </ul>
           <br />
