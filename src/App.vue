@@ -1,6 +1,6 @@
 <template>
 <MobileNavbarBurgerComponent v-bind:lang_fr="lang_fr" v-on:changeFR="changeFR"/> <!-- Ici, le v-bind sert à passer la variable dans les composants enfants. Le v-on est pour appeler la bonne fonction -->
-  <NavbarBurgerComponent  v-bind:lang_fr="lang_fr" v-on:changeFR="changeFR"/>
+  <!--<NavbarBurgerComponent  v-bind:lang_fr="lang_fr" v-on:changeFR="changeFR"/>-->
   <Popup v-bind:lang_fr="lang_fr"/>
       <router-view v-bind:lang_fr="lang_fr"/>
   <footerComponent v-bind:lang_fr="lang_fr"/>

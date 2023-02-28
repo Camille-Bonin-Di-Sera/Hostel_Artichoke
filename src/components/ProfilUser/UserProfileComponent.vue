@@ -1,39 +1,46 @@
 <template>
   <div class="containerProfile">
+    <div class="hautPage">
+          <img src="" alt="Avatar" class="inline">
+        <div class="justify-end flex flex-col ml-24 mt-12 items-start">
+          <p class="text-black text-2xl">Prénom </p>
+          <p class="text-black text-2xl underline">utilisateur@gmail.com</p>
+        </div>
+      <!--A remplacer par les infos réelles de l'utilisateur depuis la base de données -->
+    </div>
+    <div>
       <h3 class="colorText text-center text-2xl sm:text-3xl"> {{lang_fr ? "Mes informations" : "My informations" }} </h3>
-      <form class="space-x-4 space-y-4" v-on:submit.prevent="updating">
-        <p class="text-gray-200 text-sm"> {{lang_fr ? "Votre Pseudo" : "Your pseudo" }}</p>
+      <form class="w-full m-auto justify-center items-center flex flex-col" v-on:submit.prevent="updating">
+        <label class="text-gray text-xs w-3/5 text-left pt-8"> {{lang_fr ? "Votre Pseudo" : "Your pseudo" }}</label>
         <br />
-        <input id="Pseudo" v-model="Pseudo" name="Pseudo" type="text" placeholder=" Pseudo" class="border border-black">
+        <input id="Pseudo" v-model="Pseudo" name="Pseudo" type="text" class="border-b border-green">
         <br />
-        <label class="text-gray-200 text-sm"> {{lang_fr ? "Votre Nom" : "Your lastname" }}</label>
+        <label class="text-gray text-xs w-3/5 text-left pt-8"> {{lang_fr ? "Votre Nom" : "Your lastname" }}</label>
         <br />
-        <input id="lastName" v-model="lastName" name="lastName" type="text" placeholder=" Nom" class="border border-black">
+        <input id="lastName" v-model="lastName" name="lastName" type="text" class="border-green border-b">
         <br />
-        <label class="text-gray-200 text-sm"> {{lang_fr ? "Votre Prénom" : "Your firstname" }}</label>
+        <label class="text-gray text-xs w-3/5 text-left pt-8"> {{lang_fr ? "Votre Prénom" : "Your firstname" }}</label>
         <br />
-        <input id="firstName" v-model="firstName" name="firstName" type="text" placeholder=" Prénom" class="border border-black ml-4 ">
+        <input id="firstName" v-model="firstName" name="firstName" type="text" class="border-b border-green">
         <br />
-        <label class="text-gray-200 text-sm"> {{lang_fr ? "Votre email" : "Your email" }}</label>
+        <label class="text-gray text-xs w-3/5 text-left pt-8"> {{lang_fr ? "Votre email" : "Your email" }}</label>
         <br />
-        <input id="email" v-model="email" name="email" type="email" placeholder=" E-mail" class="border border-black">
+        <input id="email" v-model="email" name="email" type="email" class="border-b border-green">
         <br />
-        <label class="text-gray-200 text-sm"> {{lang_fr ? "Votre mot de passe" : "Your password" }}</label>
+        <label class="text-gray text-xs w-3/5 text-left pt-8"> {{lang_fr ? "Votre mot de passe" : "Your password" }}</label>
         <br />
-        <input id="password" v-model="password" name="password" type="password" placeholder=" Mot de passe" class="border border-black">
+        <input id="password" v-model="password" name="password" type="password" class="border-b border-green">
         <br />
-        <div class="fontButtonSave">
-          <button class="text-white pr-2 pl-2 text-xl backgroundButton block m-auto sm:w-1/2 rounded sm:text-3xl"> {{ this.lang_fr ? "Sauvegarder changement" : "Save Change" }} </button>
+        <div>
+          <br />
+          <button class="p-4 fontButtonSave border-green-500 border text-lg"> {{ this.lang_fr ? "Sauvegarder changement" : "Save Change" }} </button>
         </div>
       </form>
-
-    <div class="bg-black fontButtonDeco">
-      <button class="bg-red-600 text-white">{{this.lang_fr ? "Se déconnecter" : "Log out" }}</button>
-    </div>
       <br />
-      <br />
-    <div class="bg-black fontButtonSupp">
-      <button class="border-red-400 text-white">{{this.lang_fr ? "Supprimer le compte" : "Delete Account" }}</button>
+      <div class="bg-black">
+        <button class="ml-4 p-4 fontButtonDeco text-xl">{{this.lang_fr ? "Se déconnecter" : "Log out" }}</button>
+        <button class="ml-4 p-4 fontButtonSupp border border-red-600 text-white text-xl">{{this.lang_fr ? "Supprimer le compte" : "Delete Account" }}</button>
+      </div>
     </div>
   </div>
 </template>

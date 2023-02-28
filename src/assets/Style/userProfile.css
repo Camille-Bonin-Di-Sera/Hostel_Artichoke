@@ -1,20 +1,28 @@
 .fontButtonSave
 {
     font-family: AdventPro;
-    border-color: #49a078c4;
     background-color: white;
-    text-color: #49a078c4;
 }
 
 .fontButtonDeco
 {
     background-color: red;
     font-family: AdventPro;
+    color:white;
 }
 
 
 .fontButtonSupp
 {
     font-family: AdventPro;
-    border-color: red;
+    background-color: black;
+}
+
+.hautPage
+{
+    background-image: url("../../assets/Pictures/fondUserProfile.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
 }
