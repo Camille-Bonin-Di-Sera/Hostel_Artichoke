@@ -3,7 +3,7 @@
     <section class="md:flex md:flex-row">
       <section class="flex flex-column bg-black pt-8 md:w-1/3">
         <article class="w-1/2 md:w-1/2">
-            <h1 class="text-white text-left ml-4 md:ml-12 text-5xl md:text-8xl"> L'artichaut </h1>
+            <h1 class="text-white text-left ml-4 md:ml-12 text-5xl md:text-8xl"> L'Artichaut </h1>
             <img src="../assets/Pictures/Etoile.png" alt="Etoile" class="ml-4 md:ml-8 inline">
             <img src="../assets/Pictures/Etoile.png" alt="Etoile" class="ml-1 md:ml-8 inline">
             <img src="../assets/Pictures/Etoile.png" alt="Etoile" class="ml-1 md:ml-8 inline">

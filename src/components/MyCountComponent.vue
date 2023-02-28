@@ -1,7 +1,7 @@
 <template>
   <div class="containerLogin">
     <section class="other_content colorText sm:flex md:flex-column sm:flex-row bg-white w-4/5 m-auto">
-      <h2 class="text-center text-4xl text-white sm:text-5xl"> Mon compte </h2>
+      <h2 class="text-center text-4xl text-white sm:text-5xl"> {{ this.lang_fr ? "Mon compte" : "My account" }} </h2>
       <article class="flex flex-row mt-24 w-full">
         <Regis v-bind:lang_fr="lang_fr"/>
         <Login v-bind:lang_fr="lang_fr"/>

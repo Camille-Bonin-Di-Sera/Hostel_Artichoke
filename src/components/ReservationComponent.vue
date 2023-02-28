@@ -12,11 +12,11 @@
       <section class="sm:flex flex-column sm:flex-row bg-white m-auto">
         <article class="sm:w-1/2 space-y-4">
           <div class="ml-4 familyText text-xl">
-            <label>&nbsp; Arrivée : </label><br />
+            <label>&nbsp; {{ this.lang_fr ? "Arrivée : " : "Arrival : " }}</label><br />
             <input type="date">
           </div>
           <div class="bg-gray-800 border border-black ml-4 mr-4 familyText text-xl">
-            <label>&nbsp; Nombre de personnes : </label>
+            <label>&nbsp; {{ this.lang_fr ? "Nombre de personnes : " : "Number of people : " }}</label>
             <select class="ml-20">
               <option>0</option>
               <option>1</option>
@@ -41,11 +41,11 @@
         </article>
         <article class="sm:w-1/2 space-y-4">
           <div class="ml-4 familyText text-xl">
-            <label> &nbsp; Départ : </label> <br />
+            <label> &nbsp; {{ this.lang_fr ? "Départ : " : "Departure : " }}</label> <br />
             <input type="date">
           </div>
           <div class="border border-black ml-4 familyText text-xl">
-            <label>&nbsp; Nombre de chambres : </label>
+            <label>&nbsp; {{ this.lang_fr ? "Nombre de chambres : " : "Number of chambers : " }}</label>
             <select>
               <option>0</option>
               <option>1</option>
@@ -64,11 +64,11 @@
           </div>
           <div class="border border-black ml-4 familyText text-xl">
             <br />
-            <label>&nbsp; Type de chambres : </label>
+            <label>&nbsp; {{ this.lang_fr ? "Type de chambres : " : " Chamber Type : " }}</label>
             <select>
-              <option>Standard</option>
-              <option>Suite</option>
-              <option>Luxe</option>
+              <option>{{ this.lang_fr ? "Standard" : "Standard" }}</option>
+              <option>{{ this.lang_fr ? "Suite" : "Suite" }}</option>
+              <option>{{ this.lang_fr ? "Luxe" : "Luxurious" }}</option>
             </select>
           </div>
         </article>
@@ -80,7 +80,7 @@
             <h3 class="colorText text-center text-2xl sm:text-3xl"> {{ this.lang_fr ? "Coordonnées bancaires" : "Bank details" }} </h3>
             <br />
             <div class="border border-black familyText text-xl mb-4">
-              <label>&nbsp;  Payer avec : </label>
+              <label>&nbsp;  {{ this.lang_fr ? "Payer avec : " : "Pay with " }}</label>
               <img src="../assets/Pictures/paypal.png" alt ="logo carte bancaire " class="inline w-20 border border-black ml-20">
               <img src="../assets/Pictures/visa-credit-card.png" alt =" logo paypal" class="inline w-20 border border-black ml-20">
               <div class="border border-black familyText space-y-4 space-x-4 text-xl">
@@ -90,8 +90,8 @@
                 <br />
                 <input type="password" placeholder=" Crypto" class="border border-black ">
                 <div class="fontButton">
-                  <button type="submit" class="text-white pr-2 pl-2 text-xl backgroundButton block m-auto ml-96 rounded sm:text-3xl inline"> Réserver </button>
-                  <button type="submit" class="text-white pr-2 pl-2 text-xl backgroundButton block m-auto ml-96 rounded sm:text-3xl inline"> Paypal </button>
+                  <button type="submit" class="text-white pr-2 pl-2 text-xl backgroundButton block m-auto ml-96 rounded sm:text-3xl inline"> {{ this.lang_fr ? "Réserver" : "Book" }} </button>
+                  <button type="submit" class="text-white pr-2 pl-2 text-xl backgroundButton block m-auto ml-96 rounded sm:text-3xl inline"> {{ this.lang_fr ? "Paypal " : "Paypal" }}</button>
                 </div>
               </div>
             </div>

@@ -90,11 +90,9 @@
 
       <section class="Description md:w-4/5 md:flex md:ml-6 md:hidden	">
         <article class="text ">
-          <h3 class="text-3xl	text-center	text-green">Tout ce dont vous avez besoin</h3>
-          <p class="text-black text-center ml-3 mr-3 mt-5">Artichauts, si mystérieux et doux,
-            Garnissent nos plats de leur belle couleur verte.
-            Souvent négligés, mais oh combien précieux,
-            Leur goût délicat nous enchante à chaque crève-faim.</p>
+          <h3 class="text-3xl	text-center	text-green">{{ this.lang_fr ? "Tout ce dont vous avez besoin" : "All what you need" }}</h3>
+          <p class="text-black text-center ml-3 mr-3 mt-5">{{ this.lang_fr ? "Artichauts, si mystérieux et doux, garnissent nos plats de leur belle couleur verte. Souvent négligés, mais oh combien précieux, Leur goût délicat nous enchante à chaque crève-faim." :
+              "Artichoke, mysterious and sweet, garnish our dishes with a great green color. Often neglected, but precious, their delicate tastes enchant us at every meal" }}</p>
           <div class="accordion" id="accordionExample">
             <div class="accordion-item bg-white w-88">
               <h2 class="accordion-header mb-0 " id="headingOne">
@@ -116,31 +114,47 @@
                       focus:outline-none
                     " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
                 >
-                  Voir Plus
+                  {{ this.lang_fr ? "Voir Plus" : "View more" }}
                 </button>
               </h2>
               <div id="collapseOne" class="accordion-collapse collapse show"
                    data-bs-parent="#accordionExample">
                 <div class="accordion-body py-4 px-5 font-AdventPro">
-                  Les feuilles douces et tendres, une délicatesse,
-                  Cachent un coeur tendre et sucré, un véritable trésor.
-                  Râpés ou cuits, en salade ou en purée,
-                  Ils ajoutent une touche de raffinement à chaque mets.
+                  {{ this.lang_fr ? "Les feuilles douces et tendres, une délicatesse," +
+                  "Cachent un coeur tendre et sucré, un véritable trésor." +
+                  "Râpés ou cuits, en salade ou en purée," +
+                  "Ils ajoutent une touche de raffinement à chaque mets." +
 
-                  Artichauts, symbole de la cuisine italienne,
-                  Où ils sont cuits à la vapeur et servis avec de l'huile d'olive.
-                  Mais ils sont aussi appréciés en France et en Espagne,
-                  Et dans le monde entier, pour leur goût unique et leur texture.
+                  "Artichauts, symbole de la cuisine italienne," +
+                  "Où ils sont cuits à la vapeur et servis avec de l'huile d'olive." +
+                  "Mais ils sont aussi appréciés en France et en Espagne," +
+                  "Et dans le monde entier, pour leur goût unique et leur texture." +
 
-                  Ils sont une source de fibres et de nutriments,
-                  Et peuvent aider à améliorer la santé de notre corps.
-                  Mais plus encore, c'est leur saveur qui nous attire,
-                  Et nous fait revenir encore et encore pour en demander plus.
+                  "Ils sont une source de fibres et de nutriments,"+
+                  "Et peuvent aider à améliorer la santé de notre corps."+
+                  "Mais plus encore, c'est leur saveur qui nous attire,"+
+                  "Et nous fait revenir encore et encore pour en demander plus."+
 
-                  Alors, ici je vous dis, chers artichauts,
-                  Vous êtes plus qu'un simple légume sur notre table.
-                  Vous êtes un enchantement culinaire, un véritable don,
-                  Et nous vous aimons pour tout ce que vous êtes.
+                  "Alors, ici je vous dis, chers artichauts,"+
+                  "Vous êtes plus qu'un simple légume sur notre table." +
+                  "Vous êtes un enchantement culinaire, un véritable don,"+
+                  "Et nous vous aimons pour tout ce que vous êtes." :
+                    "The leaves soft and tender, delicacy," +
+                  "Hide a sweet tender heart, a real chest" +
+                  "raw or cook, in salad or puree" +
+                  "They add a touch of sophistication in each meal" +
+                  "Artichokes, symbol of italian food"+
+                  "Where they are steamed and served with olive oil" +
+                  "But they are also appreciate in France and Spain" +
+                  "And in the entire world, for their unique tastes and texture"+
+                  "They are source of fibre and nutrients" +
+                  "And can help to improve health" +
+                  "More of that, it's their flavour which attracts us" +
+                  "And make us come back again to ask more" +
+                  "So, here, I say to you dear artichokes" +
+                  "You are more than a vegetable in our table" +
+                  "You are a culinary enchantment, a true gift" +
+                  "And we love you for all of that" }}
                 </div>
               </div>
             </div>
