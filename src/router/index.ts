@@ -7,7 +7,9 @@ import FooterView from '@/views/FooterView.vue';
 import ReservationView from '@/views/ReservationView.vue';
 import CardActu from "@/components/CardsComponent/Actualite/CardActu.vue";
 import CountView from "@/components/MyCountComponent.vue";
+import userProfileView from "@/views/UserProfileView.vue";
 import 'tw-elements';
+import userProfileComponent from "@/components/ProfilUser/UserProfileComponent.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -55,6 +57,13 @@ const router = createRouter({
       path: '/Reservation',
       name: 'Reservation',
       component: ReservationView
+    },
+
+
+    {
+      path: '/userProfile',
+      name: 'userProfile',
+      component: userProfileView
     },
   ]
 })
