@@ -1,7 +1,7 @@
 <template>
         <aside class="sm:w-full">
           <div>
-            <h3 class="title_count text-white text-center text-4xl sm:text-4xl"> {{ this.lang_fr ? "Créer un compte" : "Create an account" }} </h3>
+            <h3 class="title_count text-white text-center text-4xl sm:text-4xl md:text-6xl"> {{ this.lang_fr ? "Créer un compte" : "Create an account" }} </h3>
           </div>
           <form class="form_resa w-full flex flex-col justify-center items-center mt-6" v-on:submit.prevent="register">
             <input id="Pseudo" v-model="Pseudo" name="Pseudo" type="text" placeholder="Pseudo" class="border border-black w-1/2">
