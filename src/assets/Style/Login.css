@@ -3,9 +3,18 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 200vh;
+    height: 168vh;
     display: flex;
-
+}
+@media (min-width: 640px) {
+.containerLogin{
+    background-image: url("../../assets/Pictures/background/bk-count.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 120vh;
+    display: flex;
+    }
 }
 
 @media (min-width: 1025px) {
@@ -14,35 +23,10 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 80vh;
     display: flex;
     }
 }
-
-
-/****************************************************************/
-
-.contentLogin {
-    background-color: white;
-    flex-direction: row;
-    margin: auto;
-    width: 80%;
-    height: 50%;
-}
-
-@media (min-width: 1025px) {
-    .contentLogin {
-    background-color: white;
-    flex-direction: row;
-    margin: auto;
-    width:80%;
-    height:50%;
-
-    }
-}
-
-
-/**--------------------------------------------**/
+/******************************************************************/
 
 .other_content{
     background-color: rgb(255 255 255 / 15%);
@@ -50,52 +34,81 @@
     display: flex;
     margin-top: 36vh;
     flex-direction: column;
-    height: 80%;
+    height:76%;
+}
+@media (min-width: 640px) {
+ .other_content{
+     background-color: rgb(255 255 255 / 15%);
+     backdrop-filter: blur(8px);
+     display: flex;
+     margin-top: 32vh;
+     flex-direction: column;
+     height: 66%;
+    }
 }
 @media (min-width: 1025px) {
  .other_content{
-    margin-top: 10vh;
+     background-color: rgb(255 255 255 / 15%);
+     backdrop-filter: blur(8px);
+     display: flex;
+     margin-top: 14vh;
+     flex-direction: column;
     }
 }
 
 /*--------------------------------------*/
 
 .connection{
-    width: 50%;
+    width: 100%; /* w-full */
+    display: flex; /* flex */
+    justify-content: center; /* justify-center */
+    flex-direction: column; /* flex-col*/
+    align-items: center; /* items-center */
+}
+
+@media (min-width: 1025px) {
+.connection{
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-top: 2vh;
-    margin-left: 10.5vw;
+    }
 }
 
+/*************************************************************************/
 
-
-.My_Count{
+.My_count{
     font-family: AdventPro;
     text-shadow: 3px 5px 2px #474747;
 }
-.title_count {
+
+
+.title_count, .title-connect{
     width: 100%;
     text-shadow: 3px 5px 2px #474747;
 
 }
 
+
+/************************************************************************/
+
+
+@media (min-width: 1025px) {
 .form_resa{
-    width: 70%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 7Vw;
-    margin-top: 2vh;
+    margin-top: 4vh;
+    }
 }
+/************************************************************/
 
-#button_register
+.fontButton
 {
     font-family: AdventPro;
-    width: 90%;
 }
 
 .colorText
