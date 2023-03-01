@@ -1,72 +1,66 @@
-.Container_Contact{
+.Container_Contact {
+  background-image: url("../../assets/Pictures/background/bk-count.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 168vh;
+  display: flex;
+}
+@media (min-width: 640px) {
+  .Container_Contact {
     background-image: url("../../assets/Pictures/background/bk-count.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 168vh;
+    height: 120vh;
     display: flex;
-}
-@media (min-width: 640px) {
-    .Container_Contact{
-        background-image: url("../../assets/Pictures/background/bk-count.jpg");
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 120vh;
-        display: flex;
-    }
+  }
 }
 
 @media (min-width: 1025px) {
-    .Container_Contact{
-        background-image: url("../../assets/Pictures/background/bk-count.jpg");
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        display: flex;
-    }
+  .Container_Contact {
+    background-image: url("../../assets/Pictures/background/bk-count.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+  }
 }
-
 
 /*************************************************************************/
 
-
-
-
-
 /******************************************************************/
 
-.Content_Contact{
+.Content_Contact {
+  background-color: #49a07859;
+  backdrop-filter: blur(8px);
+  display: flex;
+  margin-top: 36vh;
+  flex-direction: column;
+  height: 76%;
+}
+@media (min-width: 640px) {
+  .Content_Contact {
     background-color: rgb(255 255 255 / 15%);
     backdrop-filter: blur(8px);
     display: flex;
-    margin-top: 36vh;
+    margin-top: 32vh;
     flex-direction: column;
-    height:76%;
-}
-@media (min-width: 640px) {
-    .Content_Contact{
-        background-color: rgb(255 255 255 / 15%);
-        backdrop-filter: blur(8px);
-        display: flex;
-        margin-top: 32vh;
-        flex-direction: column;
-        height: 66%;
-    }
+    height: 66%;
+  }
 }
 @media (min-width: 1025px) {
-    .Content_Contact{
-        background-color: rgb(255 255 255 / 15%);
-        backdrop-filter: blur(8px);
-        display: flex;
-        margin-top: 14vh;
-        flex-direction: column;
-    }
+  .Content_Contact {
+    background-color: rgb(255 255 255 / 15%);
+    backdrop-filter: blur(8px);
+    display: flex;
+    margin-top: 14vh;
+    flex-direction: column;
+  }
 }
 
 /*--------------------------------------*/
 
-.Contact_Us{
-    font-family: AdventPro;
-    text-shadow: 3px 5px 2px #474747;
+.Contact_Us {
+  font-family: AdventPro;
 }
