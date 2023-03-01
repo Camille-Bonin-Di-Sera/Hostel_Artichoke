@@ -26,3 +26,69 @@
     background-repeat: no-repeat;
     height: 50vh;
 }
+
+
+.backgroundInput
+{
+    background-color: #94949454;
+}
+
+@media (min-width: 640px) {
+    .containerProfile{
+        background-image: url("../../assets/Pictures/imageBackground.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 120vh;
+    }
+}
+
+@media (min-width: 1025px) {
+    .containerProfile{
+        background-image: url("../../assets/Pictures/imageBackground.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .hautPage
+    {
+        background-image: url("../../assets/Pictures/fondUserProfile.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 20vh;
+    }
+
+    .fondBlanc
+    {
+        background-color: white;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width :60%;
+        margin: auto;
+        height: 168vh;
+    }
+
+    .userDesk
+    {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+
+@media (max-width: 640px)
+{
+    .cancel
+    {
+        display: none;
+    }
+
+    .menu
+    {
+        display: none;
+    }
+}

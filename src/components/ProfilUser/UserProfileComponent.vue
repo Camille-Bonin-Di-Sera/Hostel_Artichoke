@@ -1,45 +1,63 @@
 <template>
   <div class="containerProfile">
-    <div class="hautPage">
-          <img src="" alt="Avatar" class="inline">
-        <div class="justify-end flex flex-col ml-24 mt-12 items-start">
-          <p class="text-black text-2xl">Prénom </p>
-          <p class="text-black text-2xl underline">utilisateur@gmail.com</p>
+    <div class="fondBlanc">
+      <div class="hautPage md:m-auto">
+            <img src="" alt="Avatar" class="inline">
+          <div class="justify-end flex flex-col ml-24 mt-12 items-start">
+            <p class="text-black text-2xl">Prénom </p>
+            <p class="text-black text-2xl underline">utilisateur@gmail.com</p>
+          </div>
+        <!-- A remplacer par les infos réelles de l'utilisateur depuis la base de données -->
+      </div>
+      <div class="md:w-4/5 md:m-auto">
+        <div class="md:flex md:flex-row space-x-16">
+          <h3 class="colorText text-center text-2xl sm:text-3xl"> {{ this.lang_fr ? "Mes informations" : "My informations" }} </h3>
+          <h3 class="colorText text-center text-2xl sm:text-3xl menu"> {{ this.lang_fr ? "Mes Réservations" : "My informations" }} </h3>
+          <h3 class="colorText text-center text-2xl sm:text-3xl menu"> {{ this.lang_fr ? "Mes Factures" : "My informations" }} </h3>
+          <h3 class="colorText text-center text-2xl sm:text-3xl menu"> {{ this.lang_fr ? "Mes Bonus Fidélité" : "My informations" }} </h3>
         </div>
-      <!--A remplacer par les infos réelles de l'utilisateur depuis la base de données -->
-    </div>
-    <div>
-      <h3 class="colorText text-center text-2xl sm:text-3xl"> {{lang_fr ? "Mes informations" : "My informations" }} </h3>
-      <form class="w-full m-auto justify-center items-center flex flex-col" v-on:submit.prevent="updating">
-        <label class="text-gray text-xs w-3/5 text-left pt-8"> {{lang_fr ? "Votre Pseudo" : "Your pseudo" }}</label>
+        <form class="w-full m-auto justify-center items-center flex flex-col md:items-start space-y-4 md:space-y-8 md:mt-16" v-on:submit.prevent="updating">
+          <div class="userDesk">
+            <label class="text-gray text-xs w-3/5 text-left pt-8"> {{ this.lang_fr ? "Votre Pseudo" : "Your pseudo" }}</label>
+            <br />
+            <input id="Pseudo" v-model="Pseudo" name="Pseudo" type="text" class="border-b border-green backgroundInput md:mt-8">
+            <br />
+            <label class="text-gray text-xs w-3/5 text-left pt-8 md:ml-48"> {{ this.lang_fr ? "Votre Nom" : "Your lastname" }}</label>
+            <br />
+            <input id="lastName" v-model="lastName" name="lastName" type="text" class="border-green border-b backgroundInput md:mt-8">
+            <br />
+          </div>
+          <div class="userDesk">
+            <label class="text-gray text-xs w-3/5 text-left pt-8"> {{ this.lang_fr ? "Votre Prénom" : "Your firstname" }}</label>
+            <br />
+            <input id="firstName" v-model="firstName" name="firstName" type="text" class="border-b border-green backgroundInput md:mt-8">
+            <br />
+            <label class="text-gray text-xs w-3/5 text-left pt-8 md:ml-48"> {{ this.lang_fr ? "Votre email" : "Your email" }}</label>
+            <br />
+            <input id="email" v-model="email" name="email" type="email" class="border-b border-green backgroundInput md:mt-8">
+            <br />
+          </div>
+          <div class="userDesk">
+            <label class="text-gray text-xs w-3/5 text-left pt-8"> {{ this.lang_fr ? "Ancien mot de passe" : "Old password" }}</label>
+            <br />
+            <input id="password" v-model="password" name="password" type="password" class="border-b border-green backgroundInput md:mt-8">
+            <br />
+            <label class="text-gray text-xs w-3/5 text-left pt-8 md:ml-48"> {{ this.lang_fr ? "Nouveau mot de passe" : "New password" }}</label>
+            <br />
+            <input id="password" v-model="password" name="password" type="password" class="border-b border-green backgroundInput md:mt-8">
+            <br />
+          </div>
+          <div class="md:space-x-48">
+            <br />
+            <button class="p-4 fontButtonSave border-green-500 border text-lg md:text-green-500 md:font-bold"> {{ this.lang_fr ? "Sauvegarder changement" : "Save Change" }} </button>
+            <button class="p-4 fontButtonSave border-red-500 border text-lg cancel"> {{ this.lang_fr ? "Annuler" : "Cancel" }} </button>
+          </div>
+        </form>
         <br />
-        <input id="Pseudo" v-model="Pseudo" name="Pseudo" type="text" class="border-b border-green">
-        <br />
-        <label class="text-gray text-xs w-3/5 text-left pt-8"> {{lang_fr ? "Votre Nom" : "Your lastname" }}</label>
-        <br />
-        <input id="lastName" v-model="lastName" name="lastName" type="text" class="border-green border-b">
-        <br />
-        <label class="text-gray text-xs w-3/5 text-left pt-8"> {{lang_fr ? "Votre Prénom" : "Your firstname" }}</label>
-        <br />
-        <input id="firstName" v-model="firstName" name="firstName" type="text" class="border-b border-green">
-        <br />
-        <label class="text-gray text-xs w-3/5 text-left pt-8"> {{lang_fr ? "Votre email" : "Your email" }}</label>
-        <br />
-        <input id="email" v-model="email" name="email" type="email" class="border-b border-green">
-        <br />
-        <label class="text-gray text-xs w-3/5 text-left pt-8"> {{lang_fr ? "Votre mot de passe" : "Your password" }}</label>
-        <br />
-        <input id="password" v-model="password" name="password" type="password" class="border-b border-green">
-        <br />
-        <div>
-          <br />
-          <button class="p-4 fontButtonSave border-green-500 border text-lg"> {{ this.lang_fr ? "Sauvegarder changement" : "Save Change" }} </button>
+        <div class="bg-black md:hidden">
+          <button class="ml-4 p-4 fontButtonDeco text-xl">{{this.lang_fr ? "Se déconnecter" : "Log out" }}</button>
+          <button class="ml-4 p-4 fontButtonSupp border border-red-600 text-white text-xl">{{this.lang_fr ? "Supprimer le compte" : "Delete Account" }}</button>
         </div>
-      </form>
-      <br />
-      <div class="bg-black">
-        <button class="ml-4 p-4 fontButtonDeco text-xl">{{this.lang_fr ? "Se déconnecter" : "Log out" }}</button>
-        <button class="ml-4 p-4 fontButtonSupp border border-red-600 text-white text-xl">{{this.lang_fr ? "Supprimer le compte" : "Delete Account" }}</button>
       </div>
     </div>
   </div>
