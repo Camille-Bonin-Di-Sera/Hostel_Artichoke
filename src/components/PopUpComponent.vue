@@ -12,6 +12,7 @@
         id="dropdownMenuLargeButton"
         data-bs-toggle="dropdown"
         aria-expanded="false"
+        aria-controls="widget"
     >
       {{ this.lang_fr ? "Réserver" : "Book" }}
       <svg
@@ -31,6 +32,7 @@
       </svg>
     </button>
     <div
+        id="widget"
         class="
         bg-black
         px-4
@@ -154,5 +156,7 @@ import('../assets/Style/popup.css')
 
 export default{
   props: ['lang_fr'],
+
+
 }
 </script>
