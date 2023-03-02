@@ -1,5 +1,5 @@
 <template>
-  <div class="dropdown relative hidden md:block" id="widget">
+  <div class="dropdown relative hidden md:block">
     <button
         class="
         dropdown-toggle
@@ -11,8 +11,6 @@
         type="button"
         id="dropdownMenuLargeButton"
         data-bs-toggle="dropdown"
-        aria-expanded="false"
-        aria-controls="widget"
     >
       {{ this.lang_fr ? "Réserver" : "Book" }}
       <svg
