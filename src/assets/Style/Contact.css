@@ -38,6 +38,7 @@
   margin-top: 36vh;
   flex-direction: column;
   height: 76%;
+  width: 86%;
 }
 @media (min-width: 640px) {
   .Content_Contact {
@@ -60,7 +61,22 @@
 }
 
 /*--------------------------------------*/
+.content_info {
+  width: 94%;
+  height: 11vh;
+}
 
+/*--------------------------------------*/
+.title_contact {
+  height: 5vh;
+}
+
+/*--------------------------------------*/
+.content_adress {
+  margin-top: -4vh;
+}
+
+/*--------------------------------------*/
 .Contact_Us {
   font-family: AdventPro;
 }
