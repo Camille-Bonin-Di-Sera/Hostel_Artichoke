@@ -1,5 +1,5 @@
 <template>
-  <div class="dropdown relative hidden md:block">
+  <div class="dropdown relative hidden md:block" id="widget">
     <button
         class="
         dropdown-toggle
@@ -32,7 +32,6 @@
       </svg>
     </button>
     <div
-        id="widget"
         class="
         bg-black
         px-4
