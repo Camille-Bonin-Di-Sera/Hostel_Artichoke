@@ -102,97 +102,53 @@
           </div>
 
         </li>
-        <li>
-          <div
-              class="
-              dropdown-item
-              text-sm
-              py-2
-              px-4
-              font-normal
-              block
-              w-full
-              whitespace-nowrap
-              bg-transparent
-              text-gray-700
-              hover:bg-gray-100
-            "
-              href="#"
-          >
-            <label for="start" class="text-white" >{{this.lang_fr ? "Date de départ : " : "Departure date : " }}</label>
-
-          </div>
-      </li>
       <li>
-        <div>
-          <div
-              class="
-              dropdown-item
-              text-sm
-              py-2
-              px-4
-              font-normal
-              block
-              w-full
-              whitespace-nowrap
-              bg-transparent
-              text-gray-700
-              hover:bg-gray-100
-            "
-              href="#"
-          >
-            <label for="start" class="text-white" >{{this.lang_fr ? "Date de départ : " : "Departure date : " }}</label>
+          <div>
+            <div
+                class="
+                dropdown-item
+                text-sm
+                py-2
+                px-4
+                font-normal
+                block
+                w-full
+                whitespace-nowrap
+                bg-transparent
+                text-gray-700
+                hover:bg-gray-100
+              "
+                href="#"
+            >
+              <label for="start" class="text-white" >{{this.lang_fr ? "Date de départ : " : "Departure date : " }}</label>
 
-            <input type="date" id="start" name="trip-start"
-                   value="2023-07-22"
-                   min="2023-01-01" max="2100-12-31">
-          </div>
-
-        </div>
-      </li>
-      <li>
-        <div class="flex justify-center mt-4 mb-4">
-          <router-link
-              to="/Reservation" type="button"
-              class="
-              text-center
-              dropdown-item
-              text-sm
-              py-2
-              px-4
-              font-normal
-              block
-              w-3/4
-              whitespace-nowrap
-              bg-green
-              text-gray-700
-              hover:bg-green-btn">
-            Continue
-          </router-link>
-        </div>
               <input type="date" id="start" name="trip-start"
                      value="2023-07-22"
                      min="2023-01-01" max="2100-12-31">
+            </div>
 
-      </li>
-        <li class="flex justify-center mt-4 mb-4">
-          <router-link
-              to="/Reservation" type="button"
-              class="
-              text-center
-              dropdown-item
-              text-sm
-              py-2
-              px-4
-              font-normal
-              block
-              w-3/4
-              whitespace-nowrap
-              bg-green
-              text-gray-700
-              hover:bg-green-btn">
-            Continue
-          </router-link>
+          </div>
+        </li>
+        <li>
+          <div class="flex justify-center mt-4 mb-4">
+            <router-link
+                to="/Reservation" type="button"
+                class="
+                text-center
+                dropdown-item
+                text-sm
+                py-2
+                px-4
+                font-normal
+                block
+                w-3/4
+                whitespace-nowrap
+                bg-green
+                text-gray-700
+                hover:bg-green-btn">
+              Continue
+            </router-link>
+          </div>
         </li>
       </ul>
     </div>
