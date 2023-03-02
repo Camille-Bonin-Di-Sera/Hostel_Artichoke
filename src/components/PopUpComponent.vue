@@ -54,7 +54,7 @@
       "
         aria-labelledby="dropdownMenuLargeButton"
     >
-
+    <ul>
       <li>
        <a class="
         dropdown-item
@@ -145,6 +145,7 @@
           Continue
         </router-link>
       </li>
+    </ul>
     </div>
   </div>
 </template>
