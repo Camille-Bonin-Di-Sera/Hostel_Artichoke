@@ -26,7 +26,7 @@
       <span></span>
       <ul id="menu">
         <li><a class="hover:border-b-2 hover:border-green" href="/">{{ this.lang_fr ? "Accueil" : "Home" }} </a></li>
-        <li><a class="hover:border-b-2 hover:border-green" href="/discounts">{{ this.lang_fr ? "Chambre" : "Chamber" }}</a></li>
+        <li><a class="hover:border-b-2 hover:border-green" href="/discounts">{{ this.lang_fr ? "Chambre" : "Room" }}</a></li>
         <li><a class="hover:border-b-2 hover:border-green" href="/Reservation">{{ this.lang_fr ? "Reserver" : "Book" }}</a></li>
         <li><a class="hover:border-b-2 hover:border-green" href="/Register-Login">{{ this.lang_fr ? "Me Connecter" : "Login" }}</a></li>
         <li><a class="hover:border-b-2 hover:border-green" href="/Contact">{{ this.lang_fr ? "Nous contacter" : "Contact us" }}</a></li>
