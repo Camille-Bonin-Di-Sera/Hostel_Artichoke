@@ -11,7 +11,6 @@ import MobileNavbarBurgerComponent from "./components/MobileNavbarBurgerComponen
 import FooterComponent from "./components/FooterComponent.vue";
 import Popup from "./components/PopUpComponent.vue";
 import Router from "./router/index.ts";
-import * as te from "tw-elements";
 
 export default {
   components: {
