@@ -30,10 +30,10 @@
         ></path>
       </svg>
     </button>
-    <ul class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
+    <div class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
         aria-labelledby="dropdownMenuButton1"
         data-te-dropdown-menu-ref>
-      <li>
+      <div>
        <a class="
         dropdown-item
         text-sm
@@ -52,9 +52,9 @@
         ">{{ this.lang_fr ? "Choisissez une date" : "Choose a date" }}
 
        </a>
-      </li>
+      </div>
 
-      <li>
+      <div>
         <div
             class="
             dropdown-item
@@ -78,8 +78,8 @@
                  min="2023-01-01" max="2100-12-31">
         </div>
 
-      </li>
-      <li>
+      </div>
+      <div>
         <div
             class="
             dropdown-item
@@ -103,8 +103,8 @@
                  min="2023-01-01" max="2100-12-31">
         </div>
 
-      </li>
-      <li class="flex justify-center mt-4 mb-4">
+      </div>
+      <div class="flex justify-center mt-4 mb-4">
         <router-link
             to="/Reservation" type="button"
             class="
@@ -122,8 +122,8 @@
             hover:bg-green-btn">
           Continue
         </router-link>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 </template>
 
