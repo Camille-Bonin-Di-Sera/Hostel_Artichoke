@@ -63,7 +63,7 @@
               >
             </li>
             <li class="text-white">
-              <a href="/mentionsLegales"
+              <a href="#"
                 ><p class="text-left hover:underline">
                   {{ this.lang_fr ? "Mentions Légales" : "legal notice" }}
                 </p></a
