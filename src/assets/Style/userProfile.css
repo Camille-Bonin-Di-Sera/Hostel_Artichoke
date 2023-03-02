@@ -1,0 +1,20 @@
+.fontButtonSave
+{
+    font-family: AdventPro;
+    border-color: #49a078c4;
+    background-color: white;
+    text-color: #49a078c4;
+}
+
+.fontButtonDeco
+{
+    background-color: red;
+    font-family: AdventPro;
+}
+
+
+.fontButtonSupp
+{
+    font-family: AdventPro;
+    border-color: red;
+}

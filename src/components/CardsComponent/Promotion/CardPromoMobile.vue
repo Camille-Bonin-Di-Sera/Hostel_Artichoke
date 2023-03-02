@@ -5,8 +5,8 @@
           <div class="promo_bandeau "> <p>Théâtre</p></div>
         </article>
         <article class="promo_discrib " v-for="discount of discounts">
-          <title class="hidden md:block md:text-green md:text-3xl md:mt-6" v-if="discount.id === 1">{{ discount.title_fr_discount }}</title>
-          <p class="text-black text-left ml-4 mt-4 mb-12 md:mb-6 md:mt-2" v-if="discount.id === 1">{{ discount.describe_fr_discount}}</p>
+          <title class="hidden md:block md:text-green md:text-3xl md:mt-6" v-if="discount.id === 1">{{ this.lang_fr ? discount.title_fr_discount : discount.title_ang_discount }}</title>
+          <p class="text-black text-left ml-4 mt-4 mb-12 md:mb-6 md:mt-2" v-if="discount.id === 1">{{ this.lang_fr ? discount.describe_fr_discount : discount.describe_ang_discount }}</p>
           <div class="flex space-x-2 justify-center mb-6 md:hidden">
             <router-link  v-if="discount.id === 1" to="/#yourlink" type="button" class=
                 "inline-block
@@ -41,6 +41,8 @@ import axios from "axios";
 
 import {defineComponent} from "vue";
 export default{
+  props : ['lang_fr'],
+
   data() {
     return {
       discounts: [],

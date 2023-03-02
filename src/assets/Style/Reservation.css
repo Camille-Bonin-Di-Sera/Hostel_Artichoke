@@ -13,15 +13,20 @@
 }
 
 
-/*input[type="date"]::-webkit-calendar-picker-indicator {
-//display: none;
-//-webkit-appearance: none;
-    width: 15px;
-    padding: 0px;
-    margin: 0px;
-    margin-top: 10px;
-}*/
+.containerReservation{
+    background-image: url("../../assets/Pictures/imageBackground.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
-/*.custom-inpt {
-padding: 10px !important;
-}*/
+.imageResa
+{
+    width: 80%;
+    height: 50vh;
+    background-image: url("../../assets/Pictures/suite-chambre.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
+}

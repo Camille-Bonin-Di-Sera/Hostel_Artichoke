@@ -16,7 +16,8 @@ module.exports = {
         'orange': '#ff7849',
         'green': {
           DEFAULT: '#49A078',
-          'second':'#57be8d'
+          'second':'#57be8d',
+          'btn':'rgb(114,252,189)'
         },
         'yellow': '#ffc82c',
         'gray-dark': '#273444',

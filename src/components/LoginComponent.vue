@@ -61,6 +61,7 @@ export default {
         .get('http://localhost/api/v1/Login')*/
   },
 
+  props: ['lang_fr'],
 
   data()
   {

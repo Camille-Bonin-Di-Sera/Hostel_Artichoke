@@ -3,7 +3,7 @@
     <button
         class="
         dropdown-toggle
-        inline-block  px-14 py-3 bg-green-btn backdrop-blur-sm	 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-green hover:shadow-lg focus:bg-green focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green active:shadow-lg transition duration-150 ease-in-out
+        inline-block  px-14 py-3 bg-yellow text-black font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-green hover:shadow-lg focus:bg-green focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green active:shadow-lg transition duration-150 ease-in-out
         flex
         items-center
         whitespace-nowrap
@@ -13,7 +13,7 @@
         data-bs-toggle="dropdown"
         aria-expanded="false"
     >
-      Reserver
+      {{ this.lang_fr ? "Réserver" : "Book" }}
       <svg
           aria-hidden="true"
           focusable="false"
@@ -71,7 +71,7 @@
         italic
         text-white
         text-center
-        ">Choisissez une date
+        ">{{ this.lang_fr ? "Choisissez une date" : "Choose a date" }}
 
        </a>
       </li>
@@ -93,7 +93,7 @@
           "
             href="#"
         >
-          <label for="start" class="text-white">Date d'arrivé :   </label>
+          <label for="start" class="text-white">{{this.lang_fr ? "Date d'arrivée : " : "Arrival date : "}} </label>
 
           <input type="date" id="start" name="trip-start"
                  value="2023-07-22"
@@ -118,7 +118,7 @@
           "
             href="#"
         >
-          <label for="start" class="text-white" >Date de départ : </label>
+          <label for="start" class="text-white" >{{this.lang_fr ? "Date de départ : " : "Departure date : " }}</label>
 
           <input type="date" id="start" name="trip-start"
                  value="2023-07-22"
@@ -126,10 +126,33 @@
         </div>
 
       </li>
+      <li class="flex justify-center mt-4 mb-4">
+        <router-link
+            to="/Reservation" type="button"
+            class="
+            text-center
+            dropdown-item
+            text-sm
+            py-2
+            px-4
+            font-normal
+            block
+            w-3/4
+            whitespace-nowrap
+            bg-green
+            text-gray-700
+            hover:bg-green-btn">
+          Continue
+        </router-link>
+      </li>
     </div>
   </div>
 </template>
 
 <script>
 import('../assets/Style/popup.css')
+
+export default{
+  props: ['lang_fr'],
+}
 </script>
