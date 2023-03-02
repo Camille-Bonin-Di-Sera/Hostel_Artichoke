@@ -11,6 +11,7 @@
         type="button"
         id="dropdownMenuLargeButton"
         data-bs-toggle="dropdown"
+        aria-expanded="false"
     >
       {{ this.lang_fr ? "Réserver" : "Book" }}
       <svg
