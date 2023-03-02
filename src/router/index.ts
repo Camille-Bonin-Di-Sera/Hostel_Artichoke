@@ -9,7 +9,6 @@ import CardActu from "@/components/CardsComponent/Actualite/CardActu.vue";
 import userProfileView from "@/views/UserProfileView.vue";
 import RegisterLogin from "@/components/RegisterLogin.vue";
 import ContactView from "@/views/ContactView.vue";
-import 'tw-elements';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
