@@ -30,30 +30,6 @@
         ></path>
       </svg>
     </button>
-    <div
-        class="
-        bg-black
-        px-4
-        dropdown-menu
-        min-w-max
-        absolute
-        hidden
-        text-base
-        z-50
-        float-left
-        py-2
-        list-none
-        text-left
-        rounded-lg
-        shadow-lg
-        mt-1
-        hidden
-        m-0
-        bg-clip-padding
-        border-none
-      "
-        aria-labelledby="dropdownMenuLargeButton"
-    >
     <ul>
       <li>
        <a class="
@@ -146,7 +122,6 @@
         </router-link>
       </li>
     </ul>
-    </div>
   </div>
 </template>
 
