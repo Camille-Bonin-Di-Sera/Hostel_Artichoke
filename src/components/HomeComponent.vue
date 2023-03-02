@@ -185,7 +185,7 @@
         <CardActu v-bind:lang_fr="lang_fr"/>
       </section>
       <section class="Three_comment hidden md:block md:border-t-2 md:border-green md:mb-80">
-        <Comment/>
+        <Comment v-bind:lang_fr="lang_fr"/>
       </section>
 
     </main_home>
