@@ -1,82 +1,60 @@
-.Container_Contact {
-  background-image: url("../../assets/Pictures/background/bk-count.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 168vh;
-  display: flex;
-}
-@media (min-width: 640px) {
-  .Container_Contact {
-    background-image: url("../../assets/Pictures/background/bk-count.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 120vh;
-    display: flex;
-  }
-}
+/*  .Container_Contact {
 
-@media (min-width: 1025px) {
-  .Container_Contact {
-    background-image: url("../../assets/Pictures/background/bk-count.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-  }
+  background-position: center; -> bg-center
+  background-size: cover; -> bg-cover
+  background-repeat: no-repeat;  -> bg-no-repeat
+  display: flex; -> flex
+  justify-content: center ; -> justify-center
+  backgrond-image:"url('./src/assets/Pictures/background/bk-count.jpg')" ; -> bg-contact-bg
 }
+}*/
 
 /*************************************************************************/
 
-/******************************************************************/
-
+/**************************
 .Content_Contact {
-  background-color: #49a07859;
-  backdrop-filter: blur(8px);
-  display: flex;
-  margin-top: 36vh;
-  flex-direction: column;
-  height: 76%;
-  width: 86%;
-}
-@media (min-width: 640px) {
-  .Content_Contact {
-    background-color: rgb(255 255 255 / 15%);
-    backdrop-filter: blur(8px);
-    display: flex;
-    margin-top: 32vh;
-    flex-direction: column;
-    height: 66%;
-  }
-}
-@media (min-width: 1025px) {
-  .Content_Contact {
-    background-color: rgb(255 255 255 / 15%);
-    backdrop-filter: blur(8px);
-    display: flex;
-    margin-top: 14vh;
-    flex-direction: column;
-  }
+  background-color: #49a07859;  -> bg-green/30
+  backdrop-filter: blur(8px); -> backdrop-blur
+  display: flex; -> flex
+  margin-top: 36vh; -> mt-[36vh]
+  flex-direction: column; -> flex-col
+  width: 86%; -> w-[86%]
 }
 
-/*--------------------------------------*/
-.content_info {
-  width: 94%;
-  height: 11vh;
-}
 
-/*--------------------------------------*/
-.title_contact {
-  height: 5vh;
-}
 
-/*--------------------------------------*/
-.content_adress {
-  margin-top: -4vh;
-}
 
+-----------------------------*/
+
+.adress_p{
+  font-size: 1rem;
+
+}
 /*--------------------------------------*/
 .Contact_Us {
   font-family: AdventPro;
+}
+/***********************************************************************************/
+
+::placeholder {
+  font-family: AdventPro;
+  font-size: 1.2em;
+  color:black;
+}
+/************************************/
+
+.Contact_mail{
+ width: 92%;
+}
+
+/************************************/
+
+.Contcat_message{
+ width: 92%;
+}
+
+/************************************/
+
+.map{
+
 }

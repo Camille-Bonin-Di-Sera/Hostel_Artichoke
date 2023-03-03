@@ -7,7 +7,7 @@
     .content-carousel{
         height: 48vh;
         display: block;
-        background-image: url(/src/assets/Pictures/background/artichoke-carroussel.png);
+        background-image: url("/src/assets/Pictures/background/artichoke-carroussel.png");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
