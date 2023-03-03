@@ -6,9 +6,11 @@ import NavbarView from '@/views/TestView.vue';
 import FooterView from '@/views/FooterView.vue';
 import ReservationView from '@/views/ReservationView.vue';
 import CardActu from "@/components/CardsComponent/Actualite/CardActu.vue";
+import userProfileView from "@/views/UserProfileView.vue";
 import RegisterLogin from "@/components/RegisterLogin.vue";
-import 'tw-elements';
 import ContactView from "@/views/ContactView.vue";
+import TestDropDown from "@/views/TestDropDownView.vue";
+import 'tw-elements';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -41,7 +43,9 @@ const router = createRouter({
       name: 'Register-Login',
       component: RegisterLogin
 
-    },  {
+    },
+
+    {
       path: '/Nav',
       name: 'Navbar',
       component: NavbarView
@@ -63,7 +67,21 @@ const router = createRouter({
       name: 'contact',
       component: ContactView
     },
+
+
+    {
+      path: '/userProfile',
+      name: 'userProfile',
+      component: userProfileView
+    },
+
+    {
+      path: '/test',
+      name: 'test',
+      component: TestDropDown
+    },
   ]
 })
 
 export default router
+

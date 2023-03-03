@@ -30,7 +30,7 @@
            active:shadow-lg
            transition
            duration-150
-           ease-in-out">Voir plus</router-link>
+           ease-in-out">{{ this.lang_fr ? "Voir plus" : " View more " }}</router-link>
           </div>
         </article>
       </div>

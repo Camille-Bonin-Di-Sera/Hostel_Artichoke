@@ -1,6 +1,6 @@
 <template>
 
-    <h2  class="text-5xl text-center md:text-6xl text-green mt-12">Votre avis compte</h2>
+    <h2  class="text-5xl text-center md:text-6xl text-green mt-12">{{ this.lang_fr ? "Votre avis compte" : "Your opinion matters" }}</h2>
     <article class="flex flex-row justify-center gap-3">
       <aside class=" Comment_card mt-12 bg-green ">
         <aside class="picture_comment flex justify-center">
@@ -67,4 +67,9 @@
 <script>
 
 import('../../../assets/Style/Cards/Comment.css')
+
+export default {
+  props : ['lang_fr']
+}
+
 </script>

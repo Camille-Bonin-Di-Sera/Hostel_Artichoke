@@ -7,13 +7,12 @@ export default {
 
 <script setup lang="ts">
 import Carousel from "@/components/Carousel.vue"
-import HomeComponent from "@/components/HomeComponent.vue";
+import UserProfileComponent from "@/components/ProfilUser/UserProfileComponent.vue";
 
 </script>
 
 <template>
   <main>
-    <Carousel/>
-    <HomeComponent v-bind:lang_fr="lang_fr"/> <!-- On repasse de nouveau la propriété au composant enfant -->
+    <UserProfileComponent v-bind:lang_fr="lang_fr"/> <!-- On repasse de nouveau la propriété au composant enfant -->
   </main>
 </template>

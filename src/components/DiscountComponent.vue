@@ -48,10 +48,6 @@ export default{
     };
   },
 
-  mounted() {
-    console.log(import.meta.env);
-  },
-
   created() {
     axios
         .get(this.local + '/v1/discounts')
