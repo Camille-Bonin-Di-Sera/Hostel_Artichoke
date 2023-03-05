@@ -22,6 +22,7 @@
 <script>
 import axios from "axios";
 import router from "../../router"
+import {store} from "@/store";
 import('../../assets/Style/Login.css');
 export default {
 
@@ -30,8 +31,6 @@ export default {
     /*axios
         .get('https://localhost/api/v1/Login')*/
   },
-
-
   data()
   {
     return {
@@ -40,6 +39,7 @@ export default {
       password: '',
       emailLog: '',
       passwordLog: '',
+        store,
     }
   },
 
@@ -52,8 +52,10 @@ export default {
             password:this.passwordLog,
           })
           .then((result) => {
-            localStorage.setItem('usertoken', result.data.token)
-                console.log(result);
+            localStorage.setItem('usertoken', result.data.token);
+            store.pseudoConnected = result.data.user.pseudo;
+            store.emailConnected = result.data.user.email;
+
                 this.emailLog = ''
                 this.passwordLog = ''
                 router.push({name: 'home'})
@@ -61,7 +63,8 @@ export default {
           .catch((err) => {
             console.log(err)
           })
-     },
+        },
+
   },
 
 };
