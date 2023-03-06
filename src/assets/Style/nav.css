@@ -1,9 +1,9 @@
 nav {
   z-index: 10;
-  margin-top: 14vh;
+  margin-top: 5vh;
   position: absolute;
   background-color: rgb(3, 0, 0);
-  height: 16%;
+  height: 8%;
   width: 100%;
 }
 @media (min-width: 1025px) {
@@ -21,7 +21,6 @@ nav {
   height: 100%;
   width: 80%;
   margin-left: 10vw;
-  display: flex;
   align-items: center;
   color: white;
   justify-content: space-around;
@@ -61,7 +60,7 @@ nav {
 }
 
 .arti {
-  width: 22%;
+  width: 20%;
   height: 86%;
 }
 
@@ -75,7 +74,7 @@ nav {
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 22vh;
+  top: 9vh;
   left: 25px;
   z-index: 9;
   -webkit-user-select: none;

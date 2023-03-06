@@ -3,7 +3,7 @@
   <NavbarBurgerComponent v-bind:lang_fr="lang_fr" v-on:changeFR="changeFR" />
   <Popup v-bind:lang_fr="lang_fr" v-if="isNotOnReserver" />
   <router-view v-bind:lang_fr="lang_fr" />
-  <footerComponent v-bind:lang_fr="lang_fr" v-if="isNotLogin" />
+ <!-- <footerComponent v-bind:lang_fr="lang_fr" v-if="isNotLogin" /> -->
 </template>
 <script>
 import NavbarBurgerComponent from "./components/NavbarBurgerComponent.vue";
