@@ -1,7 +1,7 @@
 
 .top_phone-flag {
     z-index: 9;
-    height: 14%;
+    height: 6%;
     position: fixed;
     width: 100%;
     display: flex;
@@ -19,7 +19,7 @@
     }
 }
 .picture{
-    width: 12%;
+    width: 20%;
     gap: 20px;
     display: flex;
 }
