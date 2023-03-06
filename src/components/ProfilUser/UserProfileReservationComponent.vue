@@ -7,51 +7,15 @@
           <p class="text-black text-2xl">Prénom </p>
           <p class="text-black text-2xl underline">utilisateur@gmail.com</p>
         </div>
-        <!-- A remplacer par les infos réelles de l'utilisateur depuis la base de données -->
       </div>
-      <div class="md:w-4/5 md:m-auto">
-        <NavbarUserProfilComponent v-bind:lang_fr="lang_fr" />
-        <form class="w-full m-auto justify-center items-center flex flex-col md:items-start space-y-4 md:space-y-8 md:mt-16" v-on:submit.prevent="updating">
-          <div class="userDesk">
-            <label class="text-gray text-xs w-3/5 text-left pt-8"> {{ this.lang_fr ? "Votre Pseudo" : "Your pseudo" }}</label>
-            <br />
-            <input id="Pseudo" v-model="Pseudo" name="Pseudo" type="text" class="border-b border-green backgroundInput md:mt-8">
-            <br />
-            <label class="text-gray text-xs w-3/5 text-left pt-8 md:ml-48"> {{ this.lang_fr ? "Votre Nom" : "Your lastname" }}</label>
-            <br />
-            <input id="lastName" v-model="lastName" name="lastName" type="text" class="border-green border-b backgroundInput md:mt-8">
-            <br />
+        <!-- A remplacer par les infos réelles de l'utilisateur depuis la base de données -->
+      <div class="md:w-4/5 md:m-auto bg-red mt-24 w-[50vh] h-[50vh]">
+        <div v-for="reservation of reservations">
+          <div>
+            <p class="text-black">Date de début : {{reservation.dateStart}}</p>
+            <p class="text-black">Date de fin : {{reservation.dateEnd}}</p>
+            <p class="text-black">Nombre de personne : {{reservation.nb_Person}}</p>
           </div>
-          <div class="userDesk">
-            <label class="text-gray text-xs w-3/5 text-left pt-8"> {{ this.lang_fr ? "Votre Prénom" : "Your firstname" }}</label>
-            <br />
-            <input id="firstName" v-model="firstName" name="firstName" type="text" class="border-b border-green backgroundInput md:mt-8">
-            <br />
-            <label class="text-gray text-xs w-3/5 text-left pt-8 md:ml-48"> {{ this.lang_fr ? "Votre email" : "Your email" }}</label>
-            <br />
-            <input id="email" v-model="email" name="email" type="email" class="border-b border-green backgroundInput md:mt-8">
-            <br />
-          </div>
-          <div class="userDesk">
-            <label class="text-gray text-xs w-3/5 text-left pt-8"> {{ this.lang_fr ? "Ancien mot de passe" : "Old password" }}</label>
-            <br />
-            <input id="password" v-model="password" name="password" type="password" class="border-b border-green backgroundInput md:mt-8">
-            <br />
-            <label class="text-gray text-xs w-3/5 text-left pt-8 md:ml-48"> {{ this.lang_fr ? "Nouveau mot de passe" : "New password" }}</label>
-            <br />
-            <input id="password" v-model="password" name="password" type="password" class="border-b border-green backgroundInput md:mt-8">
-            <br />
-          </div>
-          <div class="md:space-x-48">
-            <br />
-            <button class="p-4 fontButtonSave border-green-500 border text-lg md:text-green-500 md:font-bold"> {{ this.lang_fr ? "Sauvegarder changement" : "Save Change" }} </button>
-            <button class="p-4 fontButtonSave border-red-500 border text-lg cancel"> {{ this.lang_fr ? "Annuler" : "Cancel" }} </button>
-          </div>
-        </form>
-        <br />
-        <div class="bg-black md:hidden">
-          <button class="ml-4 p-4 fontButtonDeco text-xl">{{this.lang_fr ? "Se déconnecter" : "Log out" }}</button>
-          <button class="ml-4 p-4 fontButtonSupp border border-red-600 text-white text-xl">{{this.lang_fr ? "Supprimer le compte" : "Delete Account" }}</button>
         </div>
       </div>
     </div>
@@ -74,33 +38,29 @@ export default {
   data()
   {
     return {
-      firstName: '',
-      lastName: '',
-      Pseudo: '',
-      email: '',
-      password: '',
+      reservations: [],
+      //services: [],
+      local: import.meta.env.VITE_URL_API,
     }
   },
 
-  methods: {
-    updating() {
-      axios.put('/v1/users',
-          {
-            firstname:this.firstName,
-            lastname:this.lastName,
-            pseudo:this.Pseudo,
-            email:this.email,
-            password:this.password,
-          })
-          .then((result) => {
-            console.log(result)
-            router.push({name:'userProfile'})
-          })
-          .catch((erreur) =>
-          {
-            console.log(erreur)
-          })
-    },
+  created() {
+    axios
+        .get(this.local + '/v1/reservation')
+        .then((res) =>
+        {
+          try{
+            this.reservations = res.data;
+            console.log("données : ", res.data);
+          }
+          catch (err) {
+            console.log("erreur reservation : ", err);
+          }
+        })
+        .catch((error) =>
+        {
+          console.log("erreur : ", error.res.data.value);
+        });
   },
 };
 </script>

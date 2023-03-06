@@ -59,7 +59,6 @@ export default{
         {
           try{
             this.discounts = res.data;
-            console.log("bonjour : ", res);
           }
           catch (err) {
             console.log("erreur discount : ", err);
@@ -67,7 +66,7 @@ export default{
         })
         .catch((error) =>
         {
-          console.log("bonjour : ", error.res.data.value);
+          console.log("erreur : ", error.res.data.value);
         });
     },
 };
