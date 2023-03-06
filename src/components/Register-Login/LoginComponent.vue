@@ -64,6 +64,7 @@ export default {
             console.log(err)
           })
         },
+     /*to do implementer fonction qui verifie si user connecter */
 
   },
 

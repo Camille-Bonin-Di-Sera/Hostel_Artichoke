@@ -12,9 +12,9 @@
         <button v-on:click="$emit('changeFR')" class="languageButton"><img src="../assets/Pictures/icon/flag-fr.png" alt="" class="inline md:mr-6 md:h-12"></button>
         <button v-on:click="$emit('changeFR')" class="languageButton"><img src="../assets/Pictures/icon/flag-eng.png" alt="" class="inline md:mr-2 md:h-12"></button>
       </div>
-        <di>
+        <div>
             <p>Bonjour {{ store.pseudoConnected}}</p>
-        </di>
+        </div>
     </div>
 
     <div class="link_mobile flex flex-row-reverse md:hidden">
