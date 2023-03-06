@@ -11,7 +11,7 @@
         <!-- A remplacer par les infos réelles de l'utilisateur depuis la base de données -->
       <div class="md:w-4/5 md:m-auto">
         <NavbarUserProfilComponent v-bind:lang_fr="lang_fr" />
-        <div v-for="reservation of reservations">
+        <div v-for="reservation of reservations" class="">
           <div class="backgroundInput w-1/3">
             <p class="text-black">Date de début : {{reservation.dateStart}}</p>
             <p class="text-black">Date de fin : {{reservation.dateEnd}}</p>
