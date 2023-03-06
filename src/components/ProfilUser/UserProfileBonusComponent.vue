@@ -2,11 +2,11 @@
   <div class="containerProfile">
     <div class="fondBlanc">
       <div class="hautPage md:m-auto">
-            <img src="" alt="Avatar" class="inline">
-          <div class="justify-end flex flex-col ml-24 mt-12 items-start">
-            <p class="text-black text-2xl">Prénom </p>
-            <p class="text-black text-2xl underline">utilisateur@gmail.com</p>
-          </div>
+        <img src="" alt="Avatar" class="inline">
+        <div class="justify-end flex flex-col ml-24 mt-12 items-start">
+          <p class="text-black text-2xl">Prénom </p>
+          <p class="text-black text-2xl underline">utilisateur@gmail.com</p>
+        </div>
         <!-- A remplacer par les infos réelles de l'utilisateur depuis la base de données -->
       </div>
       <div class="md:w-4/5 md:m-auto">
@@ -69,7 +69,7 @@ export default {
 
   props: ['lang_fr'],
 
-  name: "UserProfileComponent",
+  name: "UserProfileBonusComponent",
 
   data()
   {
