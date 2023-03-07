@@ -46,6 +46,11 @@
     background-color: #49a078a0;
 }
 
+.backgroundInputFact
+{
+    background-color: #49a07855;
+}
+
 @media (min-width: 640px) {
     .containerProfile{
         background-image: url("../../assets/Pictures/imageBackground.jpg");

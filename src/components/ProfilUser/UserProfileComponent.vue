@@ -79,12 +79,14 @@ export default {
       Pseudo: '',
       email: '',
       password: '',
+
+      local: import.meta.env.VITE_URL_API,
     }
   },
 
   methods: {
     updating() {
-      axios.put('/v1/users',
+      axios.put(this.local + '/v1/users',
           {
             firstname:this.firstName,
             lastname:this.lastName,
