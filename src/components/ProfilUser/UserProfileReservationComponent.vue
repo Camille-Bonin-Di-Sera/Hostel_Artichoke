@@ -55,13 +55,8 @@ export default {
         .then((res) => {
           try {
             this.reservations = res.data;
-            this.longueur = res.data.length;
             console.log("données : ", res.data);
-            console.log("longueur : ", this.reservations.length);
-            this.modulo = this.longueur % 3;
-            console.log("Modulo :", this.modulo);
-            this.division = Math.round(this.longueur / 3) + 1;
-            console.log("division : ", this.division);
+
           } catch (err) {
             console.log("erreur reservation : ", err);
           }
