@@ -8,7 +8,7 @@ nav {
 }
 @media (min-width: 1025px) {
   nav {
-    background-color: rgba(0, 0, 0, 0.38);
+    background-color: rgb(73 160 120 / 80%);
     backdrop-filter: blur(6px);
     height: 65px;
     margin-top: 0vh;
@@ -112,7 +112,7 @@ nav {
   height: 2px;
   margin-bottom: 5px;
   position: relative;
-  background-color: #01d001;
+  background-color: #000000;
   border-radius: 3px;
   z-index: 1;
   transform-origin: 5px 0px;
