@@ -9,11 +9,11 @@
         </div>
       </div>
       <!-- A remplacer par les infos réelles de l'utilisateur depuis la base de données -->
+      <NavbarUserProfilComponent v-bind:lang_fr="lang_fr"/>
       <div class="md:w-4/5 md:m-auto">
-        <NavbarUserProfilComponent v-bind:lang_fr="lang_fr"/>
         <h3 class="colorText text-center  text-3xl sm:block sm:m-auto sm:w-1/3 sm:text-5xl">{{ this.lang_fr ? "Mes réservations" : "My booking" }}</h3>
         <div class="flex flex-wrap mt-8">
-          <div v-for="reservation of reservations" class="backgroundInput ml-8 mt-8 flex-initial p-1">
+          <div v-for="reservation of reservations" class="backgroundInputResa ml-8 mt-8 flex-initial p-1">
               <p class="text-black">Date de début : {{ reservation.dateStart }}</p>
               <p class="text-black">Date de fin : {{ reservation.dateEnd }}</p>
               <p class="text-black">Nombre de personne : {{ reservation.nb_Person }}</p>

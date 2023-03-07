@@ -9,8 +9,8 @@
           </div>
         <!-- A remplacer par les infos réelles de l'utilisateur depuis la base de données -->
       </div>
+      <NavbarUserProfilComponent v-bind:lang_fr="lang_fr" />
       <div class="md:w-4/5 md:m-auto">
-        <NavbarUserProfilComponent v-bind:lang_fr="lang_fr" />
         <form class="w-full m-auto justify-center items-center flex flex-col md:items-start space-y-4 md:space-y-8 md:mt-16" v-on:submit.prevent="updating">
           <div class="userDesk">
             <label class="text-gray text-xs w-3/5 text-left pt-8"> {{ this.lang_fr ? "Votre Pseudo" : "Your pseudo" }}</label>
