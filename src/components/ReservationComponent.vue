@@ -255,10 +255,38 @@ export default {
             checkWifi : false,
             checkPaypal :false,
             checkCB: false,
+
+
+            numeroChambre: 102,
+            name:'test',
+            price: 120,
+            numberPerson:2,
+            numberWeek:1,
         }
     },
     created() {
-        axios
+
+        //Multiple get
+        /*let urls = [this.local + '/v1/reservation', this.local + '/v1/services', this.local + '/v1/chambers'];
+
+        let msg = {};
+        const requests = urls.map((url) => axios.get(url));
+      console.log("liens : ", requests);
+        axios.all(requests)
+            .then((respoonse) => {
+              respoonse.forEach((resp) => {
+                msg = {
+                  fields : resp.data
+                };
+              })
+              console.log(msg.fields[0]);
+            })
+            .catch((error) =>
+            {
+              console.log("test : ", error);
+            });*/
+
+          axios
             .get(this.local + '/v1/reservation')
             .then((res) =>
             {
@@ -279,7 +307,35 @@ export default {
        store()
         {
             console.log("hello");
-            axios.post(this.local + '/v1/reservation',
+            let urls = [this.local + '/v1/reservation', this.local + '/v1/reservationService'];
+            if(this.numberPerson === 2)
+            {
+              this.numberPerson = 3;
+            }
+            const requests = urls.map((url) => axios.post(url, {
+              dateStart: this.dateStart,
+              dateEnd: this.dateEnd,
+              nb_Person: this.nbPerson,
+              nb_Chamber: this.nbChamber,
+
+              fk_Reservations: 1,
+              fk_Services: 3,
+              numberDays:2,
+              numberPerson:this.numberPerson,
+              numberWeek:1,
+            }));
+            axios.all(requests)
+                .then((result) => {
+                  result.forEach((res) => {
+                    console.log(res.data.id);
+                  })
+                  console.log(result)
+                  router.push({name: 'home'})
+                })
+                .catch((erreur) => {
+                  console.log(erreur)
+                })
+            /*axios.post(this.local + '/v1/reservation',
                 // mettre un count sur les options
                 // voir comment passer les données en liaisons avec les autres tables
                 // erreur 422 lors de la soumission des données
@@ -311,7 +367,7 @@ export default {
                 })
                 .catch((erreur) => {
                     console.log(erreur)
-                })
+                })*/
         }
     },
 
