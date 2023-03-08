@@ -8,13 +8,13 @@
     background-color: white;
     flex-direction: row;
     margin: auto;
-    width:80%;
+    width:90%;
     height:50%;
 }
 
 
 .containerReservation{
-    background-image: url("../../assets/Pictures/imageBackground.jpg");
+    background-image: url("");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -31,7 +31,24 @@
     margin: auto;
 }
 
+.NbPerson{
+    width: 15%;
+    text-align: center;
+}
+
+
+.logoDiscount, .logoBed{
+    width: 1.5rem;
+
+}
+.logoOptions {
+    width: 1rem;
+}
+
 .inputResa
 {
-    width:90%;
+    width:95%;
+}
+.payment{
+    margin: 5vh 0vh 5vh 0vh
 }

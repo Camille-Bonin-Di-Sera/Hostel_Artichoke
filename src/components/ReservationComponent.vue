@@ -7,96 +7,218 @@
             <div class="imageResa">
 
             </div>
-            <form class="contentReservation" v-on:submit.prevent="">
+<!--start formulaire-->
+            <form class="contentReservation" v-on:submit.prevent="store">
                 <h3 class="colorText text-center text-2xl sm:text-4xl"> {{ this.lang_fr ? "Réserver" : "Book" }} </h3>
+                <section class="sm:flex flex-column items-center justify-around sm:flex-row bg-white m-auto">
+                        <div class="ml-4 familyText text-xl">
+                            <label for="dateStart">&nbsp; {{ this.lang_fr ? "Arrivée : " : "Arrival : " }}
+                            <input type="date" id="dateStart" v-model="dateStart"></label>
+                        </div>
+                        <div class="ml-4 familyText text-xl">
+                            <label for="dateEnd"> &nbsp; {{ this.lang_fr ? "Départ : " : "Departure : " }}
+                            <input type="date" id="dateEnd" v-model="dateEnd"></label>
+                        </div>
+                </section>
+<!-- section person chamber discount-->
                 <section class="sm:flex flex-column sm:flex-row bg-white m-auto">
-                    <article class="space-x-4 space-y-4 sm:w-1/2 space-y-4">
-                        <div class="ml-4 familyText text-xl">
-                            <label>&nbsp; {{ this.lang_fr ? "Arrivée : " : "Arrival : " }}</label><br />
-                            <input type="date">
+                    <div class=" sm:w-1/2 space-y-4">
+                        <div class="inputResa border rounded-lg flex justify-between" >
+                            <label for="PersonResaValue">&nbsp; {{ this.lang_fr ? "Nombre de personnes : " : "Number of people : " }}</label>
+                                    <input class="NbPerson text-center"
+                                           type="number"
+                                           id="PersonResaValue"
+                                           v-model="nbPerson"
+                                           min="1"
+                                           max="100"
+                                            >
+                            <img src="../assets/Pictures/personne.png" alt="personne" class="ml-1.5  inline">
                         </div>
-                        <div class="inputResa border rounded-lg py-3 px-3 bg-gray-700 border-gray-700 placeholder-gray-500">
-                            <label>&nbsp; {{ this.lang_fr ? "Nombre de personnes : " : "Number of people : " }}</label>
-                            <select class="ml-20">
-                                <option>0</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                                <option>10</option>
-                                <option>11</option>
-                            </select>
-                            <img src="../assets/Pictures/personne.png" alt="personne" class="inline">
-                            <br />
+
+                        <div class="inputResa border rounded-lg flex justify-between">
+                            <input type="text" placeholder="Code promotionnel" v-model="codePromo">
+                            <img src="../assets/Pictures/promo_icon.png" alt="logo Promo" class="logoDiscount inline ml-8">
                         </div>
-                        <div class="inputResa border rounded-lg py-3 px-3 bg-gray-700 border-gray-700 placeholder-gray-500">
-                            <input type="text" placeholder=" Entrer votre code promotionnel" class="">
-                            <img src="../assets/Pictures/promo_icon.png" alt="logo Promo" class="w-10 inline ml-8">
+                    </div>
+                    <div class="sm:w-1/2 space-y-4">
+                        <div class="inputResa border rounded-lg flex justify-between" >
+                            <label for="ChamberResaValue" class=" NbChamber ">&nbsp; {{ this.lang_fr ? "Nombre de chambres : " : "Number of chambers : " }}</label>
+                                <input class="NbChamber text-center "
+                                    type="number"
+                                    id="ChamberResaValue"
+                                    v-model="nbChamber"
+                                    min="1"
+                                    max="20"
+                                >
+                            <img src="../assets/Pictures/Lit.png" alt="chambre" class="logoBed inline">
                         </div>
-                    </article>
-                    <article class="sm:w-1/2 space-y-4">
-                        <div class="ml-4 familyText text-xl">
-                            <label> &nbsp; {{ this.lang_fr ? "Départ : " : "Departure : " }}</label> <br />
-                            <input type="date">
-                        </div>
-                        <div class="inputResa border rounded-lg py-3 px-3 bg-gray-700 border-gray-700 placeholder-gray-500">
-                            <label>&nbsp; {{ this.lang_fr ? "Nombre de chambres : " : "Number of chambers : " }}</label>
-                            <select>
-                                <option>0</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                                <option>10</option>
-                                <option>11</option>
-                            </select>
-                            <img src="../assets/Pictures/Lit.png" alt="chambre" class="inline">
-                        </div>
-                        <div class="inputResa border rounded-lg py-3 px-3 bg-gray-700 border-gray-700 placeholder-gray-500">
-                            <br />
-                            <label>&nbsp; {{ this.lang_fr ? "Type de chambres : " : " Chamber Type : " }}</label>
-                            <select>
+                        <div class="inputResa border rounded-lg flex justify-between">
+                            <label for="selectedChamber">&nbsp; {{ this.lang_fr ? "Type de chambres : " : " Chamber Type : " }}</label>
+                            <select id="selectedChamber" v-model="selectedChamberType">
                                 <option>{{ this.lang_fr ? "Standard" : "Standard" }}</option>
                                 <option>{{ this.lang_fr ? "Suite" : "Suite" }}</option>
                                 <option>{{ this.lang_fr ? "Luxe" : "Luxurious" }}</option>
                             </select>
                         </div>
-                    </article>
+                    </div>
                 </section>
-                <section>
+<!--end section person chamber discount -->
+
+                <div class="sm:flex flex-column sm:flex-row bg-white justify-center items-center h-[10vh] p-[2vh]">
                     <h3 class="colorText text-center text-2xl sm:text-3xl"> {{ this.lang_fr ? "Options supplémentaires" : "Additional options" }} </h3>
-                </section>
-                <section>
-                    <h3 class="colorText text-center text-2xl sm:text-3xl"> {{ this.lang_fr ? "Coordonnées bancaires" : "Bank details" }} </h3>
-                    <br />
-                    <div class="border border-black familyText text-xl mb-4">
-                        <label>&nbsp;  {{ this.lang_fr ? "Payer avec : " : "Pay with " }}</label>
-                        <img src="../assets/Pictures/paypal.png" alt ="logo carte bancaire " class="inline w-20 border border-black ml-20">
-                        <img src="../assets/Pictures/visa-credit-card.png" alt =" logo paypal" class="inline w-20 border border-black ml-20">
-                        <div class="border border-black familyText space-y-4 space-x-4 text-xl">
-                            <input type="password" placeholder=" Numéro carte" class="ml-4 w-4/5 border border-black">
-                            <br />
-                            <input type="password" placeholder=" Expiration" class="border border-black">
-                            <br />
-                            <input type="password" placeholder=" Crypto" class="border border-black ">
-                            <div class="fontButton">
-                                <button type="submit" class="text-white pr-2 pl-2 text-xl backgroundButton block m-auto ml-96 rounded sm:text-3xl inline"> {{ this.lang_fr ? "Réserver" : "Book" }} </button>
-                                <button type="submit" class="text-white pr-2 pl-2 text-xl backgroundButton block m-auto ml-96 rounded sm:text-3xl inline"> {{ this.lang_fr ? "Paypal " : "Paypal" }}</button>
+                </div>
+
+<!-- section choise Options -->
+                <section  class="md:flex-wrap columns-1 bg-white m-auto justify-center ">
+                    <div class="sm:flex flex-column sm:flex-row bg-white m-auto justify-center ">
+                        <div class=" sm:w-1/2 space-y-4">
+                            <div class="inputResa border rounded-lg flex justify-between" >
+                                <label for="NbDayFullboard">&nbsp; {{ this.lang_fr ? "Pension complète : " : "Full board : " }}</label>
+                                <div class="">
+                                    <input class="FullBoard text-center"
+                                           type="number"
+                                           id="NbDayFullboard"
+                                           v-model="nbDayFullboard"
+                                           min="0"
+                                           max="100"
+                                    >
+                                    <img src="../assets/Pictures/calendrier.png" alt="calendrier" class="logoOptions inline">
+                                   <input class="FullBoard text-center"
+                                           type="number"
+                                           id="NbPersonFullBoard"
+                                           v-model="nbPersonFullBoard"
+                                           min="0"
+                                           max="100"
+                                    >
+                                    <img src="../assets/Pictures/personne.png" alt="Personne" class="logoOptions inline">
+                                </div>
+                            </div>
+
+                            <div class="inputResa border rounded-lg flex justify-between" >
+                                <label for="NbBreakfast">&nbsp; {{ this.lang_fr ? "Petit dejeuné : " : "Breakfast: " }}</label>
+                                <div class="">
+                                    <input class="FullBoard text-center"
+                                           type="number"
+                                           id="NbBreakfast"
+                                           v-model="nbBreakfast"
+                                           min="0"
+                                           max="100"
+                                    >
+                                    <img src="../assets/Pictures/calendrier.png" alt="calendrier" class="logoOptions inline">
+                                    <input class="FullBoard text-center"
+                                           type="number"
+                                           id="NbPersonBreakfast"
+                                           v-model="nbPersonBreakfast"
+                                           min="0"
+                                           max="100"
+                                    >
+                                    <img src="../assets/Pictures/personne.png" alt="Personne" class="logoOptions inline">
+                                </div>
+                            </div>
+
+                            <div class="inputResa border rounded-lg flex justify-between" >
+                                <label for="NbWeekTv">&nbsp; {{ this.lang_fr ? "Télévision: " : "Television : " }}</label>
+                                <div class="">
+                                    <input class="Breakfast text-center"
+                                           type="number"
+                                           id="NbWeekTv"
+                                           v-model="nbWeekTv"
+                                           min="0"
+                                           max="20"
+                                    >
+                                    <img src="../assets/Pictures/calendrier.png" alt="calendrier" class="logoOptions inline  mr-1">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div  class=" sm:w-1/2 space-y-4">
+                            <div class="inputResa border rounded-lg flex justify-between" >
+                                <label for="NbDayHalfBoard">&nbsp; {{ this.lang_fr ? "Demi pension : " : "Half board : " }}</label>
+                                <div>
+                                    <input class="HalfBoard text-center"
+                                            type="number"
+                                            id="NbDayHalfBoard"
+                                            v-model="nbDayHalfBoard"
+                                            min="0"
+                                            max="100"
+                                    >
+                                    <img src="../assets/Pictures/calendrier.png" alt="calendrier" class="logoOptions inline">
+                                    <input class="HaldBoard text-center"
+                                           type="number"
+                                           id="NbPersonHalfBoard"
+                                           v-model="nbPersonHalfBoard"
+                                           min="0"
+                                           max="100"
+                                    >
+                                    <img src="../assets/Pictures/personne.png" alt="Personne" class="logoOptions  inline">
+                                </div>
+                            </div>
+
+                            <div class="inputResa border rounded-lg flex justify-between" >
+                                <label for="NbDayLaundryService">&nbsp; {{ this.lang_fr ? "Service pressing: " : "Laundry service : " }}</label>
+                                <div>
+                                    <input class="laundryService text-center"
+                                           type="number"
+                                           id="NbDayLaundryService"
+                                           v-model="nbDayLaundryService"
+                                           min="0"
+                                           max="100"
+                                    >
+                                    <img src="../assets/Pictures/calendrier.png" alt="calendrier" class="logoOptions inline">
+                                    <input class="laundryService text-center"
+                                           type="number"
+                                           id="NbPersonLaundryService"
+                                           v-model="nbPersonlaundryService"
+                                           min="0"
+                                           max="100"
+                                    >
+                                    <img src="../assets/Pictures/personne.png" alt="Personne" class="logoOptions  inline">
+                                </div>
+                            </div>
+                            <div class="inputResa border rounded-lg flex justify-between" >
+                                <label for="checkWifi">{{ this.lang_fr ? "WIFI: " : "WIFI : " }}</label>
+                                <div class="">
+                                    <input class="WIFI text-center mr-3"
+                                           type="checkbox"
+                                           id="checkWifi"
+                                           v-model="checkWifi"
+                                    >
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
+<!-- end section choise Options -->
+
+<!--start payment -->
+                <div class="sm:flex flex-column sm:flex-row bg-white justify-center items-center h-[10vh] p-[2vh]">
+                    <h3 class="colorText text-center text-2xl sm:text-3xl"> {{ this.lang_fr ? "Choix du paiement" : "Choise of Payment" }} </h3>
+                </div>
+                <section class="payment md:flex-wrap columns-1 bg-white flex justify-around h-[10vh]  ">
+                    <div class="">
+                        <label for="paypal">&nbsp;  {{ this.lang_fr ? "Payer avec : " : "Pay with " }}</label>
+                            <input type="checkbox" id="paypal" v-model="checkPaypal"/>
+                            <img src="../assets/Pictures/paypal.png" alt ="logo paypal " class="inline w-20 border border-black ml-20">
+                    </div>
+                    <div>
+                        <label for="CB">{{ this.lang_fr ? "Payer avec : " : "Pay with " }}</label>
+                            <input type="checkbox" id="CB" v-model="checkCB"/>
+                            <img src="../assets/Pictures/credit-car.png" alt =" logo credit card" class="inline w-20 border border-black ml-20">
+                    </div>
+                </section>
+<!--end payment -->
+                <div class="fontButton flex justify-around m-4">
+                    <div>
+                        <button type="submit"
+                                class="text-white pr-2 pl-2 text-xl backgroundButton block m-auto rounded sm:text-3xl inline"> {{ this.lang_fr ? "Réserver" : "Book" }} </button>
+                    </div>
+                    <div>
+                        <button type="reset"
+                                class="text-white pr-2 pl-2 text-xl backgroundButton block m-auto  rounded sm:text-3xl inline"> {{ this.lang_fr ? "Annuler" : "reset" }} </button>
+                    </div>
+                </div>
             </form>
+<!--end formulaire -->
         </div>
     </div>
 </template>
@@ -104,72 +226,93 @@
 <script>
 import axios from "axios";
 import router from "../router"
+import {ref} from "vue";
 import('../assets/Style/main.css');
 import('../assets/Style/Reservation.css');
 export default {
+    data(){
+        return{
+            dataReservation: [],
+            local: import.meta.env.VITE_URL_API,
+            dateStart:"",
+            dateEnd:"",
+            nbPerson:"1",
+            codePromo:"",
+            nbChamber:"1",
+            selectedChamberType:"Standard",
+            nbDayFullboard:"0",
+            nbPersonFullBoard:"0",
+            nbBreakfast:"0",
+            nbPersonBreakfast:"0",
+            nbWeekTv:"0",
+            nbDayHalfBoard:"0",
+            nbPersonHalfBoard:"0",
+            nbDayLaundryService:"0",
+            nbPersonlaundryService:"0",
+            checkWifi : false,
+            checkPaypal :false,
+            checkCB: false,
+        }
+    },
+    created() {
+        axios
+            .get(this.local + '/v1/reservation')
+            .then((res) =>
+            {
+                try{
+                    this.dataReservation = res.data;
+                    console.log("bonjour : ", res);
+                }
+                catch (err) {
+                    console.log("erreur discount : ", err);
+                }
+            })
+            .catch((error) =>
+            {
+                console.log("bonjour : ", error.res.data.value);
+        });
+    },
+    methods: {
+       store()
+        {
+            console.log("hello");
+            axios.post(this.local + '/v1/reservation',
+                // mettre un count sur les options
+                // voir comment passer les données en liaisons avec les autres tables
+                // erreur 422 lors de la soumission des données
+                // route non protegée
+                {
+                    dateStart: this.dateStart,
+                    dateEnd: this.dateEnd,
+                    nbPerson: this.nbPerson,
+                    codePromo: this.codePromo,
+                    nbChamber: this.nbChamber,
+                    selectedChamberType: this.selectedChamberType,
+                    nbDayFullboard: this.nbDayFullboard,
+                    nbPersonFullBoard: this.nbPersonFullBoard,
+                    nbBreakfast: this.nbBreakfast,
+                    nbPersonBreakfast: this.nbPersonBreakfast,
+                    nbWeekTv: this.nbWeekTv,
+                    nbDayHalfBoard: this.nbDayHalfBoard,
+                    nbPersonHalfBoard: this.nbPersonFullBoard,
+                    nbDayLaundryService: this.nbDayLaundryService,
+                    nbPersonlaundryService: this.nbPersonlaundryService,
+                    checkWifi: this.checkWifi,
+                    checkPaypal: this.checkPaypal,
+                    checkCB: this.checkCB,
+
+                })
+                .then((result) => {
+                    console.log(result)
+                    router.push({name: 'home'})
+                })
+                .catch((erreur) => {
+                    console.log(erreur)
+                })
+        }
+    },
 
   props: ['lang_fr'],
-
-  created() {
-    axios
-        .get('http://localhost/api/v1/Reservation')
-
-
-    //let now = new Date();
-  },
-
-
-  /*data()
-  {
-    return {
-      firstName:'',
-      lastName:'',
-      pseudo:'',
-      email:'',
-      telephone:'',
-      password:'',
-    }
-  },
-
-  methods: {
-    register() {
-      axios.post('/api/v1/Users',
-          {
-            firstname:this.firstName,
-            lastname:this.lastName,
-            pseudo:this.pseudo,
-            email:this.email,
-            phone:this.telephone,
-            password:this.password,
-          })
-          .then((result) => {
-            console.log(result)
-            router.push({name:'home'})
-          })
-          .catch((erreur) =>
-          {
-            console.log(erreur)
-          })
-    },
-
-
-    login() {
-      axios.post('api/v1/Users',
-          {
-            email:this.email,
-            password:this.password,
-          })
-          .then((result) => {
-            localStorage.setItem('usertoken', result.data.token)
-            this.email = ''
-            this.password = ''
-            router.push({name: 'home'})
-          })
-          .catch((err) => {
-            console.log(err)
-          })
-    },
-  },*/
 
 };
 </script>
