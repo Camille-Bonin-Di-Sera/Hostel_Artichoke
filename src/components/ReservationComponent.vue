@@ -13,11 +13,11 @@
                 <section class="sm:flex flex-column items-center justify-around sm:flex-row bg-white m-auto">
                         <div class="ml-4 familyText text-xl">
                             <label for="dateStart">&nbsp; {{ this.lang_fr ? "Arrivée : " : "Arrival : " }}
-                            <input type="date" id="dateStart" v-model="dateStart"></label>
+                            <input type="datetime-local" id="dateStart" v-model="dateStart"></label>
                         </div>
                         <div class="ml-4 familyText text-xl">
                             <label for="dateEnd"> &nbsp; {{ this.lang_fr ? "Départ : " : "Departure : " }}
-                            <input type="date" id="dateEnd" v-model="dateEnd"></label>
+                            <input type="datetime-local" id="dateEnd" v-model="dateEnd"></label>
                         </div>
                 </section>
 <!-- section person chamber discount-->
@@ -237,9 +237,12 @@ export default {
             dateStart:"",
             dateEnd:"",
             nbPerson:"1",
+
             codePromo:"",
+
             nbChamber:"1",
             selectedChamberType:"Standard",
+
             nbDayFullboard:"0",
             nbPersonFullBoard:"0",
             nbBreakfast:"0",
