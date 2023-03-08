@@ -54,39 +54,52 @@
           </div>
         </div>
 
-        <!-- bloc mail       -->
+
+        <!-- container of mail message and map       -->
+  <div id="continer-map-mail-msg" class="bg-blue w-full
+                                  flex flex-col items-center">
 
 
+    <!-- container of mail and message       -->
+    <div id="container-mail-msg" class="w-full lex flex-col items-center">
 
-        <div id="mail" class="flex flex-col mt-8 mx-4 w-[92%]">
-          <input type="email"
-                 class="Contcat_mail bg-white/70 placeholder:text-black font-adpro"
-                 placeholder="Email"
-                 name="email" />
-        </div>
+      <!-- bloc mail       -->
+      <div id="mail" class="flex flex-col mt-8 mx-4 w-[92%]">
+        <input type="email"
+               class="Contcat_mail bg-white/70 placeholder:text-black font-adpro"
+               placeholder="Email"
+               name="email" />
+      </div>
 
 
-
-<!-- bloc message       -->
-        <div id="messageBlock" class="flex flex-col mt-8 mx-4 w-[92%]">
+      <!-- bloc message       -->
+      <div id="messageBlock" class="flex flex-col mt-8 mx-4 w-[92%]">
           <textarea type="longtext"
                     class=" bg-white/70 placeholder:text-black"
                     placeholder="Message"  n
                     ame="textarea"
                     rows="10" cols="50" />
-        </div>
+      </div>
+
+    </div>
 
 
-        <!-- bloc Map       -->
-        <div id="map" class="w-[92%] mt-8 mb-[8%]">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2762.438778586826!2d4.752517300000001!3d46.18182649999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f37ca271d1423d%3A0x203b2e21f681f8ca!2sTouroparc%20Zoo!5e0!3m2!1sfr!2sfr!4v1677846388654!5m2!1sfr!2sfr"
-                  class="map
+    <!-- bloc Map       -->
+    <div id="map" class="w-[92%] mt-8 mb-[8%]">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2762.438778586826!2d4.752517300000001!3d46.18182649999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f37ca271d1423d%3A0x203b2e21f681f8ca!2sTouroparc%20Zoo!5e0!3m2!1sfr!2sfr!4v1677846388654!5m2!1sfr!2sfr"
+              class="map
                   w-full"
-                  style="border:0;"
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+
+  </div>
+
+
+
       </article>
     </section>
   </main>
