@@ -9,7 +9,7 @@
       <h2
         class="Contact_Us text-center text-6xl text-white md:text-8xl mt-[4%]"
       >
-        Nous contacter
+        {{ this.lang_fr ? "Nous contacter" : "Contact us" }}
       </h2>
       <article class="flex flex-col items-center w-full h-full">
         <!-- block of informations znd logo       -->
@@ -21,7 +21,7 @@
             <h3
               class="title_contact text-black text-2xl lg:text-[3rem] text-left w-full md:h-[50%] md:flex md:items-center ml-1"
             >
-              Hôtel Artichaut
+              {{ this.lang_fr ? " Hôtel Artichaut" : "Artichoke hostel" }}
             </h3>
             <img
               class="w-1/4 h-full lg:w-[12%]"
@@ -96,7 +96,7 @@
             <!-- bloc Map       -->
             <div
               id="map"
-              class="w-[92%] lg:w-[40%] lg:h-[92%] mt-8 lg:mt-[2%] lg:h-[25vh]"
+              class="w-[92%] lg:w-[40%] lg:h-[92%] mt-8 lg:mt-[5%] lg:h-[31vh]"
             >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2762.438778586826!2d4.752517300000001!3d46.18182649999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f37ca271d1423d%3A0x203b2e21f681f8ca!2sTouroparc%20Zoo!5e0!3m2!1sfr!2sfr!4v1677846388654!5m2!1sfr!2sfr"
@@ -116,15 +116,15 @@
           >
             <button
               type="button"
-              class="rounded-lg bg-white/10 backdrop-blur w-[15rem] h-[4rem] text-white font-bold font-adpro text-[1.5rem]"
+              class="rounded-lg bg-white backdrop-blur w-[15rem] h-[4rem] text-black font-bold font-adpro text-[1.5rem]"
             >
-              Envoyer
+              {{ this.lang_fr ? "Envoyer" : "Send" }}
             </button>
             <button
               type="reset"
-              class="rounded-lg bg-white backdrop-blur w-[15rem] h-[4rem] text-black font-bold font-adpro text-[1.5rem]"
+              class="rounded-lg bg-white/10 backdrop-blur w-[15rem] h-[4rem] text-black font-bold font-adpro text-[1.5rem]"
             >
-              Annuler
+              {{ this.lang_fr ? "Annuler" : "Reset" }}
             </button>
           </div>
         </form>
@@ -134,9 +134,33 @@
 </template>
 
 <script>
-import("../assets/Style/Contact.css");
+import axios from "axios";
+import("../assets/Style/contact.css");
 
 export default {
   props: ["lang_fr"],
+
+  data() {
+    return {
+      discounts: [],
+      local: import.meta.env.VITE_URL_API,
+    };
+  },
+
+  created() {
+    axios
+      .get(this.local + "/v1/discounts")
+      .then((res) => {
+        try {
+          this.discounts = res.data;
+          console.log("bonjour : ", res);
+        } catch (err) {
+          console.log("erreur discount : ", err);
+        }
+      })
+      .catch((error) => {
+        console.log("bonjour : ", error.res.data.value);
+      });
+  },
 };
 </script>
