@@ -4,7 +4,7 @@
   >
     <!-- Container  --->
     <section
-      class="Content_Contact bg-white/20 backdrop-blur shadow-2xl shadow-white/50 flex flex-col mt-[20vh] sm:mt-[22vh] md:mt-[20vh] lg:mt-[10vh] mb-[8%] w-[86%] lg:w-[42%]"
+      class="Content_Contact bg-white/20 backdrop-blur shadow-2xl shadow-white/50 flex flex-col mt-[20vh] sm:mt-[22vh] md:mt-[20vh] lg:mt-[6vh] mb-[8%] w-[86%] lg:w-[42%]"
     >
       <h2
         class="Contact_Us text-center text-6xl text-white md:text-8xl mt-[4%]"

@@ -1,5 +1,9 @@
 <template>
-<MobileNavbarBurgerComponent v-bind:lang_fr="lang_fr" v-on:changeFR="changeFR"/> <!-- Ici, le v-bind sert à passer la variable dans les composants enfants. Le v-on est pour appeler la bonne fonction -->
+  <MobileNavbarBurgerComponent
+    v-bind:lang_fr="lang_fr"
+    v-on:changeFR="changeFR"
+  />
+  <!-- Ici, le v-bind sert à passer la variable dans les composants enfants. Le v-on est pour appeler la bonne fonction -->
   <NavbarBurgerComponent v-bind:lang_fr="lang_fr" v-on:changeFR="changeFR" />
   <Popup v-bind:lang_fr="lang_fr" v-if="isNotOnReserver" />
   <router-view v-bind:lang_fr="lang_fr" />
@@ -45,6 +49,10 @@ export default {
   mounted: function () {
     document.onreadystatechange = () => {
       if (this.$router.currentRoute.value.name == "Register-Login") {
+        this.isNotLogin = false;
+      }
+
+      if (this.$router.currentRoute.value.name == "contact") {
         this.isNotLogin = false;
       }
 
