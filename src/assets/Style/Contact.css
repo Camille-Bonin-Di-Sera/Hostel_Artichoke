@@ -1,13 +1,7 @@
-/*  .Container_Contact {
-
-  background-position: center; -> bg-center
-  background-size: cover; -> bg-cover
-  background-repeat: no-repeat;  -> bg-no-repeat
-  display: flex; -> flex
-  justify-content: center ; -> justify-center
-  backgrond-image:"url('./src/assets/Pictures/background/bk-count.jpg')" ; -> bg-contact-bg
+.Container_Contact {
+  background-color: blueviolet;
+  background-image: url("../Pictures/background/contact-glass.jpg");
 }
-}*/
 
 /*************************************************************************/
 
@@ -36,6 +30,12 @@
   font-family: AdventPro;
   font-size: 1.2em;
   color: black;
+}
+
+@media (min-width: 1025px) {
+  ::placeholder {
+    font-size: 1.4em;
+  }
 }
 /************************************/
 
