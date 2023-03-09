@@ -232,26 +232,39 @@ import('../assets/Style/Reservation.css');
 export default {
     data(){
         return{
+            //Tableau pour les données
             dataReservation: [],
+            dataChambers: [],
+            dataServices: [],
+
+            //URL pour les routes à atteindre
             local: import.meta.env.VITE_URL_API,
+
+            //Données de la table réservation
             dateStart:"",
             dateEnd:"",
-            nbPerson:"1",
+            nbPerson:1,
+            nbChamber:1,
 
+            countNbServices: 0, // pour compter le nombre de service pris
+
+            idReservation: 0, // Donnée à récupérer pendant le post
+
+            //A récupérer de la table discount
             codePromo:"",
 
-            nbChamber:"1",
             selectedChamberType:"Standard",
 
-            nbDayFullboard:"0",
-            nbPersonFullBoard:"0",
-            nbBreakfast:"0",
-            nbPersonBreakfast:"0",
-            nbWeekTv:"0",
-            nbDayHalfBoard:"0",
-            nbPersonHalfBoard:"0",
-            nbDayLaundryService:"0",
-            nbPersonlaundryService:"0",
+            //Info pour les services
+            nbDayFullboard:0,
+            nbPersonFullBoard:0,
+            nbBreakfast:0,
+            nbPersonBreakfast:0,
+            nbWeekTv:0,
+            nbDayHalfBoard:0,
+            nbPersonHalfBoard:0,
+            nbDayLaundryService:0,
+            nbPersonlaundryService:0,
             checkWifi : false,
             checkPaypal :false,
             checkCB: false,
@@ -266,48 +279,75 @@ export default {
     },
     created() {
 
-        //Multiple get
-        /*let urls = [this.local + '/v1/reservation', this.local + '/v1/services', this.local + '/v1/chambers'];
-
-        let msg = {};
+        let urls = [this.local + '/v1/services', this.local + '/v1/chambers'];
         const requests = urls.map((url) => axios.get(url));
-      console.log("liens : ", requests);
+
         axios.all(requests)
             .then((respoonse) => {
-              respoonse.forEach((resp) => {
-                msg = {
-                  fields : resp.data
-                };
-              })
-              console.log(msg.fields[0]);
+                for(let i = 0; i < respoonse.length; i++)
+                {
+                  if(i === 0)
+                  {
+                    this.dataServices = respoonse[i];
+                  }
+                  if(i === 1)
+                  {
+                    this.dataChambers = respoonse[i];
+                  }
+                }
+                console.log("Services id : ", this.dataServices.data[0].id); // Bonne méthode pour récup l'id
+                console.log("Chambres : ", this.dataChambers);
             })
             .catch((error) =>
             {
               console.log("test : ", error);
-            });*/
-
-          axios
-            .get(this.local + '/v1/reservation')
-            .then((res) =>
-            {
-                try{
-                    this.dataReservation = res.data;
-                    console.log("bonjour : ", res);
-                }
-                catch (err) {
-                    console.log("erreur discount : ", err);
-                }
-            })
-            .catch((error) =>
-            {
-                console.log("bonjour : ", error.res.data.value);
-        });
+            });
     },
     methods: {
        store()
         {
+          //On compte le nombre de service pris par le client
+          if(this.nbDayFullboard > 0)
+          {
+            this.countNbServices++;
+          }
+          if(this.nbBreakfast > 0)
+          {
+            this.countNbServices++;
+          }
+          if(this.nbWeekTv > 0)
+          {
+            this.countNbServices++;
+          }
+          if(this.nbDayHalfBoard > 0)
+          {
+            this.countNbServices++;
+          }
+          if(this.nbDayLaundryService > 0)
+          {
+            this.countNbServices++;
+          }
+          if(this.checkWifi)
+          {
+            this.countNbServices++;
+          }
+          console.log(this.countNbServices);
+          axios.post(this.local + '/v1/reservation', {
+            dateStart: this.dateStart,
+            dateEnd: this.dateEnd,
+            nb_Person: this.nbPerson,
+            nb_Chamber: this.nbChamber,
+            nb_TotalServices: this.countNbServices,
+          })
+              .then((result) => {
+                console.log(result);
+                console.log(result.data.nb_TotalServices);
+                this.idReservation = result.data.id;
+              })
+
+
             console.log("hello");
-            let urls = [this.local + '/v1/reservation', this.local + '/v1/reservationService'];
+            /*let urls = [this.local + '/v1/reservation', this.local + '/v1/reservationService'];
             if(this.numberPerson === 2)
             {
               this.numberPerson = 3;
@@ -334,7 +374,7 @@ export default {
                 })
                 .catch((erreur) => {
                   console.log(erreur)
-                })
+                })*/
             /*axios.post(this.local + '/v1/reservation',
                 // mettre un count sur les options
                 // voir comment passer les données en liaisons avec les autres tables
