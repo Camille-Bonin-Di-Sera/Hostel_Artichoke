@@ -353,7 +353,7 @@ export default {
       })
           .then((result) => {
             console.log(result);
-            console.log(result.data.nb_TotalService);
+            console.log(result.data.nb_TotalServices);
             this.idReservation = result.data.id;
           })
           .catch((erreur) => {
