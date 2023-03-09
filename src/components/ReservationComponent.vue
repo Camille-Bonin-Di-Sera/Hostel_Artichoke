@@ -268,6 +268,28 @@
                 checkWifi : false,
                 checkPaypal :false,
                 checkCB: false,
+            //Info pour les services
+            nbDayFullboard:0,
+            nbPersonFullBoard:0,
+            nbBreakfast:0,
+            nbPersonBreakfast:0,
+            nbWeekTv:0,
+            nbDayHalfBoard:0,
+            nbPersonHalfBoard:0,
+            nbDayLaundryService:0,
+            nbPersonlaundryService:0,
+            checkWifi : false,
+
+            //Les id pour les différents services
+            idServicePensionComplete:0,
+            idServiceDemiPension:0,
+            idPetitDejeuner:0,
+            idServicePressing:0,
+            idServiceTele:0,
+            idServiceWifi:0,
+
+            checkPaypal :false,
+            checkCB: false,
 
                 numeroChambre: 102,
                 name:'test',
@@ -297,6 +319,78 @@
                     }
                     console.log("Services id : ", this.dataServices.data[0].id); // Bonne méthode pour récup l'id
                     console.log("Chambres : ", this.dataChambers);
+        axios.all(requests)
+            .then((respoonse) => {
+                for(let i = 0; i < respoonse.length; i++)
+                {
+                  if(i === 0)
+                  {
+                    this.dataServices = respoonse[i];
+                  }
+                  if(i === 1)
+                  {
+                    this.dataChambers = respoonse[i];
+                  }
+                }
+                console.log("Services id : ", this.dataServices.data[0].id); // Bonne méthode pour récup l'id
+                console.log("Services : ", this.dataServices); // Bonne méthode pour récup l'id
+                console.log("Chambres : ", this.dataChambers);
+            })
+            .catch((error) =>
+            {
+              console.log("test : ", error);
+            });
+    },
+    methods: {
+       store()
+        {
+          //On compte le nombre de service pris par le client
+          if(this.nbDayHalfBoard > 0 || this.nbPersonHalfBoard > 0)
+          {
+            this.countNbServices++;
+            this.idServicePensionComplete = this.dataServices.data[0].id;
+          }
+          if(this.nbDayFullboard > 0 || this.nbPersonFullBoard > 0)
+          {
+            this.countNbServices++;
+            this.idServicePensionComplete = this.dataServices.data[1].id;
+          }
+          if(this.nbBreakfast > 0 || this.nbPersonBreakfast > 0)
+          {
+            this.countNbServices++;
+            this.idServicePensionComplete = this.dataServices.data[2].id;
+          }
+          if(this.nbDayLaundryService > 0 || this.nbPersonlaundryService > 0)
+          {
+            this.countNbServices++;
+            this.idServicePensionComplete = this.dataServices.data[3].id;
+          }
+          if(this.nbWeekTv > 0)
+          {
+            this.countNbServices++;
+            this.idServicePensionComplete = this.dataServices.data[4].id;
+          }
+          if(this.checkWifi)
+          {
+            this.countNbServices++;
+            this.idServicePensionComplete = this.dataServices.data[5].id;
+          }
+          console.log(this.countNbServices);
+          axios.post(this.local + '/v1/reservation', {
+            dateStart: this.dateStart,
+            dateEnd: this.dateEnd,
+            nb_Person: this.nbPerson,
+            nb_Chamber: this.nbChamber,
+            nb_TotalService: this.countNbServices,
+          })
+              .then((result) => {
+                console.log(result);
+                console.log(result.data.nb_TotalService);
+                this.idReservation = result.data.id;
+              })
+              .catch((erreur) => {
+                console.log(erreur)
+              })
 
                 })
                 .catch((error) =>
