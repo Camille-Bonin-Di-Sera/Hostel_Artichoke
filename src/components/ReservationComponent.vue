@@ -1,421 +1,362 @@
-<template>
-    <div class="containerReservation">
-        <div class="contentReservation colorText">
-            <h3 class="text-center text-4xl sm:text-5xl"> {{ this.lang_fr ? "Nos chambres" : "Our chambers" }}</h3>
-            <br />
+    <template>
+        <div class="containerReservation">
+            <div class="contentReservation colorText">
+                <h3 class="text-center text-4xl sm:text-5xl"> {{ this.lang_fr ? "Nos chambres" : "Our chambers" }}</h3>
+                <br />
 
-            <div class="imageResa">
+                <div class="imageResa">
 
-            </div>
-<!--start formulaire-->
-            <form class="contentReservation" v-on:submit.prevent="store">
-                <h3 class="colorText text-center text-2xl sm:text-4xl"> {{ this.lang_fr ? "Réserver" : "Book" }} </h3>
-                <section class="sm:flex flex-column items-center justify-around sm:flex-row bg-white m-auto">
-                        <div class="ml-4 familyText text-xl">
-                            <label for="dateStart">&nbsp; {{ this.lang_fr ? "Arrivée : " : "Arrival : " }}
-                            <input type="datetime-local" id="dateStart" v-model="dateStart"></label>
-                        </div>
-                        <div class="ml-4 familyText text-xl">
-                            <label for="dateEnd"> &nbsp; {{ this.lang_fr ? "Départ : " : "Departure : " }}
-                            <input type="datetime-local" id="dateEnd" v-model="dateEnd"></label>
-                        </div>
-                </section>
-<!-- section person chamber discount-->
-                <section class="sm:flex flex-column sm:flex-row bg-white m-auto">
-                    <div class=" sm:w-1/2 space-y-4">
-                        <div class="inputResa border rounded-lg flex justify-between" >
-                            <label for="PersonResaValue">&nbsp; {{ this.lang_fr ? "Nombre de personnes : " : "Number of people : " }}</label>
-                                    <input class="NbPerson text-center"
-                                           type="number"
-                                           id="PersonResaValue"
-                                           v-model="nbPerson"
-                                           min="1"
-                                           max="100"
-                                            >
-                            <img src="../assets/Pictures/personne.png" alt="personne" class="ml-1.5  inline">
-                        </div>
-
-                        <div class="inputResa border rounded-lg flex justify-between">
-                            <input type="text" placeholder="Code promotionnel" v-model="codePromo">
-                            <img src="../assets/Pictures/promo_icon.png" alt="logo Promo" class="logoDiscount inline ml-8">
-                        </div>
-                    </div>
-                    <div class="sm:w-1/2 space-y-4">
-                        <div class="inputResa border rounded-lg flex justify-between" >
-                            <label for="ChamberResaValue" class=" NbChamber ">&nbsp; {{ this.lang_fr ? "Nombre de chambres : " : "Number of chambers : " }}</label>
-                                <input class="NbChamber text-center "
-                                    type="number"
-                                    id="ChamberResaValue"
-                                    v-model="nbChamber"
-                                    min="1"
-                                    max="20"
-                                >
-                            <img src="../assets/Pictures/Lit.png" alt="chambre" class="logoBed inline">
-                        </div>
-                        <div class="inputResa border rounded-lg flex justify-between">
-                            <label for="selectedChamber">&nbsp; {{ this.lang_fr ? "Type de chambres : " : " Chamber Type : " }}</label>
-                            <select id="selectedChamber" v-model="selectedChamberType">
-                                <option>{{ this.lang_fr ? "Standard" : "Standard" }}</option>
-                                <option>{{ this.lang_fr ? "Suite" : "Suite" }}</option>
-                                <option>{{ this.lang_fr ? "Luxe" : "Luxurious" }}</option>
-                            </select>
-                        </div>
-                    </div>
-                </section>
-<!--end section person chamber discount -->
-
-                <div class="sm:flex flex-column sm:flex-row bg-white justify-center items-center h-[10vh] p-[2vh]">
-                    <h3 class="colorText text-center text-2xl sm:text-3xl"> {{ this.lang_fr ? "Options supplémentaires" : "Additional options" }} </h3>
                 </div>
-
-<!-- section choise Options -->
-                <section  class="md:flex-wrap columns-1 bg-white m-auto justify-center ">
-                    <div class="sm:flex flex-column sm:flex-row bg-white m-auto justify-center ">
+    <!--start formulaire-->
+                <form class="contentReservation" v-on:submit.prevent="store">
+                    <h3 class="colorText text-center text-2xl sm:text-4xl"> {{ this.lang_fr ? "Réserver" : "Book" }} </h3>
+                    <section class="sm:flex flex-column items-center justify-around sm:flex-row bg-white m-auto">
+                            <div class="ml-4 familyText text-xl">
+                                <label for="dateStart">&nbsp; {{ this.lang_fr ? "Arrivée : " : "Arrival : " }}
+                                <input type="datetime-local" id="dateStart" v-model="dateStart"></label>
+                            </div>
+                            <div class="ml-4 familyText text-xl">
+                                <label for="dateEnd"> &nbsp; {{ this.lang_fr ? "Départ : " : "Departure : " }}
+                                <input type="datetime-local" id="dateEnd" v-model="dateEnd"></label>
+                            </div>
+                    </section>
+    <!-- section person chamber discount-->
+                    <section class="sm:flex flex-column sm:flex-row bg-white m-auto">
                         <div class=" sm:w-1/2 space-y-4">
                             <div class="inputResa border rounded-lg flex justify-between" >
-                                <label for="NbDayFullboard">&nbsp; {{ this.lang_fr ? "Pension complète : " : "Full board : " }}</label>
-                                <div class="">
-                                    <input class="FullBoard text-center"
-                                           type="number"
-                                           id="NbDayFullboard"
-                                           v-model="nbDayFullboard"
-                                           min="0"
-                                           max="100"
+                                <label for="PersonResaValue">&nbsp; {{ this.lang_fr ? "Nombre de personnes : " : "Number of people : " }}</label>
+                                        <input class="NbPerson text-center"
+                                               type="number"
+                                               id="PersonResaValue"
+                                               v-model="nbPerson"
+                                               min="1"
+                                               max="100"
+                                                >
+                                <img src="../assets/Pictures/personne.png" alt="personne" class="ml-1.5  inline">
+                            </div>
+
+                            <div class="inputResa border rounded-lg flex justify-between">
+                                <input type="text" placeholder="Code promotionnel" v-model="codePromo">
+                                <img src="../assets/Pictures/promo_icon.png" alt="logo Promo" class="logoDiscount inline ml-8">
+                            </div>
+                        </div>
+                        <div class="sm:w-1/2 space-y-4">
+                            <div class="inputResa border rounded-lg flex justify-between" >
+                                <label for="ChamberResaValue" class=" NbChamber ">&nbsp; {{ this.lang_fr ? "Nombre de chambres : " : "Number of chambers : " }}</label>
+                                    <input class="NbChamber text-center "
+                                        type="number"
+                                        id="ChamberResaValue"
+                                        v-model="nbChamber"
+                                        min="1"
+                                        max="20"
                                     >
-                                    <img src="../assets/Pictures/calendrier.png" alt="calendrier" class="logoOptions inline">
-                                   <input class="FullBoard text-center"
-                                           type="number"
-                                           id="NbPersonFullBoard"
-                                           v-model="nbPersonFullBoard"
-                                           min="0"
-                                           max="100"
-                                    >
-                                    <img src="../assets/Pictures/personne.png" alt="Personne" class="logoOptions inline">
+                                <img src="../assets/Pictures/Lit.png" alt="chambre" class="logoBed inline">
+                            </div>
+                            <div class="inputResa border rounded-lg flex justify-between">
+                                <label for="selectedChamber">&nbsp; {{ this.lang_fr ? "Type de chambres : " : " Chamber Type : " }}</label>
+                                <select id="selectedChamber" v-model="selectedChamberType">
+                                    <option>{{ this.lang_fr ? "Standard" : "Standard" }}</option>
+                                    <option>{{ this.lang_fr ? "Suite" : "Suite" }}</option>
+                                    <option>{{ this.lang_fr ? "Luxe" : "Luxurious" }}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </section>
+    <!--end section person chamber discount -->
+
+                    <div class="sm:flex flex-column sm:flex-row bg-white justify-center items-center h-[10vh] p-[2vh]">
+                        <h3 class="colorText text-center text-2xl sm:text-3xl"> {{ this.lang_fr ? "Options supplémentaires" : "Additional options" }} </h3>
+                    </div>
+
+    <!-- section choise Options -->
+                    <section  class="md:flex-wrap columns-1 bg-white m-auto justify-center ">
+                        <div class="sm:flex flex-column sm:flex-row bg-white m-auto justify-center ">
+                            <div class=" sm:w-1/2 space-y-4">
+                                <div class="inputResa border rounded-lg flex justify-between" >
+                                    <label for="NbDayFullboard">&nbsp; {{ this.lang_fr ? "Pension complète : " : "Full board : " }}</label>
+                                    <div class="">
+                                        <input class="FullBoard text-center"
+                                               type="number"
+                                               id="NbDayFullboard"
+                                               v-model="nbDayFullboard"
+                                               min="0"
+                                               max="100"
+                                        >
+                                        <img src="../assets/Pictures/calendrier.png" alt="calendrier" class="logoOptions inline">
+                                       <input class="FullBoard text-center"
+                                               type="number"
+                                               id="NbPersonFullBoard"
+                                               v-model="nbPersonFullBoard"
+                                               min="0"
+                                               max="100"
+                                        >
+                                        <img src="../assets/Pictures/personne.png" alt="Personne" class="logoOptions inline">
+                                    </div>
+                                </div>
+
+                                <div class="inputResa border rounded-lg flex justify-between" >
+                                    <label for="NbBreakfast">&nbsp; {{ this.lang_fr ? "Petit dejeuné : " : "Breakfast: " }}</label>
+                                    <div class="">
+                                        <input class="FullBoard text-center"
+                                               type="number"
+                                               id="NbBreakfast"
+                                               v-model="nbBreakfast"
+                                               min="0"
+                                               max="100"
+                                        >
+                                        <img src="../assets/Pictures/calendrier.png" alt="calendrier" class="logoOptions inline">
+                                        <input class="FullBoard text-center"
+                                               type="number"
+                                               id="NbPersonBreakfast"
+                                               v-model="nbPersonBreakfast"
+                                               min="0"
+                                               max="100"
+                                        >
+                                        <img src="../assets/Pictures/personne.png" alt="Personne" class="logoOptions inline">
+                                    </div>
+                                </div>
+
+                                <div class="inputResa border rounded-lg flex justify-between" >
+                                    <label for="NbWeekTv">&nbsp; {{ this.lang_fr ? "Télévision: " : "Television : " }}</label>
+                                    <div class="">
+                                        <input class="Breakfast text-center"
+                                               type="number"
+                                               id="NbWeekTv"
+                                               v-model="nbWeekTv"
+                                               min="0"
+                                               max="20"
+                                        >
+                                        <img src="../assets/Pictures/calendrier.png" alt="calendrier" class="logoOptions inline  mr-1">
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="inputResa border rounded-lg flex justify-between" >
-                                <label for="NbBreakfast">&nbsp; {{ this.lang_fr ? "Petit dejeuné : " : "Breakfast: " }}</label>
-                                <div class="">
-                                    <input class="FullBoard text-center"
-                                           type="number"
-                                           id="NbBreakfast"
-                                           v-model="nbBreakfast"
-                                           min="0"
-                                           max="100"
-                                    >
-                                    <img src="../assets/Pictures/calendrier.png" alt="calendrier" class="logoOptions inline">
-                                    <input class="FullBoard text-center"
-                                           type="number"
-                                           id="NbPersonBreakfast"
-                                           v-model="nbPersonBreakfast"
-                                           min="0"
-                                           max="100"
-                                    >
-                                    <img src="../assets/Pictures/personne.png" alt="Personne" class="logoOptions inline">
+                            <div  class=" sm:w-1/2 space-y-4">
+                                <div class="inputResa border rounded-lg flex justify-between" >
+                                    <label for="NbDayHalfBoard">&nbsp; {{ this.lang_fr ? "Demi pension : " : "Half board : " }}</label>
+                                    <div>
+                                        <input class="HalfBoard text-center"
+                                                type="number"
+                                                id="NbDayHalfBoard"
+                                                v-model="nbDayHalfBoard"
+                                                min="0"
+                                                max="100"
+                                        >
+                                        <img src="../assets/Pictures/calendrier.png" alt="calendrier" class="logoOptions inline">
+                                        <input class="HaldBoard text-center"
+                                               type="number"
+                                               id="NbPersonHalfBoard"
+                                               v-model="nbPersonHalfBoard"
+                                               min="0"
+                                               max="100"
+                                        >
+                                        <img src="../assets/Pictures/personne.png" alt="Personne" class="logoOptions  inline">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="inputResa border rounded-lg flex justify-between" >
-                                <label for="NbWeekTv">&nbsp; {{ this.lang_fr ? "Télévision: " : "Television : " }}</label>
-                                <div class="">
-                                    <input class="Breakfast text-center"
-                                           type="number"
-                                           id="NbWeekTv"
-                                           v-model="nbWeekTv"
-                                           min="0"
-                                           max="20"
-                                    >
-                                    <img src="../assets/Pictures/calendrier.png" alt="calendrier" class="logoOptions inline  mr-1">
+                                <div class="inputResa border rounded-lg flex justify-between" >
+                                    <label for="NbDayLaundryService">&nbsp; {{ this.lang_fr ? "Service pressing: " : "Laundry service : " }}</label>
+                                    <div>
+                                        <input class="laundryService text-center"
+                                               type="number"
+                                               id="NbDayLaundryService"
+                                               v-model="nbDayLaundryService"
+                                               min="0"
+                                               max="100"
+                                        >
+                                        <img src="../assets/Pictures/calendrier.png" alt="calendrier" class="logoOptions inline">
+                                        <input class="laundryService text-center"
+                                               type="number"
+                                               id="NbPersonLaundryService"
+                                               v-model="nbPersonlaundryService"
+                                               min="0"
+                                               max="100"
+                                        >
+                                        <img src="../assets/Pictures/personne.png" alt="Personne" class="logoOptions  inline">
+                                    </div>
+                                </div>
+                                <div class="inputResa border rounded-lg flex justify-between" >
+                                    <label for="checkWifi">{{ this.lang_fr ? "WIFI: " : "WIFI : " }}</label>
+                                    <div class="">
+                                        <input class="WIFI text-center mr-3"
+                                               type="checkbox"
+                                               id="checkWifi"
+                                               v-model="checkWifi"
+                                        >
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </section>
+    <!-- end section choise Options -->
 
-                        <div  class=" sm:w-1/2 space-y-4">
-                            <div class="inputResa border rounded-lg flex justify-between" >
-                                <label for="NbDayHalfBoard">&nbsp; {{ this.lang_fr ? "Demi pension : " : "Half board : " }}</label>
-                                <div>
-                                    <input class="HalfBoard text-center"
-                                            type="number"
-                                            id="NbDayHalfBoard"
-                                            v-model="nbDayHalfBoard"
-                                            min="0"
-                                            max="100"
-                                    >
-                                    <img src="../assets/Pictures/calendrier.png" alt="calendrier" class="logoOptions inline">
-                                    <input class="HaldBoard text-center"
-                                           type="number"
-                                           id="NbPersonHalfBoard"
-                                           v-model="nbPersonHalfBoard"
-                                           min="0"
-                                           max="100"
-                                    >
-                                    <img src="../assets/Pictures/personne.png" alt="Personne" class="logoOptions  inline">
-                                </div>
-                            </div>
-
-                            <div class="inputResa border rounded-lg flex justify-between" >
-                                <label for="NbDayLaundryService">&nbsp; {{ this.lang_fr ? "Service pressing: " : "Laundry service : " }}</label>
-                                <div>
-                                    <input class="laundryService text-center"
-                                           type="number"
-                                           id="NbDayLaundryService"
-                                           v-model="nbDayLaundryService"
-                                           min="0"
-                                           max="100"
-                                    >
-                                    <img src="../assets/Pictures/calendrier.png" alt="calendrier" class="logoOptions inline">
-                                    <input class="laundryService text-center"
-                                           type="number"
-                                           id="NbPersonLaundryService"
-                                           v-model="nbPersonlaundryService"
-                                           min="0"
-                                           max="100"
-                                    >
-                                    <img src="../assets/Pictures/personne.png" alt="Personne" class="logoOptions  inline">
-                                </div>
-                            </div>
-                            <div class="inputResa border rounded-lg flex justify-between" >
-                                <label for="checkWifi">{{ this.lang_fr ? "WIFI: " : "WIFI : " }}</label>
-                                <div class="">
-                                    <input class="WIFI text-center mr-3"
-                                           type="checkbox"
-                                           id="checkWifi"
-                                           v-model="checkWifi"
-                                    >
-                                </div>
-                            </div>
+    <!--start payment -->
+                    <div class="sm:flex flex-column sm:flex-row bg-white justify-center items-center h-[10vh] p-[2vh]">
+                        <h3 class="colorText text-center text-2xl sm:text-3xl"> {{ this.lang_fr ? "Choix du paiement" : "Choise of Payment" }} </h3>
+                    </div>
+                    <section class="payment md:flex-wrap columns-1 bg-white flex justify-around h-[10vh]  ">
+                        <div class="">
+                            <label for="paypal">&nbsp;  {{ this.lang_fr ? "Payer avec : " : "Pay with " }}</label>
+                                <input type="checkbox" id="paypal" v-model="checkPaypal"/>
+                                <img src="../assets/Pictures/paypal.png" alt ="logo paypal " class="inline w-20 border border-black ml-20">
+                        </div>
+                        <div>
+                            <label for="CB">{{ this.lang_fr ? "Payer avec : " : "Pay with " }}</label>
+                                <input type="checkbox" id="CB" v-model="checkCB"/>
+                                <img src="../assets/Pictures/credit-car.png" alt =" logo credit card" class="inline w-20 border border-black ml-20">
+                        </div>
+                    </section>
+    <!--end payment -->
+                    <div class="fontButton flex justify-around m-4">
+                        <div>
+                            <button type="submit"
+                                    class="text-white pr-2 pl-2 text-xl backgroundButton block m-auto rounded sm:text-3xl inline"> {{ this.lang_fr ? "Réserver" : "Book" }} </button>
+                        </div>
+                        <div>
+                            <button type="reset"
+                                    class="text-white pr-2 pl-2 text-xl backgroundButton block m-auto  rounded sm:text-3xl inline"> {{ this.lang_fr ? "Annuler" : "reset" }} </button>
                         </div>
                     </div>
-                </section>
-<!-- end section choise Options -->
-
-<!--start payment -->
-                <div class="sm:flex flex-column sm:flex-row bg-white justify-center items-center h-[10vh] p-[2vh]">
-                    <h3 class="colorText text-center text-2xl sm:text-3xl"> {{ this.lang_fr ? "Choix du paiement" : "Choise of Payment" }} </h3>
-                </div>
-                <section class="payment md:flex-wrap columns-1 bg-white flex justify-around h-[10vh]  ">
-                    <div class="">
-                        <label for="paypal">&nbsp;  {{ this.lang_fr ? "Payer avec : " : "Pay with " }}</label>
-                            <input type="checkbox" id="paypal" v-model="checkPaypal"/>
-                            <img src="../assets/Pictures/paypal.png" alt ="logo paypal " class="inline w-20 border border-black ml-20">
-                    </div>
-                    <div>
-                        <label for="CB">{{ this.lang_fr ? "Payer avec : " : "Pay with " }}</label>
-                            <input type="checkbox" id="CB" v-model="checkCB"/>
-                            <img src="../assets/Pictures/credit-car.png" alt =" logo credit card" class="inline w-20 border border-black ml-20">
-                    </div>
-                </section>
-<!--end payment -->
-                <div class="fontButton flex justify-around m-4">
-                    <div>
-                        <button type="submit"
-                                class="text-white pr-2 pl-2 text-xl backgroundButton block m-auto rounded sm:text-3xl inline"> {{ this.lang_fr ? "Réserver" : "Book" }} </button>
-                    </div>
-                    <div>
-                        <button type="reset"
-                                class="text-white pr-2 pl-2 text-xl backgroundButton block m-auto  rounded sm:text-3xl inline"> {{ this.lang_fr ? "Annuler" : "reset" }} </button>
-                    </div>
-                </div>
-            </form>
-<!--end formulaire -->
+                </form>
+    <!--end formulaire -->
+            </div>
         </div>
-    </div>
-</template>
+    </template>
 
-<script>
-import axios from "axios";
-import router from "../router"
-import {ref} from "vue";
-import('../assets/Style/main.css');
-import('../assets/Style/Reservation.css');
-export default {
-    data(){
-        return{
-            //Tableau pour les données
-            dataReservation: [],
-            dataChambers: [],
-            dataServices: [],
+    <script>
+    import axios from "axios";
+    import router from "../router"
+    import {ref} from "vue";
+    import('../assets/Style/main.css');
+    import('../assets/Style/Reservation.css');
+    export default {
+        data(){
+            return{
+                //Tableau pour les données
+                dataReservation: [],
+                dataChambers: [],
+                dataServices: [],
 
-            //URL pour les routes à atteindre
-            local: import.meta.env.VITE_URL_API,
+                //URL pour les routes à atteindre
+                local: import.meta.env.VITE_URL_API,
 
-            //Données de la table réservation
-            dateStart:"",
-            dateEnd:"",
-            nbPerson:1,
-            nbChamber:1,
+                //Données de la table réservation
+                dateStart:"",
+                dateEnd:"",
+                nbPerson:1,
+                nbChamber:1,
 
-            countNbServices: 0, // pour compter le nombre de service pris
+                countNbServices: 0, // pour compter le nombre de service pris
 
-            idReservation: 0, // Donnée à récupérer pendant le post
+                idReservation: 0, // Donnée à récupérer pendant le post
 
-            //A récupérer de la table discount
-            codePromo:"",
+                //A récupérer de la table discount
+                codePromo:"",
 
-            selectedChamberType:"Standard",
+                selectedChamberType:"Standard",
 
-            //Info pour les services
-            nbDayFullboard:0,
-            nbPersonFullBoard:0,
-            nbBreakfast:0,
-            nbPersonBreakfast:0,
-            nbWeekTv:0,
-            nbDayHalfBoard:0,
-            nbPersonHalfBoard:0,
-            nbDayLaundryService:0,
-            nbPersonlaundryService:0,
-            checkWifi : false,
-            checkPaypal :false,
-            checkCB: false,
+                //Info pour les services
+                nbDayFullboard:0,
+                nbPersonFullBoard:0,
+                nbBreakfast:0,
+                nbPersonBreakfast:0,
+                nbWeekTv:0,
+                nbDayHalfBoard:0,
+                nbPersonHalfBoard:0,
+                nbDayLaundryService:0,
+                nbPersonlaundryService:0,
+                checkWifi : false,
+                checkPaypal :false,
+                checkCB: false,
 
-
-            numeroChambre: 102,
-            name:'test',
-            price: 120,
-            numberPerson:2,
-            numberWeek:1,
-        }
-    },
-    created() {
-
-        let urls = [this.local + '/v1/services', this.local + '/v1/chambers'];
-        const requests = urls.map((url) => axios.get(url));
-
-        axios.all(requests)
-            .then((respoonse) => {
-                for(let i = 0; i < respoonse.length; i++)
-                {
-                  if(i === 0)
-                  {
-                    this.dataServices = respoonse[i];
-                  }
-                  if(i === 1)
-                  {
-                    this.dataChambers = respoonse[i];
-                  }
-                }
-                console.log("Services id : ", this.dataServices.data[0].id); // Bonne méthode pour récup l'id
-                console.log("Chambres : ", this.dataChambers);
-            })
-            .catch((error) =>
-            {
-              console.log("test : ", error);
-            });
-    },
-    methods: {
-       store()
-        {
-          //On compte le nombre de service pris par le client
-          if(this.nbDayFullboard > 0)
-          {
-            this.countNbServices++;
-          }
-          if(this.nbBreakfast > 0)
-          {
-            this.countNbServices++;
-          }
-          if(this.nbWeekTv > 0)
-          {
-            this.countNbServices++;
-          }
-          if(this.nbDayHalfBoard > 0)
-          {
-            this.countNbServices++;
-          }
-          if(this.nbDayLaundryService > 0)
-          {
-            this.countNbServices++;
-          }
-          if(this.checkWifi)
-          {
-            this.countNbServices++;
-          }
-          console.log(this.countNbServices);
-          axios.post(this.local + '/v1/reservation', {
-            dateStart: this.dateStart,
-            dateEnd: this.dateEnd,
-            nb_Person: this.nbPerson,
-            nb_Chamber: this.nbChamber,
-            nb_TotalServices: this.countNbServices,
-          })
-              .then((result) => {
-                console.log(result);
-                console.log(result.data.nb_TotalServices);
-                this.idReservation = result.data.id;
-              })
-
-
-            console.log("hello");
-            /*let urls = [this.local + '/v1/reservation', this.local + '/v1/reservationService'];
-            if(this.numberPerson === 2)
-            {
-              this.numberPerson = 3;
+                numeroChambre: 102,
+                name:'test',
+                price: 120,
+                numberPerson:2,
+                numberWeek:1,
             }
-            const requests = urls.map((url) => axios.post(url, {
-              dateStart: this.dateStart,
-              dateEnd: this.dateEnd,
-              nb_Person: this.nbPerson,
-              nb_Chamber: this.nbChamber,
+        },
+        created() {
 
-              fk_Reservations: 1,
-              fk_Services: 3,
-              numberDays:2,
-              numberPerson:this.numberPerson,
-              numberWeek:1,
-            }));
+            let urls = [this.local + '/v1/services', this.local + '/v1/chambers'];
+            const requests = urls.map((url) => axios.get(url));
+
             axios.all(requests)
-                .then((result) => {
-                  result.forEach((res) => {
-                    console.log(res.data.id);
-                  })
-                  console.log(result)
-                  router.push({name: 'home'})
+                .then((respoonse) => {
+                    for(let i = 0; i < respoonse.length; i++)
+                    {
+                      if(i === 0)
+                      {
+                        this.dataServices = respoonse[i];
+                      }
+                      if(i === 1)
+                      {
+                        this.dataChambers = respoonse[i];
+                      }
+
+                    }
+                    console.log("Services id : ", this.dataServices.data[0].id); // Bonne méthode pour récup l'id
+                    console.log("Chambres : ", this.dataChambers);
+
                 })
-                .catch((erreur) => {
-                  console.log(erreur)
-                })*/
-            /*axios.post(this.local + '/v1/reservation',
-                // mettre un count sur les options
-                // voir comment passer les données en liaisons avec les autres tables
-                // erreur 422 lors de la soumission des données
-                // route non protegée
+                .catch((error) =>
                 {
+                  console.log("test : ", error);
+                });
+        },
+        methods: {
+           store()
+            {
+              //On compte le nombre de service pris par le client
+              if(this.nbDayFullboard > 0)
+              {
+                this.countNbServices++;
+              }
+              if(this.nbBreakfast > 0)
+              {
+                this.countNbServices++;
+              }
+              if(this.nbWeekTv > 0)
+              {
+                this.countNbServices++;
+              }
+              if(this.nbDayHalfBoard > 0)
+              {
+                this.countNbServices++;
+              }
+              if(this.nbDayLaundryService > 0)
+              {
+                this.countNbServices++;
+              }
+              if(this.checkWifi)
+              {
+                this.countNbServices++;
+              }
+
+                  axios.post(this.local + '/v1/reservation', {
                     dateStart: this.dateStart,
                     dateEnd: this.dateEnd,
-                    nbPerson: this.nbPerson,
-                    codePromo: this.codePromo,
-                    nbChamber: this.nbChamber,
-                    selectedChamberType: this.selectedChamberType,
-                    nbDayFullboard: this.nbDayFullboard,
-                    nbPersonFullBoard: this.nbPersonFullBoard,
-                    nbBreakfast: this.nbBreakfast,
-                    nbPersonBreakfast: this.nbPersonBreakfast,
-                    nbWeekTv: this.nbWeekTv,
-                    nbDayHalfBoard: this.nbDayHalfBoard,
-                    nbPersonHalfBoard: this.nbPersonFullBoard,
-                    nbDayLaundryService: this.nbDayLaundryService,
-                    nbPersonlaundryService: this.nbPersonlaundryService,
-                    checkWifi: this.checkWifi,
-                    checkPaypal: this.checkPaypal,
-                    checkCB: this.checkCB,
+                    nb_Person: this.nbPerson,
+                    nb_Chamber: this.nbChamber,
+                    nb_TotalServices: this.countNbServices,
+                  })
+                      .then((result) => {
+                        this.idReservation = result.data.id;
+                        console.log(result);
+                        console.log(result.data);
 
-                })
-                .then((result) => {
-                    console.log(result)
-                    router.push({name: 'home'})
-                })
-                .catch((erreur) => {
-                    console.log(erreur)
-                })*/
-        }
-    },
+                      })
 
-  props: ['lang_fr'],
+                console.log("hello");
 
-};
-</script>
+            }
+        },
 
-<style scoped>
+      props: ['lang_fr'],
 
-</style>
+    };
+    </script>
+
+    <style scoped>
+
+    </style>
