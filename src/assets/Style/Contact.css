@@ -26,10 +26,6 @@
 
 -----------------------------*/
 
-.adress_p{
-  font-size: 1rem;
-
-}
 /*--------------------------------------*/
 .Contact_Us {
   font-family: AdventPro;
@@ -39,22 +35,21 @@
 ::placeholder {
   font-family: AdventPro;
   font-size: 1.2em;
-  color:black;
+  color: black;
 }
 /************************************/
 
-.Contact_mail{
- width: 92%;
-}
-
-/************************************/
-
-.Contcat_message{
- width: 92%;
+.Contact_mail {
+  width: 92%;
 }
 
 /************************************/
 
-.map{
+.Contcat_message {
+  width: 92%;
+}
 
+/************************************/
+
+.map {
 }
