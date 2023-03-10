@@ -12,6 +12,9 @@
         <button v-on:click="$emit('changeFR')" class="languageButton"><img src="../assets/Pictures/icon/flag-fr.png" alt="" class="inline md:mr-6 md:h-12"></button>
         <button v-on:click="$emit('changeFR')" class="languageButton"><img src="../assets/Pictures/icon/flag-eng.png" alt="" class="inline md:mr-2 md:h-12"></button>
       </div>
+        <div>
+            <p>Bonjour {{ store.pseudoConnected}}</p>
+        </div>
     </div>
 
     <div class="link_mobile flex flex-row-reverse md:hidden">
@@ -34,6 +37,7 @@
           <button class="flag inline mr-6" v-on:click="$emit('changeFR')"><img src="../assets/Pictures/icon/flag-fr.png" alt=""></button>
           <button class="flag inline mr-2" v-on:click="$emit('changeFR')"><img src="../assets/Pictures/icon/flag-eng.png" alt=""></button>
         </li>
+
       </ul>
       
     </div>
@@ -42,7 +46,7 @@
 
 </template>
 <script>
-
+import {store} from "@/store";
 import('../assets/Style/nav.css')
 export  default {
 
@@ -52,6 +56,7 @@ export  default {
     return {
       auth: '',
       user: '',
+        store,
 
     }
   },

@@ -48,15 +48,11 @@ export default {
 
   mounted: function () {
     document.onreadystatechange = () => {
-      if (this.$router.currentRoute.value.name == "Register-Login") {
+      if (this.$router.currentRoute.value.name === "Register-Login") {
         this.isNotLogin = false;
       }
 
-      if (this.$router.currentRoute.value.name == "contact") {
-        this.isNotLogin = false;
-      }
-
-      if (this.$router.currentRoute.value.name == "Reservation") {
+      if (this.$router.currentRoute.value.name === "Reservation") {
         this.isNotOnReserver = false;
       }
     };
