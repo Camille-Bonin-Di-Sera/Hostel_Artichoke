@@ -310,55 +310,151 @@ export default {
 
   methods: {
     store() {
-      //On compte le nombre de service pris par le client
+      //On compte le nombre de service pris par le client, on récupère les id correspondants
       if (this.nbDayHalfBoard > 0 || this.nbPersonHalfBoard > 0)
       {
         this.countNbServices++;
-        //this.idServicePensionComplete = this.dataServices.data[0].id;
+        this.idServiceDemiPension = this.dataServices.data[0].id;
       }
       if (this.nbDayFullboard > 0 || this.nbPersonFullBoard > 0)
       {
         this.countNbServices++;
-        //this.idServicePensionComplete = this.dataServices.data[1].id;
+        this.idServicePensionComplete = this.dataServices.data[1].id;
       }
       if (this.nbBreakfast > 0 || this.nbPersonBreakfast > 0)
       {
         this.countNbServices++;
-        //this.idServicePensionComplete = this.dataServices.data[2].id;
+        this.idPetitDejeuner = this.dataServices.data[2].id;
       }
       if (this.nbDayLaundryService > 0 || this.nbPersonlaundryService > 0)
       {
         this.countNbServices++;
-        //this.idServicePensionComplete = this.dataServices.data[3].id;
+        this.idServicePressing = this.dataServices.data[3].id;
       }
       if (this.nbWeekTv > 0)
       {
         this.countNbServices++;
-        //this.idServicePensionComplete = this.dataServices.data[4].id;
+        this.idServiceTele = this.dataServices.data[4].id;
       }
       if (this.checkWifi)
       {
         this.countNbServices++;
-        //this.idServicePensionComplete = this.dataServices.data[5].id;
+        this.idServiceWifi = this.dataServices.data[5].id;
       }
 
-      console.log(this.countNbServices);
+      // On enregistre d'abord la réservation
       axios.post(this.local + '/v1/reservation', {
-        nb_TotalServices: this.countNbServices,
         dateStart: this.dateStart,
         dateEnd: this.dateEnd,
         nb_Person: this.nbPerson,
         nb_Chamber: this.nbChamber,
+        nb_TotalServices: this.countNbServices,
 
       })
           .then((result) => {
-            console.log(result);
-            console.log(result.data.nb_TotalService);
-            this.idReservation = result.data.id;
+            console.log(result.data.id);
+            this.idReservation = result.data.id; // On récupère l'id de la réservation qu'on vient d'enregistrer, pour ensuite pouvoir l'enregistrer ensuite dans les tables nécessaire
           })
           .catch((erreur) => {
             console.log(erreur);
           })
+
+      //Puis on insert les données dans la table ReservationService
+      if(this.idServiceDemiPension !== 0)
+      {
+        axios.post(this.local + '/v1/reservationService', {
+          fk_Reservations: 11,
+          fk_Services: this.idServiceDemiPension,
+          numberDays: this.nbDayHalfBoard,
+          numberPerson: this.nbPersonHalfBoard,
+        })
+            .then((result) => {
+              console.log("Reserv : ", this.idReservation);
+              console.log("demi pension : ", result);
+            })
+            .catch((error) => {
+              console.log("coucou");
+              console.log(error);
+            })
+      }
+
+      if(this.idServicePensionComplete !== 0)
+      {
+        axios.post(this.local + '/v1/reservationService', {
+          fk_Reservations: this.idReservation,
+          fk_Services: this.idServicePensionComplete,
+          numberDays: this.nbDayFullboard,
+          numberPerson: this.nbPersonFullBoard,
+        })
+            .then((result) => {
+          console.log("pension : ", result);
+        })
+            .catch((error) => {
+              console.log(error);
+            })
+
+      }
+
+      if(this.idPetitDejeuner !== 0)
+      {
+        axios.post(this.local + '/v1/reservationService', {
+          fk_Reservations: this.idReservation,
+          fk_Services: this.idPetitDejeuner,
+          numberDays: this.nbBreakfast,
+          numberPerson: this.nbPersonBreakfast,
+        })
+            .then((result) => {
+              console.log("ptit dej : ", result);
+            })
+            .catch((error) => {
+              console.log(error);
+            })
+      }
+
+      if(this.idServicePressing !== 0)
+      {
+        axios.post(this.local + '/v1/reservationService', {
+          fk_Reservations: this.idReservation,
+          fk_Services: this.idServicePressing,
+          numberDays: this.nbDayLaundryService,
+          numberPerson: this.nbPersonlaundryService,
+        })
+            .then((result) => {
+              console.log("pressing : ", result);
+            })
+            .catch((error) => {
+              console.log(error);
+            })
+      }
+
+      if(this.idServiceTele !== 0)
+      {
+        axios.post(this.local + '/v1/reservationService', {
+          fk_Reservations: this.idReservation,
+          fk_Services: this.idServiceTele,
+          numberWeek: this.nbWeekTv,
+        })
+            .then((result) => {
+              console.log("télé : ", result);
+            })
+            .catch((error) => {
+              console.log(error);
+            })
+      }
+
+      if(this.idServiceWifi !== 0)
+      {
+        axios.post(this.local + '/v1/reservationService', {
+          fk_Reservations: this.idReservation,
+          fk_Services: this.idServiceWifi,
+        })
+            .then((result) => {
+              console.log("Wifi : ", result);
+            })
+            .catch((error) => {
+              console.log(error);
+            })
+      }
     },
 
   },
