@@ -234,10 +234,11 @@ export default {
 
   data() {
     return {
-      //Tableau pour les données
+      //Tableau pour les données à récupérer
       dataReservation: [],
       dataChambers: [],
       dataServices: [],
+      dataTypeChambers: [],
 
       //URL pour les routes à atteindre
       local: import.meta.env.VITE_URL_API,
@@ -277,10 +278,28 @@ export default {
       idServiceTele: 0,
       idServiceWifi: 0,
 
+      //Les informations pour la chambres
+      idChambre: 0,
+      idTypeChambre: 0,
+      numeroChambre: 102,
+
+      //Les variables pour les prix
+      priceServicePensionComplete:0,
+      priceServiceDemiPension:0,
+      priceServicePtitDej:0,
+      priceServicePressing:0,
+      priceServiceTele:0,
+      priceServiceWifi:0,
+      priceChamber:0,
+      priceTotalChamber:0,
+      priceTotalResa:0,
+
+      //Le numero de la facture
+      nbInvoice: 0,
+
       checkPaypal: false,
       checkCB: false,
 
-      numeroChambre: 102,
       name: 'test',
       price: 120,
       numberPerson: 2,
@@ -289,7 +308,7 @@ export default {
   },
   created() {
 
-    let urls = [this.local + '/v1/services', this.local + '/v1/chambers'];
+    let urls = [this.local + '/v1/services', this.local + '/v1/chambers', this.local + '/v1/type_chambers'];
     const requests = urls.map((url) => axios.get(url));
 
     axios.all(requests)
@@ -301,45 +320,104 @@ export default {
             if (i === 1) {
               this.dataChambers = respoonse[i];
             }
-
+            if (i === 2) {
+              this.dataTypeChambers = respoonse[i];
+            }
           }
           console.log("Services id : ", this.dataServices.data[0].id); // Bonne méthode pour récup l'id
           console.log("Chambres : ", this.dataChambers);
+          console.log("Chambres numero : ", this.dataChambers.data[0].fk_Chambers_TypeChamber);
+          console.log("Type chambres : ", this.dataTypeChambers);
         })
   },
 
   methods: {
     store() {
-      //On compte le nombre de service pris par le client, on récupère les id correspondants
+      //On compte le nombre de service pris par le client
+      // on récupère les id correspondants
+      // On calcule le prix du service, et ce, pour chaque service
       if (this.nbDayHalfBoard > 0 || this.nbPersonHalfBoard > 0)
       {
         this.countNbServices++;
         this.idServiceDemiPension = this.dataServices.data[0].id;
+        if(this.nbDayHalfBoard > 0)
+        {
+          this.priceServiceDemiPension = this.dataServices.data[0].price * this.nbDayHalfBoard
+        }
+        if(this.nbPersonHalfBoard > 0)
+        {
+          this.priceServiceDemiPension *= this.nbPersonHalfBoard;
+        }
       }
       if (this.nbDayFullboard > 0 || this.nbPersonFullBoard > 0)
       {
         this.countNbServices++;
         this.idServicePensionComplete = this.dataServices.data[1].id;
+        if(this.nbDayFullboard > 0)
+        {
+          this.priceServicePensionComplete = this.dataServices.data[1].price * this.nbDayFullboard
+        }
+        if(this.nbPersonFullBoard > 0)
+        {
+          this.priceServicePensionComplete *= this.nbPersonFullBoard;
+        }
       }
       if (this.nbBreakfast > 0 || this.nbPersonBreakfast > 0)
       {
         this.countNbServices++;
         this.idPetitDejeuner = this.dataServices.data[2].id;
+        if (this.nbBreakfast > 0)
+        {
+          this.priceServicePtitDej = this.dataServices.data[2].price * this.nbBreakfast;
+        }
+        if(this.nbBreakfast > 0)
+        {
+          this.priceServicePtitDej *= this.nbPersonBreakfast;
+        }
       }
       if (this.nbDayLaundryService > 0 || this.nbPersonlaundryService > 0)
       {
         this.countNbServices++;
         this.idServicePressing = this.dataServices.data[3].id;
+        if (this.nbDayLaundryService > 0)
+        {
+          this.priceServicePressing = this.dataServices.data[3].price * this.nbDayLaundryService;
+        }
+        if(this.nbPersonlaundryService > 0)
+        {
+          this.priceServicePressing *= this.nbPersonlaundryService;
+        }
       }
       if (this.nbWeekTv > 0)
       {
         this.countNbServices++;
         this.idServiceTele = this.dataServices.data[4].id;
+        this.priceServiceDemiPension = this.dataServices.data[4].price * this.nbWeekTv;
       }
       if (this.checkWifi)
       {
         this.countNbServices++;
         this.idServiceWifi = this.dataServices.data[5].id;
+        this.priceServiceDemiPension = this.dataServices.data[5].price;
+      }
+
+      //On va chercher l'id de la chambre correspondant au numéro de chambre
+      for(let i = 0; i < this.dataChambers.data.length; i++)
+      {
+        if(this.numeroChambre === this.dataChambers.data[i].number_chamber)
+        {
+          this.idChambre = this.dataChambers.data[i].id;
+          this.idTypeChambre = this.dataChambers.data[i].fk_Chambers_TypeChamber;
+        }
+      }
+
+      //On cherche le type de chambre correspondant à la clé étrangère récupérée, afin d'avoir son prix
+      for(let j = 0; j < this.dataTypeChambers.data.length; j++)
+      {
+        if(this.idTypeChambre === this.dataTypeChambers.data[j].id)
+        {
+          this.priceChamber = this.dataTypeChambers.data[j].price;
+        }
       }
 
       // On enregistre d'abord la réservation
@@ -352,28 +430,31 @@ export default {
 
       })
           .then((result) => {
-            console.log(result.data.id);
             this.idReservation = result.data.id; // On récupère l'id de la réservation qu'on vient d'enregistrer, pour ensuite pouvoir l'enregistrer ensuite dans les tables nécessaire
+            this.priceTotalChamber = this.priceChamber * this.nbPerson * this.nbChamber; // On calcule le prix total de la chambre selon le nombre de personne et le nombre de chambre
+            this.priceTotalResa = this.priceTotalChamber + this.priceServiceDemiPension + this.priceServicePensionComplete + this.priceServicePtitDej
+                + this.priceServicePressing + this.priceServiceTele + this.priceServiceWifi; // Calcul du prix total de la réservation
+            this.StoreLinkTable(); // On appelle la fonction qui va remplir les tables de laison, une fois qu'on a toute les données.
           })
           .catch((erreur) => {
             console.log(erreur);
           })
+    },
 
+    StoreLinkTable()
+    {
       //Puis on insert les données dans la table ReservationService
       if(this.idServiceDemiPension !== 0)
       {
         axios.post(this.local + '/v1/reservationService', {
-          fk_Reservations: 11,
+          fk_Reservations: this.idReservation,
           fk_Services: this.idServiceDemiPension,
           numberDays: this.nbDayHalfBoard,
           numberPerson: this.nbPersonHalfBoard,
         })
             .then((result) => {
-              console.log("Reserv : ", this.idReservation);
-              console.log("demi pension : ", result);
             })
             .catch((error) => {
-              console.log("coucou");
               console.log(error);
             })
       }
@@ -387,7 +468,6 @@ export default {
           numberPerson: this.nbPersonFullBoard,
         })
             .then((result) => {
-          console.log("pension : ", result);
         })
             .catch((error) => {
               console.log(error);
@@ -404,7 +484,6 @@ export default {
           numberPerson: this.nbPersonBreakfast,
         })
             .then((result) => {
-              console.log("ptit dej : ", result);
             })
             .catch((error) => {
               console.log(error);
@@ -420,7 +499,6 @@ export default {
           numberPerson: this.nbPersonlaundryService,
         })
             .then((result) => {
-              console.log("pressing : ", result);
             })
             .catch((error) => {
               console.log(error);
@@ -435,7 +513,6 @@ export default {
           numberWeek: this.nbWeekTv,
         })
             .then((result) => {
-              console.log("télé : ", result);
             })
             .catch((error) => {
               console.log(error);
@@ -449,15 +526,41 @@ export default {
           fk_Services: this.idServiceWifi,
         })
             .then((result) => {
-              console.log("Wifi : ", result);
             })
             .catch((error) => {
               console.log(error);
             })
       }
+
+      //On insert les données dans la table chambreReservation
+      axios.post(this.local + '/v1/reservationChamber', {
+        fk_Reservations: this.idReservation,
+        fk_Chambers: this.idChambre,
+      })
+          .then((resultat) => {
+          })
+          .catch((error) => {
+            console.log("chambre : ", error);
+          })
+
+
+      //On insert les données dans la table facture
+      axios.post(this.local + '/v1/invoice', {
+        price: this.priceTotalResa,
+        number_invoices: this.nbInvoice++,
+        fk_Reservation: this.idReservation,
+        fk_User: 2,
+      })
+          .then((resultat) => {
+            console.log("Facture : ", resultat);
+          })
+          .catch((error) => {
+            console.log("Facture : ", error);
+          })
     },
 
   },
+
 }
 </script>
 
