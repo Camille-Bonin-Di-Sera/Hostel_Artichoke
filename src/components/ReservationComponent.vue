@@ -370,7 +370,7 @@ export default {
         {
           this.priceServicePtitDej = this.dataServices.data[2].price * this.nbBreakfast;
         }
-        if(this.nbBreakfast > 0)
+        if(this.nbPersonBreakfast > 0)
         {
           this.priceServicePtitDej *= this.nbPersonBreakfast;
         }
@@ -392,13 +392,13 @@ export default {
       {
         this.countNbServices++;
         this.idServiceTele = this.dataServices.data[4].id;
-        this.priceServiceDemiPension = this.dataServices.data[4].price * this.nbWeekTv;
+        this.priceServiceTele = this.dataServices.data[4].price * this.nbWeekTv;
       }
       if (this.checkWifi)
       {
         this.countNbServices++;
         this.idServiceWifi = this.dataServices.data[5].id;
-        this.priceServiceDemiPension = this.dataServices.data[5].price;
+        this.priceServiceWifi = this.dataServices.data[5].price;
       }
 
       //On va chercher l'id de la chambre correspondant au numéro de chambre
