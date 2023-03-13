@@ -209,6 +209,11 @@ p {
   margin-top: 22vh;
 }
 @media (min-width: 728px) {
+   .text_card{
+  line-height: 1.25rem;
+  }
+}
+@media (min-width: 728px) {
   .ico-rando,
   .ico-local,
   .ico_rst,
