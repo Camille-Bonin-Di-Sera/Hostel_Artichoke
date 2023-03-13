@@ -1,26 +1,7 @@
 <template>
-    <div>
-        utilisateur connecter
-        <table>
-            <thead>
-                <tr>
-                    <th>pseudo</th>
-                    <th>email</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        {{store.pseudoConnected}}
-                    </td>
-                    <td>
-                        {{store.emailConnected}}
-                    </td>
-
-                </tr>
-            </tbody>
-        </table>
-    </div>
+  <div id="app" class="bg-blue-400">
+    <input type="date" v-model="date">
+  </div>
 </template>
 
 <script>
@@ -29,13 +10,13 @@ import router from "@/router";
 import {store} from "@/store";
 import('../assets/Style/main.css');
 export default {
-    data()
-    {
-        return {
-           store
-        }
-    },
-    props: ['lang_fr'],
+  data() {
+    return {
+      date: new Date().toISOString().substr(0, 10) // 05/09/2019
+    }
+  },
+
+  props: ['lang_fr'],
 
 
 };
@@ -45,3 +26,6 @@ console.log(store);
 <style scoped>
 
 </style>
+
+
+

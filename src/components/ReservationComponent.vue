@@ -95,7 +95,7 @@
                             </div>
 
                             <div class="inputResa border rounded-lg flex justify-between" >
-                                <label for="NbBreakfast">&nbsp; {{ this.lang_fr ? "Petit dejeuné : " : "Breakfast: " }}</label>
+                                <label for="NbBreakfast">&nbsp; {{ this.lang_fr ? "Petit Déjeuner : " : "Breakfast: " }}</label>
                                 <div class="">
                                     <input class="FullBoard text-center"
                                            type="number"
@@ -176,7 +176,7 @@
                                 </div>
                             </div>
                             <div class="inputResa border rounded-lg flex justify-between" >
-                                <label for="checkWifi">{{ this.lang_fr ? "WIFI: " : "WIFI : " }}</label>
+                                <label for="checkWifi"> &nbsp; {{ this.lang_fr ? "WIFI: " : "WIFI : " }}</label>
                                 <div class="">
                                     <input class="WIFI text-center mr-3"
                                            type="checkbox"
@@ -229,6 +229,8 @@ import router from "../router"
 import {ref} from "vue";
 import('../assets/Style/main.css');
 import('../assets/Style/Reservation.css');
+
+
 export default {
   props: ['lang_fr'],
 
@@ -244,8 +246,8 @@ export default {
       local: import.meta.env.VITE_URL_API,
 
       //Données de la table réservation
-      dateStart: "",
-      dateEnd: "",
+      dateStart: new Date().toISOString().substring(0,16),
+      dateEnd: new Date().toISOString().substring(0,16),
       nbPerson: 1,
       nbChamber: 1,
 
@@ -294,6 +296,9 @@ export default {
       priceTotalChamber:0,
       priceTotalResa:0,
 
+      //Le calcul de la date
+      durationStay:0,
+
       //Le numero de la facture
       nbInvoice: 0,
 
@@ -310,7 +315,6 @@ export default {
 
     let urls = [this.local + '/v1/services', this.local + '/v1/chambers', this.local + '/v1/type_chambers'];
     const requests = urls.map((url) => axios.get(url));
-
     axios.all(requests)
         .then((respoonse) => {
           for (let i = 0; i < respoonse.length; i++) {
@@ -328,6 +332,8 @@ export default {
           console.log("Chambres : ", this.dataChambers);
           console.log("Chambres numero : ", this.dataChambers.data[0].fk_Chambers_TypeChamber);
           console.log("Type chambres : ", this.dataTypeChambers);
+          console.log(this.dateStart);
+          console.log(this.dateEnd);
         })
   },
 
@@ -434,7 +440,7 @@ export default {
             this.priceTotalChamber = this.priceChamber * this.nbPerson * this.nbChamber; // On calcule le prix total de la chambre selon le nombre de personne et le nombre de chambre
             this.priceTotalResa = this.priceTotalChamber + this.priceServiceDemiPension + this.priceServicePensionComplete + this.priceServicePtitDej
                 + this.priceServicePressing + this.priceServiceTele + this.priceServiceWifi; // Calcul du prix total de la réservation
-            this.StoreLinkTable(); // On appelle la fonction qui va remplir les tables de laison, une fois qu'on a toute les données.
+            this.StoreLinkTable(); // On appelle la fonction qui va remplir les tables de liaison, une fois qu'on a toute les données.
           })
           .catch((erreur) => {
             console.log(erreur);
