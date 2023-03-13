@@ -12,12 +12,12 @@
                 <h3 class="colorText text-center text-2xl sm:text-4xl"> {{ this.lang_fr ? "Réserver" : "Book" }} </h3>
                 <section class="sm:flex flex-column items-center justify-around sm:flex-row bg-white m-auto">
                         <div class="ml-4 familyText text-xl">
-                            <label for="dateStart">&nbsp; {{ this.lang_fr ? "Arrivée : " : "Arrival : " }}
+                            <label for="dateStart">{{ this.lang_fr ? "Arrivée : " : "Arrival : " }}
                             <input type="datetime-local" id="dateStart" v-model="dateStart"></label>
                         </div>
                         <div class="ml-4 familyText text-xl">
-                            <label for="dateEnd"> &nbsp; {{ this.lang_fr ? "Départ : " : "Departure : " }}
-                            <input type="datetime-local" id="dateEnd" v-model="dateEnd"></label>
+                            <label for="dateEnd"> {{ this.lang_fr ? "Départ : " : "Departure : " }}
+                            <input type="datetime-local" id="dateEnd" v-model="dateEnd" v-on:change="verifyDate"></label>
                         </div>
                 </section>
 <!-- section person chamber discount-->
@@ -248,8 +248,8 @@ export default {
       //Données de la table réservation
       myDate: new Date(),
       myTomorrowDate: new Date(),
-      //dateStart: new Date().toISOString().substring(0,16),
-      //dateEnd: new Date().toISOString().substring(0,16),
+      dateStart: "",
+      dateEnd: "",
       nbPerson: 1,
       nbChamber: 1,
 
@@ -577,6 +577,17 @@ export default {
           })
     },
 
+    //On vérifie que la date de fin n'est pas inférieure à celle de début
+    verifyDate()
+    {
+      let myVerifyDate = new Date(this.dateStart);
+      let myVerifyTomorrowDate = new Date(this.dateEnd);
+      if(myVerifyTomorrowDate.getTime() <= myVerifyDate.getTime())
+      {
+        this.dateEnd = this.myTomorrowDate.setDate(this.myDate.getDate() + 1);
+        this.dateEnd = this.myTomorrowDate.toISOString().substring(0,16);
+      }
+    }
   },
 
 }
