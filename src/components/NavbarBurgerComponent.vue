@@ -12,8 +12,10 @@
         <button v-on:click="$emit('changeFR')" class="languageButton"><img src="../assets/Pictures/icon/flag-fr.png" alt="" class="inline md:mr-6 md:h-12"></button>
         <button v-on:click="$emit('changeFR')" class="languageButton"><img src="../assets/Pictures/icon/flag-eng.png" alt="" class="inline md:mr-2 md:h-12"></button>
       </div>
-        <div>
-            <p>Bonjour {{ store.pseudoConnected}}</p>
+        <div >
+            <p v-if="store.token !== null||'' "> {{ 'Bonjour ' + store.pseudoConnected}}</p>
+
+            <p v-else></p>
         </div>
         <div>
           <button v-on:click="logout"><img src="../assets/Pictures/icon/Logout.png" alt="logout" /></button>
@@ -57,6 +59,7 @@ import axios from "axios";
 import router from "@/router";
 
 import('../assets/Style/nav.css')
+
 export  default {
 
   props: ['lang_fr'],
@@ -65,7 +68,7 @@ export  default {
     return {
       local: import.meta.env.VITE_URL_API,
       auth: '',
-      user: '',
+      user: {},
         store,
 
     }
@@ -75,13 +78,14 @@ export  default {
     logout() {
       axios.post(this.local + '/logout', {}, { headers: {'Authorization': `Bearer ${store.token}`}})
           .then((res) => {
-            localStorage.removeItem('usertoken');
+              localStorage.removeItem('usertoken');
+            store.token = "" ;
             console.log(res);
             console.log("Deconnecté");
             router.push({name:'home'});
           })
           .catch((error) => {
-            console.log(error);
+            return error;
           })
     },
   },

@@ -6,5 +6,5 @@ import { reactive } from 'vue';
         firstname:'',
         pseudoConnected:'',
         emailConnected:'',
-        token: localStorage.getItem('usertoken')
+        token: null,
     })

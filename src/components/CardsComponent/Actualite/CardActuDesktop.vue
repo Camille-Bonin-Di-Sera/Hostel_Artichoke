@@ -77,7 +77,7 @@ export default{
 
   data() {
     return {
-      discounts: [],
+      infoNews: [],
       local: import.meta.env.VITE_URL_API,
     };
   },
@@ -85,11 +85,11 @@ export default{
 
   created() {
     axios
-        .get(this.local + '/v1/news')
+        .get(this.local + '/v1/infoNews')
         .then((res) =>
         {
           try{
-            this.discounts = res.data;
+            this.infoNews = res.data;
           }
           catch (err) {
             return err;

@@ -59,13 +59,14 @@ export default {
             store.user = result.data.user;
             store.pseudoConnected = result.data.user.pseudo;
             store.emailConnected = result.data.user.email;
-
+              console.log(store.token, 'token login');
                 this.emailLog = ''
                 this.passwordLog = ''
-                router.push({name: 'home'})
+                router.push({name: 'Reservation'})
           })
+
           .catch((err) => {
-            console.log(err)
+            return err;
           })
         },
      /*to do implementer fonction qui verifie si user connecter */
