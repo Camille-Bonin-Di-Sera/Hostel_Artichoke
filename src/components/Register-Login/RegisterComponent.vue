@@ -24,13 +24,11 @@ import axios from "axios";
 import router from "../../router"
 import('../../assets/Style/Login.css');
 export default {
-
   props: ['lang_fr'],
   created() {
     /*axios
         .get('https://localhost/api/v1/Login')*/
   },
-
 
   data()
   {
@@ -52,12 +50,12 @@ export default {
               password:this.password,
           })
           .then((result) => {
-            console.log(result)
+            // console.log(result)
             router.push({name:'home'})
           })
           .catch((erreur) =>
           {
-            console.log(erreur)
+            return erreur;
           })
     },
   },

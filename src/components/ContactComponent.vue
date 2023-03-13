@@ -71,8 +71,8 @@
         <div id="messageBlock" class="flex flex-col mt-8 mx-4 w-[92%]">
           <textarea type="longtext"
                     class=" bg-white/70 placeholder:text-black"
-                    placeholder="Message"  n
-                    ame="textarea"
+                    placeholder="Message"
+                    name="textarea"
                     rows="10" cols="50" />
         </div>
 

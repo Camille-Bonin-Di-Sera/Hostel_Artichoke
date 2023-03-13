@@ -60,18 +60,16 @@ export default{
         {
           try{
             this.discounts = res.data;
-            console.log("bonjour : ", res);
+
           }
           catch (err) {
-            console.log("erreur discount : ", err);
+            return err;
           }
         })
         .catch((error) =>
         {
-          console.log("bonjour : ", error.res.data.value);
+          return error;
         });
   },
 };
-
-
 </script>

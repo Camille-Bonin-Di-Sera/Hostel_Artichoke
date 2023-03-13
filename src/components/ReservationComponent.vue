@@ -229,11 +229,14 @@ import router from "../router"
 import {ref} from "vue";
 import('../assets/Style/main.css');
 import('../assets/Style/Reservation.css');
+import {store} from "@/store";
+
 export default {
   props: ['lang_fr'],
 
   data() {
     return {
+        store,
       //Tableau pour les données
       dataReservation: [],
       dataChambers: [],
@@ -288,12 +291,13 @@ export default {
     }
   },
   created() {
-
+    console.log(store.token, 'token');
     let urls = [this.local + '/v1/services', this.local + '/v1/chambers'];
     const requests = urls.map((url) => axios.get(url));
 
-    axios.all(requests)
+          axios.all(requests)
         .then((respoonse) => {
+
           for (let i = 0; i < respoonse.length; i++) {
             if (i === 0) {
               this.dataServices = respoonse[i];
@@ -303,8 +307,8 @@ export default {
             }
 
           }
-          console.log("Services id : ", this.dataServices.data[0].id); // Bonne méthode pour récup l'id
-          console.log("Chambres : ", this.dataChambers);
+         // console.log("Services id : ", this.dataServices.data[0].id); // Bonne méthode pour récup l'id
+         // console.log("Chambres : ", this.dataChambers);
         })
   },
 
@@ -352,7 +356,7 @@ export default {
 
       })
           .then((result) => {
-            console.log(result.data.id);
+           // console.log(result.data.id);
             this.idReservation = result.data.id; // On récupère l'id de la réservation qu'on vient d'enregistrer, pour ensuite pouvoir l'enregistrer ensuite dans les tables nécessaire
           })
           .catch((erreur) => {
@@ -362,35 +366,35 @@ export default {
       //Puis on insert les données dans la table ReservationService
       if(this.idServiceDemiPension !== 0)
       {
-        axios.post(this.local + '/v1/reservationService', {
+        axios.post(this.local+ '/v1/reservationService', {
           fk_Reservations: 11,
           fk_Services: this.idServiceDemiPension,
           numberDays: this.nbDayHalfBoard,
           numberPerson: this.nbPersonHalfBoard,
         })
             .then((result) => {
-              console.log("Reserv : ", this.idReservation);
-              console.log("demi pension : ", result);
+             // console.log("Reserv : ", this.idReservation);
+             // console.log("demi pension : ", result);
             })
             .catch((error) => {
-              console.log("coucou");
-              console.log(error);
+             // console.log("coucou");
+              return error;
             })
       }
 
       if(this.idServicePensionComplete !== 0)
       {
-        axios.post(this.local + '/v1/reservationService', {
+        axios.post(this.local+ '/v1/reservationService', {
           fk_Reservations: this.idReservation,
           fk_Services: this.idServicePensionComplete,
           numberDays: this.nbDayFullboard,
           numberPerson: this.nbPersonFullBoard,
         })
             .then((result) => {
-          console.log("pension : ", result);
+          //console.log("pension : ", result);
         })
             .catch((error) => {
-              console.log(error);
+              return error;
             })
 
       }
@@ -404,10 +408,10 @@ export default {
           numberPerson: this.nbPersonBreakfast,
         })
             .then((result) => {
-              console.log("ptit dej : ", result);
+              //console.log("ptit dej : ", result);
             })
             .catch((error) => {
-              console.log(error);
+              return error;
             })
       }
 
@@ -420,10 +424,10 @@ export default {
           numberPerson: this.nbPersonlaundryService,
         })
             .then((result) => {
-              console.log("pressing : ", result);
+              //console.log("pressing : ", result);
             })
             .catch((error) => {
-              console.log(error);
+             return error;
             })
       }
 

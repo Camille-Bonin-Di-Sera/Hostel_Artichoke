@@ -198,11 +198,16 @@
 import CardPromo from "../components/CardsComponent/Promotion/CardPromo.vue";
 import CardActu from "../components/CardsComponent/Actualite/CardActu.vue";
 import Comment from "../components/CardsComponent/Commentaire/Comment.vue";
+import {store} from "@/store";
 
 import('../assets/Style/Home.css')
+
+//store.token = "";
 export default {
+
   components: {Comment, CardActu, CardPromo},
-  props: ['lang_fr'], // on récupère la propriété qui nous est passée depuis la View
+  props: ['lang_fr'],
+    // on récupère la propriété qui nous est passée depuis la View
 
 }
 </script>
