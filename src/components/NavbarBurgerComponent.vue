@@ -63,6 +63,7 @@ export  default {
 
   data() {
     return {
+      local: import.meta.env.VITE_URL_API,
       auth: '',
       user: '',
         store,
@@ -72,8 +73,10 @@ export  default {
 
   methods: {
     logout() {
-      axios.post(this.local + '/logout')
+      axios.post(this.local + '/logout', {}, { headers: {'Authorization': `Bearer ${store.token}`}})
           .then((res) => {
+            localStorage.removeItem('usertoken');
+            console.log(res);
             console.log("Deconnecté");
             router.push({name:'home'});
           })
