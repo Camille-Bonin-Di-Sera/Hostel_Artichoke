@@ -15,7 +15,6 @@
         <div>
             <p>Bonjour {{ store.pseudoConnected}}</p>
         </div>
-
         <div>
           <button v-on:click="logout"><img src="../assets/Pictures/icon/Logout.png" alt="logout" /></button>
         </div>
@@ -34,7 +33,6 @@
       <ul id="menu">
         <li><a class="hover:border-b-2 hover:border-green" href="/">{{ this.lang_fr ? "Accueil" : "Home" }} </a></li>
         <!--<li><a class="hover:border-b-2 hover:border-green" href="/discounts">{{ this.lang_fr ? "Chambre" : "Room" }}</a></li>-->
-        <li><a class="hover:border-b-2 hover:border-green" href="/discounts">{{ this.lang_fr ? "Promotion" : "Discount" }}</a></li>
         <li><a class="hover:border-b-2 hover:border-green" href="/Reservation">{{ this.lang_fr ? "Reserver" : "Book" }}</a></li>
         <li><a class="hover:border-b-2 hover:border-green" href="/Register-Login">{{ this.lang_fr ? "Me Connecter" : "Login" }}</a></li>
         <li><a class="hover:border-b-2 hover:border-green" href="/Contact">{{ this.lang_fr ? "Nous contacter" : "Contact us" }}</a></li>
@@ -57,6 +55,7 @@
 import {store} from "@/store";
 import axios from "axios";
 import router from "@/router";
+
 import('../assets/Style/nav.css')
 export  default {
 

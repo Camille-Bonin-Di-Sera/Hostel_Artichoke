@@ -15,17 +15,14 @@ export default {
       date: new Date().toISOString().substr(0, 10) // 05/09/2019
     }
   },
-
   props: ['lang_fr'],
-
-
 };
 console.log(store);
 </script>
 
 <style scoped>
-
 </style>
+
 
 
 
