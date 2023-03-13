@@ -135,7 +135,7 @@
 
 <script>
 import axios from "axios";
-import("../assets/Style/contact.css");
+import("../assets/Style/Contact.css");
 
 export default {
   props: ["lang_fr"],
