@@ -349,7 +349,7 @@ export default {
       this.myDate = new Date(this.dateStart);
       this.myTomorrowDate = new Date(this.dateEnd);
       this.dateDifference = this.myTomorrowDate.getTime() - this.myDate.getTime();
-      this.durationStay = this.dateDifference / (1000*3600*24);
+      this.durationStay = Math.round(this.dateDifference / (1000*3600*24));
       if (this.nbDayHalfBoard > 0 || this.nbPersonHalfBoard > 0)
       {
         this.countNbServices++;
