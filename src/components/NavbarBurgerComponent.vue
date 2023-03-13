@@ -15,6 +15,10 @@
         <div>
             <p>Bonjour {{ store.pseudoConnected}}</p>
         </div>
+
+        <div>
+          <button v-on:click="logout"><img src="../assets/Pictures/icon/Logout.png" alt="logout" /></button>
+        </div>
     </div>
 
     <div class="link_mobile flex flex-row-reverse md:hidden">
@@ -38,6 +42,9 @@
           <button class="flag inline mr-6" v-on:click="$emit('changeFR')"><img src="../assets/Pictures/icon/flag-fr.png" alt=""></button>
           <button class="flag inline mr-2" v-on:click="$emit('changeFR')"><img src="../assets/Pictures/icon/flag-eng.png" alt=""></button>
         </li>
+        <li>
+          <button v-on:click="logout"><img src="../assets/Pictures/icon/Logout.png" alt="logout" /></button>
+        </li>
 
       </ul>
       
@@ -48,6 +55,8 @@
 </template>
 <script>
 import {store} from "@/store";
+import axios from "axios";
+import router from "@/router";
 import('../assets/Style/nav.css')
 export  default {
 
@@ -64,7 +73,14 @@ export  default {
 
   methods: {
     logout() {
-      localStorage.removeItem('userToken')
+      axios.post(this.local + '/logout')
+          .then((res) => {
+            console.log("Deconnecté");
+            router.push({name:'home'});
+          })
+          .catch((error) => {
+            console.log(error);
+          })
     },
   },
 }

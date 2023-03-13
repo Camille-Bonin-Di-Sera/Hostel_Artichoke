@@ -425,7 +425,7 @@ export default {
         }
       }
 
-      //On cherche le type de chambre correspondant à la clé étrangère récupérée, afin d'avoir son prix
+      //On cherche le type de chambre correspondant à l'id récupérer récupérée, afin d'avoir son prix
       for(let j = 0; j < this.dataTypeChambers.data.length; j++)
       {
         if(this.idTypeChambre === this.dataTypeChambers.data[j].id)
@@ -445,7 +445,7 @@ export default {
       })
           .then((result) => {
             this.idReservation = result.data.id; // On récupère l'id de la réservation qu'on vient d'enregistrer, pour ensuite pouvoir l'enregistrer ensuite dans les tables nécessaire
-            this.priceTotalChamber = this.priceChamber * this.nbPerson * this.nbChamber; // On calcule le prix total de la chambre selon le nombre de personne et le nombre de chambre
+            this.priceTotalChamber = this.priceChamber * this.nbPerson * this.nbChamber; // On calcule le prix total de la chambre selon le nombre de personne, le nombre de chambre et le nombre de nuit
             if(this.durationStay > 0)
             {
               this.priceTotalChamber *= this.durationStay;
@@ -453,6 +453,7 @@ export default {
             this.priceTotalResa = this.priceTotalChamber + this.priceServiceDemiPension + this.priceServicePensionComplete + this.priceServicePtitDej
                 + this.priceServicePressing + this.priceServiceTele + this.priceServiceWifi; // Calcul du prix total de la réservation
             this.StoreLinkTable(); // On appelle la fonction qui va remplir les tables de liaison, une fois qu'on a toute les données.
+            router.push({name:'home'});
           })
           .catch((erreur) => {
             console.log(erreur);
