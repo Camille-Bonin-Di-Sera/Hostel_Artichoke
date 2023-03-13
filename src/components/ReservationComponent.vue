@@ -246,8 +246,10 @@ export default {
       local: import.meta.env.VITE_URL_API,
 
       //Données de la table réservation
-      dateStart: new Date().toISOString().substring(0,16),
-      dateEnd: new Date().toISOString().substring(0,16),
+      myDate: new Date(),
+      myTomorrowDate: new Date(),
+      //dateStart: new Date().toISOString().substring(0,16),
+      //dateEnd: new Date().toISOString().substring(0,16),
       nbPerson: 1,
       nbChamber: 1,
 
@@ -297,6 +299,7 @@ export default {
       priceTotalResa:0,
 
       //Le calcul de la date
+      dateDifference: 0,
       durationStay:0,
 
       //Le numero de la facture
@@ -315,6 +318,9 @@ export default {
 
     let urls = [this.local + '/v1/services', this.local + '/v1/chambers', this.local + '/v1/type_chambers'];
     const requests = urls.map((url) => axios.get(url));
+    this.dateStart = this.myDate.toISOString().substring(0,16);
+    this.dateEnd = this.myTomorrowDate.setDate(this.myDate.getDate() + 1);
+    this.dateEnd = this.myTomorrowDate.toISOString().substring(0,16);
     axios.all(requests)
         .then((respoonse) => {
           for (let i = 0; i < respoonse.length; i++) {
@@ -332,8 +338,6 @@ export default {
           console.log("Chambres : ", this.dataChambers);
           console.log("Chambres numero : ", this.dataChambers.data[0].fk_Chambers_TypeChamber);
           console.log("Type chambres : ", this.dataTypeChambers);
-          console.log(this.dateStart);
-          console.log(this.dateEnd);
         })
   },
 
@@ -342,6 +346,10 @@ export default {
       //On compte le nombre de service pris par le client
       // on récupère les id correspondants
       // On calcule le prix du service, et ce, pour chaque service
+      this.myDate = new Date(this.dateStart);
+      this.myTomorrowDate = new Date(this.dateEnd);
+      this.dateDifference = this.myTomorrowDate.getTime() - this.myDate.getTime();
+      this.durationStay = this.dateDifference / (1000*3600*24);
       if (this.nbDayHalfBoard > 0 || this.nbPersonHalfBoard > 0)
       {
         this.countNbServices++;
@@ -438,6 +446,10 @@ export default {
           .then((result) => {
             this.idReservation = result.data.id; // On récupère l'id de la réservation qu'on vient d'enregistrer, pour ensuite pouvoir l'enregistrer ensuite dans les tables nécessaire
             this.priceTotalChamber = this.priceChamber * this.nbPerson * this.nbChamber; // On calcule le prix total de la chambre selon le nombre de personne et le nombre de chambre
+            if(this.durationStay > 0)
+            {
+              this.priceTotalChamber *= this.durationStay;
+            }
             this.priceTotalResa = this.priceTotalChamber + this.priceServiceDemiPension + this.priceServicePensionComplete + this.priceServicePtitDej
                 + this.priceServicePressing + this.priceServiceTele + this.priceServiceWifi; // Calcul du prix total de la réservation
             this.StoreLinkTable(); // On appelle la fonction qui va remplir les tables de liaison, une fois qu'on a toute les données.
