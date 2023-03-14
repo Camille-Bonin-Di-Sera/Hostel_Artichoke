@@ -291,6 +291,7 @@ export default {
       idServicePressing: 0,
       idServiceTele: 0,
       idServiceWifi: 0,
+      idUser: 0,
 
       //Les informations pour la chambres
       idChambre: 0,
@@ -347,6 +348,7 @@ export default {
           console.log("Chambres : ", this.dataChambers);
           console.log("Chambres numero : ", this.dataChambers.data[0].fk_Chambers_TypeChamber);
           console.log("Type chambres : ", this.dataTypeChambers);
+          this.idUser = parseInt(store.userId);
         })
   },
   methods: {
@@ -536,7 +538,7 @@ export default {
         price: this.priceTotalResa,
         number_invoices: this.nbInvoice++,
         fk_Reservation: this.idReservation,
-        fk_User: parseInt(store.userId),
+        fk_User: this.idUser,
       })
           .then((resultat) => {
             console.log("Facture : ", resultat);
