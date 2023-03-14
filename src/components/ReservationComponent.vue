@@ -349,6 +349,7 @@ export default {
           console.log("Chambres numero : ", this.dataChambers.data[0].fk_Chambers_TypeChamber);
           console.log("Type chambres : ", this.dataTypeChambers);
           this.idUser = parseInt(store.userId);
+          console.log("id : ", this.idUser);
         })
   },
   methods: {

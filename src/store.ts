@@ -1,7 +1,7 @@
 import { reactive } from 'vue';
 
     export const store = reactive({
-        userId: localStorage.getItem('user'),
+        userId: localStorage.getItem('userId'),
         lastname:'',
         firstname:'',
         pseudoConnected:'',
