@@ -32,7 +32,7 @@
 import axios from "axios";
 import('../assets/Style/main.css');
 import('../assets/Style/discounts.css');
-
+import {store} from "@/store";
 
 
 export default{
@@ -41,38 +41,41 @@ export default{
 
   data() {
     return {
+      store,
       discounts: [],
       local: import.meta.env.VITE_URL_API,
-
 
     };
   },
 
-  mounted() {
-    console.log(import.meta.env);
-  },
-
   created() {
     axios
-        .get(this.local + '/v1/discounts')
+        .get(this.local + '/discounts',{
+          headers: {
+                //   'Authorization': `Bearer ${store.token}`
+          }
+        })
+
         .then((res) =>
         {
           try{
             this.discounts = res.data;
+           // console.log("bonjour : ", res);
+              console.log(store);
           }
           catch (err) {
-            console.log("erreur discount : ", err);
+           return err;
           }
         })
         .catch((error) =>
         {
-          console.log("erreur : ", error.res.data.value);
+          return error;
         });
     },
 };
 
 </script>
-
 <style scoped>
+
 
 </style>

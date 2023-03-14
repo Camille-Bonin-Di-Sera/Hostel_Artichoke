@@ -1,11 +1,13 @@
 <template>
-<MobileNavbarBurgerComponent v-bind:lang_fr="lang_fr" v-on:changeFR="changeFR"/> <!-- Ici, le v-bind sert à passer la variable dans les composants enfants. Le v-on est pour appeler la bonne fonction -->
-  <NavbarBurgerComponent v-bind:lang_fr="lang_fr" v-on:changeFR="changeFR" />
-  <Popup v-bind:lang_fr="lang_fr" v-if="isNotOnReserver" />
+
+    <MobileNavbarBurgerComponent v-bind:lang_fr="lang_fr" v-on:changeFR="changeFR"/> <!-- Ici, le v-bind sert à passer la variable dans les composants enfants. Le v-on est pour appeler la bonne fonction -->
+    <NavbarBurgerComponent v-bind:lang_fr="lang_fr" v-on:changeFR="changeFR" />
+    <Popup v-bind:lang_fr="lang_fr" v-if="isNotOnReserver" />
   <router-view v-bind:lang_fr="lang_fr" />
   <footerComponent v-bind:lang_fr="lang_fr" v-if="isNotLogin" />
 </template>
 <script>
+
 import NavbarBurgerComponent from "./components/NavbarBurgerComponent.vue";
 import MobileNavbarBurgerComponent from "./components/MobileNavbarBurgerComponent.vue";
 import FooterComponent from "./components/FooterComponent.vue";
@@ -37,6 +39,7 @@ export default {
    * Fonction qui permet de dire si on affiche le texte en français ou en anglais
    */
   methods: {
+
     changeFR() {
       this.lang_fr = !this.lang_fr;
     },
@@ -68,3 +71,4 @@ export default {
     url("./Fonts/AdventPro-VariableFont_wdth,wght.ttf") format("truetype");
 }
 </style>
+

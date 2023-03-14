@@ -90,7 +90,6 @@ export default {
               password:this.password,
           })
           .then((result) => {
-            console.log(result)
             router.push({name:'home'})
           })
           .catch((erreur) =>
@@ -108,7 +107,6 @@ export default {
           })
           .then((result) => {
             localStorage.setItem('usertoken', result.data.token)
-                console.log(result);
                 this.emailLog = ''
                 this.passwordLog = ''
                 router.push({name: 'home'})

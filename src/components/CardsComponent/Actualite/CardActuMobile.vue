@@ -45,7 +45,7 @@
 
     data() {
       return {
-        discounts: [],
+          infoNews: [],
         local: import.meta.env.VITE_URL_API,
       };
     },
@@ -53,20 +53,19 @@
 
     created() {
       axios
-          .get(this.local + '/v1/news')
+          .get(this.local + '/v1/infoNews')
           .then((res) =>
           {
             try{
-              this.discounts = res.data;
-              console.log("bonjour : ", res);
+              this.infoNews = res.data;
             }
             catch (err) {
-              console.log("erreur news : ", err);
+              return err;
             }
           })
           .catch((error) =>
           {
-            console.log("bonjour : ", error.res.data.value);
+            return error;
           });
     },
   };

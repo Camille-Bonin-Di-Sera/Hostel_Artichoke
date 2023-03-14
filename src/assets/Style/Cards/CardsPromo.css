@@ -90,7 +90,11 @@ p{
 
 
 .promo_img{
-    background-image: url("../../../assets/Pictures/bed-section-hero.jpg");
+    background-image: url("../../../assets/Pictures/bedroom/artichoke-lunch-lux3.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0px 0px 11px 6px rgba(0,0,0,0.27);
 }
 
 

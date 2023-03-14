@@ -1,27 +1,26 @@
 nav {
   z-index: 10;
-  margin-top: 14vh;
+  margin-top: 6vh;
   position: absolute;
   background-color: rgb(3, 0, 0);
-  height: 16%;
+  height: 10%;
   width: 100%;
 }
 @media (min-width: 1025px) {
   nav {
-    background-color: rgba(0, 0, 0, 0.38);
+    background-color: rgb(73 160 120 / 80%);
     backdrop-filter: blur(6px);
     height: 65px;
     margin-top: 0vh;
     position: sticky;
     top: 0;
-    z-index: 1020;
+    z-index: 9;
   }
 }
 .link {
   height: 100%;
   width: 80%;
   margin-left: 10vw;
-  display: flex;
   align-items: center;
   color: white;
   justify-content: space-around;
@@ -61,23 +60,23 @@ nav {
 }
 
 .arti {
-  width: 22%;
-  height: 86%;
+  width: 4.5rem;
+  height: 4rem;
 }
 
 .slogan {
   width: 54%;
   font-size: 1.4rem;
-  margin-top: 4vh;
   margin-left: 20vw;
+  text-align: center;
 }
 #menuToggle {
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 22vh;
+  top: 10vh;
   left: 25px;
-  z-index: 9;
+  z-index: 8;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
@@ -89,10 +88,11 @@ nav {
     position: relative;
     top: -40px;
     left: 25px;
-    z-index: 9;
+    z-index: 8;
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
+    width: 15%;
   }
 }
 
@@ -112,13 +112,20 @@ nav {
   height: 2px;
   margin-bottom: 5px;
   position: relative;
-  background-color: #01d001;
+  background-color: #4dff00;
   border-radius: 3px;
   z-index: 1;
   transform-origin: 5px 0px;
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
     background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
+
+@media (min-width: 1025px) {
+  #menuToggle span {
+    background-color: #000000;
+  }
+}
+/***************************************/
 
 #menuToggle span:first-child {
   transform-origin: 0% 0%;
@@ -230,4 +237,8 @@ nav {
   max-width: 5%;
   height: auto;
   filter: drop-shadow(0 0 0.75rem #04fc04);
+}
+
+.languageButton {
+  z-index: 10;
 }
