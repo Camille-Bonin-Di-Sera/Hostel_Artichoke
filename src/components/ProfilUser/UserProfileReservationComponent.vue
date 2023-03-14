@@ -69,22 +69,22 @@ export default {
             this.reservations = respoonse[i];
           }
         }
-        console.log("Facture : ", this.invoices); // Bonne méthode pour récup l'id
-        console.log("reservations : ", this.reservations);
           try {
-            for(let i = 0; i < this.invoices.length; i++)
+            for(let i = 0; i < this.invoices.data.length; i++)
             {
-              if(this.invoices[i].fk_User === store.user.id)
+              if(this.invoices.data[i].fk_User === store.user.id)
               {
-                this.userInvoices.push(this.invoices[i].fk_Reservation);
+                console.log("test");
+                this.userInvoices.push(this.invoices.data[i].fk_Reservation);
+                console.log("boucle : ", this.userInvoices);
               }
             }
             console.log("User facture : ", this.userInvoices);
             for(let j = 0; j < this.userInvoices.length; j++)
             {
-              for(let k = 0; k < this.reservations.length; k++)
+              for(let k = 0; k < this.reservations.data.length; k++)
               {
-                if(this.userInvoices[j] === this.reservations[k].id)
+                if(this.userInvoices[j] === this.reservations.data[k].id)
                 {
                   this.userReservations.push(this.reservations[k]);
                 }

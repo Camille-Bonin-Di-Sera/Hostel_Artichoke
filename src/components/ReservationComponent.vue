@@ -8,7 +8,7 @@
 
       </div>
       <!--start formulaire-->
-      <form class="contentReservation" v-on:submit.prevent="store">
+      <form class="contentReservation" v-on:submit.prevent="storeResa">
         <h3 class="colorText text-center text-2xl sm:text-4xl"> {{ this.lang_fr ? "Réserver" : "Book" }} </h3>
         <section class="sm:flex flex-column items-center justify-around sm:flex-row bg-white m-auto">
           <div class="ml-4 familyText text-xl">
@@ -222,13 +222,13 @@
         <div class="fontButton flex justify-around m-4">
           <div>
             <button type="submit"
-                    class="text-white pr-2 pl-2 text-xl backgroundButton block m-auto rounded sm:text-3xl inline">
+                    class="text-white pr-2 pl-2 text-xl backgroundButtons block m-auto rounded sm:text-3xl inline">
               {{ this.lang_fr ? "Réserver" : "Book" }}
             </button>
           </div>
           <div>
             <button type="reset"
-                    class="text-white pr-2 pl-2 text-xl backgroundButton block m-auto  rounded sm:text-3xl inline">
+                    class="text-white pr-2 pl-2 text-xl backgroundButtons block m-auto  rounded sm:text-3xl inline">
               {{ this.lang_fr ? "Annuler" : "reset" }}
             </button>
           </div>
@@ -350,7 +350,7 @@ export default {
         })
   },
   methods: {
-    store() {
+    storeResa() {
       //On compte le nombre de service pris par le client
       // on récupère les id correspondants
       // On calcule le prix du service, et ce, pour chaque service
@@ -536,7 +536,7 @@ export default {
         price: this.priceTotalResa,
         number_invoices: this.nbInvoice++,
         fk_Reservation: this.idReservation,
-        fk_User: store.user.id,
+        fk_User: 11,
       })
           .then((resultat) => {
             console.log("Facture : ", resultat);
