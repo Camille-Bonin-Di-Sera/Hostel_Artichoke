@@ -4,8 +4,8 @@
       <div class="hautPage md:m-auto">
         <img src="" alt="Avatar" class="inline">
         <div class="justify-end flex flex-col ml-24 mt-12 items-start">
-          <p class="text-black text-2xl">Prénom</p>
-          <p class="text-black text-2xl underline">utilisateur@gmail.com</p>
+          <p class="text-black text-2xl">{{ store.firstname }} </p>
+          <p class="text-black text-2xl underline">{{ store.emailConnected }}</p>
         </div>
         <!-- A remplacer par les infos réelles de l'utilisateur depuis la base de données -->
       </div>
@@ -27,6 +27,7 @@
 import axios from "axios";
 import router from "../../router"
 import NavbarUserProfilComponent from "@/components/NavbarUserProfilComponent.vue";
+import {store} from "@/store";
 import('../../assets/Style/main.css');
 import('../../assets/Style/userProfile.css');
 export default {
@@ -41,6 +42,7 @@ export default {
     return {
       invoices: [],
       local: import.meta.env.VITE_URL_API,
+      store,
     }
   },
 

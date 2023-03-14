@@ -13,7 +13,9 @@
         <button v-on:click="$emit('changeFR')" class="languageButton"><img src="../assets/Pictures/icon/flag-eng.png" alt="" class="inline md:mr-2 md:h-12"></button>
       </div>
         <div >
-            <p v-if="store.token !== null||''||undefined "> {{ 'Bonjour ' + store.pseudoConnected}}</p>
+            <p v-if="store.token !== null||''||undefined "> {{ 'Bonjour ' + store.pseudoConnected}}
+              <a href="/userProfile" ><img src="../assets/Pictures/icon/Profil.png" alt="Profil" /></a>
+            </p>
 
             <p v-else></p>
         </div>

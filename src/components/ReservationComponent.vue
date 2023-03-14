@@ -242,6 +242,7 @@
 <script>
 import axios from "axios";
 import router from "../router"
+import {store} from "@/store"
 import {ref} from "vue";
 
 import('../assets/Style/main.css');
@@ -255,6 +256,7 @@ export default {
       dataChambers: [],
       dataServices: [],
       dataTypeChambers: [],
+
       //URL pour les routes à atteindre
       local: import.meta.env.VITE_URL_API,
       //Données de la table réservation
@@ -269,6 +271,7 @@ export default {
       //A récupérer de la table discount
       codePromo: "",
       selectedChamberType: "Standard",
+
       //Info pour les services
       nbDayFullboard: 0,
       nbPersonFullBoard: 0,
@@ -280,6 +283,7 @@ export default {
       nbDayLaundryService: 0,
       nbPersonlaundryService: 0,
       checkWifi: false,
+
       //Les id pour les différents services
       idServicePensionComplete: 0,
       idServiceDemiPension: 0,
@@ -287,10 +291,12 @@ export default {
       idServicePressing: 0,
       idServiceTele: 0,
       idServiceWifi: 0,
+
       //Les informations pour la chambres
       idChambre: 0,
       idTypeChambre: 0,
       numeroChambre: 102,
+
       //Les variables pour les prix
       priceServicePensionComplete: 0,
       priceServiceDemiPension: 0,
@@ -301,9 +307,11 @@ export default {
       priceChamber: 0,
       priceTotalChamber: 0,
       priceTotalResa: 0,
+
       //Le calcul de la date
       dateDifference: 0,
       durationStay: 0,
+
       //Le numero de la facture
       nbInvoice: 0,
       checkPaypal: false,
@@ -312,6 +320,8 @@ export default {
       price: 120,
       numberPerson: 2,
       numberWeek: 1,
+
+      store,
     }
   },
   created() {
@@ -526,7 +536,7 @@ export default {
         price: this.priceTotalResa,
         number_invoices: this.nbInvoice++,
         fk_Reservation: this.idReservation,
-        fk_User: 2,
+        fk_User: store.user.id,
       })
           .then((resultat) => {
             console.log("Facture : ", resultat);

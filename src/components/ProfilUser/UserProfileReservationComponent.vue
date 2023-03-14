@@ -4,8 +4,8 @@
       <div class="hautPage md:m-auto">
         <img src="" alt="Avatar" class="inline">
         <div class="justify-end flex flex-col ml-24 mt-12 items-start">
-          <p class="text-black text-2xl">Prénom </p>
-          <p class="text-black text-2xl underline">utilisateur@gmail.com</p>
+          <p class="text-black text-2xl">{{ store.firstname }} </p>
+          <p class="text-black text-2xl underline">{{ store.emailConnected }}</p>
         </div>
       </div>
       <!-- A remplacer par les infos réelles de l'utilisateur depuis la base de données -->
@@ -28,7 +28,7 @@
 import axios from "axios";
 import router from "../../router"
 import NavbarUserProfilComponent from "@/components/NavbarUserProfilComponent.vue";
-
+import {store} from "@/store";
 import('../../assets/Style/main.css');
 import('../../assets/Style/userProfile.css');
 export default {
@@ -41,28 +41,62 @@ export default {
   data() {
     return {
       reservations: [],
+      userReservations: [],
+      invoices: [],
+      userInvoices: [],
       //services: [],
       local: import.meta.env.VITE_URL_API,
       longueur: 0,
       modulo: 0,
       division: 0,
+
+      store,
     }
   },
 
-  created() {
-    axios
-        .get(this.local + '/v1/reservation')
-        .then((res) => {
-          try {
-            this.reservations = res.data;
-            console.log("données : ", res.data);
 
+  created() {
+
+    let urls = [this.local + '/v1/invoice', this.local + '/v1/reservation'];
+    const requests = urls.map((url) => axios.get(url));
+    axios.all(requests)
+      .then((respoonse) => {
+        for (let i = 0; i < respoonse.length; i++) {
+          if (i === 0) {
+            this.invoices = respoonse[i];
+          }
+          if (i === 1) {
+            this.reservations = respoonse[i];
+          }
+        }
+        console.log("Facture : ", this.invoices); // Bonne méthode pour récup l'id
+        console.log("reservations : ", this.reservations);
+          try {
+            for(let i = 0; i < this.invoices.length; i++)
+            {
+              if(this.invoices[i].fk_User === store.user.id)
+              {
+                this.userInvoices.push(this.invoices[i].fk_Reservation);
+              }
+            }
+            console.log("User facture : ", this.userInvoices);
+            for(let j = 0; j < this.userInvoices.length; j++)
+            {
+              for(let k = 0; k < this.reservations.length; k++)
+              {
+                if(this.userInvoices[j] === this.reservations[k].id)
+                {
+                  this.userReservations.push(this.reservations[k]);
+                }
+              }
+            }
+            console.log("Reserv du User : ", this.userReservations);
           } catch (err) {
             console.log("erreur reservation : ", err);
           }
         })
         .catch((error) => {
-          console.log("erreur : ", error.res.data.value);
+          console.log("erreur : ", error);
         });
   },
 };

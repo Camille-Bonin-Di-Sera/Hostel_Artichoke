@@ -59,7 +59,6 @@ export default {
             store.user = result.data.user;
             store.pseudoConnected = result.data.user.pseudo;
             store.emailConnected = result.data.user.email;
-              console.log(store.token, 'token login');
                 this.emailLog = ''
                 this.passwordLog = ''
                 router.push({name: 'Reservation'})
