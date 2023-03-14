@@ -102,7 +102,7 @@ export default {
           })
           .catch((erreur) =>
           {
-            console.log(erreur)
+            return erreur;
           })
     },
   },
