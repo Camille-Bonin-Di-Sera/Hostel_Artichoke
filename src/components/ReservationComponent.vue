@@ -536,7 +536,7 @@ export default {
         price: this.priceTotalResa,
         number_invoices: this.nbInvoice++,
         fk_Reservation: this.idReservation,
-        fk_User: store.userId,
+        fk_User: parseInt(store.userId),
       })
           .then((resultat) => {
             console.log("Facture : ", resultat);
