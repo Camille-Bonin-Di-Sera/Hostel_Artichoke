@@ -13,7 +13,7 @@
       <div class="md:w-4/5 md:m-auto">
         <h3 class="colorText text-center  text-3xl sm:block sm:m-auto sm:w-1/3 sm:text-5xl">{{ this.lang_fr ? "Mes réservations" : "My booking" }}</h3>
         <div class="flex flex-wrap mt-8">
-          <div v-for="reservation of reservations" class="backgroundInputResa ml-8 mt-8 flex-initial p-1">
+          <div v-for="reservation of userReservations" class="backgroundInputResa ml-8 mt-8 flex-initial p-1">
               <p class="text-black">Date de début : {{ reservation.dateStart }}</p>
               <p class="text-black">Date de fin : {{ reservation.dateEnd }}</p>
               <p class="text-black">Nombre de personne : {{ reservation.nb_Person }}</p>
@@ -72,11 +72,9 @@ export default {
           try {
             for(let i = 0; i < this.invoices.data.length; i++)
             {
-              if(this.invoices.data[i].fk_User === store.user.id)
+              if(this.invoices.data[i].fk_User == store.userId)
               {
-                console.log("test");
                 this.userInvoices.push(this.invoices.data[i].fk_Reservation);
-                console.log("boucle : ", this.userInvoices);
               }
             }
             console.log("User facture : ", this.userInvoices);
@@ -86,11 +84,10 @@ export default {
               {
                 if(this.userInvoices[j] === this.reservations.data[k].id)
                 {
-                  this.userReservations.push(this.reservations[k]);
+                  this.userReservations.push(this.reservations.data[k]);
                 }
               }
             }
-            console.log("Reserv du User : ", this.userReservations);
           } catch (err) {
             console.log("erreur reservation : ", err);
           }
