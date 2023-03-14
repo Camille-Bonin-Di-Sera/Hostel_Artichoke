@@ -82,6 +82,8 @@ export  default {
       axios.post(this.local + '/logout', {}, { headers: {'Authorization': `Bearer ${store.token}`}})
           .then((res) => {
             localStorage.removeItem('usertoken');
+            localStorage.removeItem('userId');
+            store.userId = null;
             store.token = null ;
             console.log(res);
             console.log("Deconnecté");
