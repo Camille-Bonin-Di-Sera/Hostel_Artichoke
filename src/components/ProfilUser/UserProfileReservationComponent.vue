@@ -72,7 +72,7 @@ export default {
           try {
             for(let i = 0; i < this.invoices.data.length; i++)
             {
-              if(this.invoices.data[i].fk_User == store.userId)
+              if(parseInt(this.invoices.data[i].fk_User) === parseInt(store.userId))
               {
                 this.userInvoices.push(this.invoices.data[i].fk_Reservation);
               }
