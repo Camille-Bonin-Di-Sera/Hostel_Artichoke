@@ -1,62 +1,62 @@
 <template>
-  <div className="containerReservation">
-    <div className="contentReservation colorText">
-      <h3 className="text-center text-4xl sm:text-5xl"> {{ this.lang_fr ? "Nos chambres" : "Our chambers" }}</h3>
+  <div class="containerReservation">
+    <div class="contentReservation colorText">
+      <h3 class="text-center text-4xl sm:text-5xl"> {{ this.lang_fr ? "Nos chambres" : "Our chambers" }}</h3>
       <br/>
 
-      <div className="imageResa">
+      <div class="imageResa">
 
       </div>
       <!--start formulaire-->
-      <form className="contentReservation" v-on:submit.prevent="store">
-        <h3 className="colorText text-center text-2xl sm:text-4xl"> {{ this.lang_fr ? "Réserver" : "Book" }} </h3>
-        <section className="sm:flex flex-column items-center justify-around sm:flex-row bg-white m-auto">
-          <div className="ml-4 familyText text-xl">
-            <label htmlFor="dateStart">{{ this.lang_fr ? "Arrivée : " : "Arrival : " }}
+      <form class="contentReservation" v-on:submit.prevent="store">
+        <h3 class="colorText text-center text-2xl sm:text-4xl"> {{ this.lang_fr ? "Réserver" : "Book" }} </h3>
+        <section class="sm:flex flex-column items-center justify-around sm:flex-row bg-white m-auto">
+          <div class="ml-4 familyText text-xl">
+            <label for="dateStart">{{ this.lang_fr ? "Arrivée : " : "Arrival : " }}
               <input type="datetime-local" id="dateStart" v-model="dateStart"></label>
           </div>
-          <div className="ml-4 familyText text-xl">
-            <label htmlFor="dateEnd"> {{ this.lang_fr ? "Départ : " : "Departure : " }}
+          <div class="ml-4 familyText text-xl">
+            <label for="dateEnd"> {{ this.lang_fr ? "Départ : " : "Departure : " }}
               <input type="datetime-local" id="dateEnd" v-model="dateEnd" v-on:change="verifyDate"></label>
           </div>
         </section>
         <!-- section person chamber discount-->
-        <section className="sm:flex flex-column sm:flex-row bg-white m-auto">
-          <div className=" sm:w-1/2 space-y-4">
-            <div className="inputResa border rounded-lg flex justify-between">
-              <label htmlFor="PersonResaValue">&nbsp; {{
+        <section class="sm:flex flex-column sm:flex-row bg-white m-auto">
+          <div class=" sm:w-1/2 space-y-4">
+            <div class="inputResa border rounded-lg flex justify-between">
+              <label for="PersonResaValue">&nbsp; {{
                   this.lang_fr ? "Nombre de personnes : " : "Number of people : "
                 }}</label>
-              <input className="NbPerson text-center"
+              <input class="NbPerson text-center"
                      type="number"
                      id="PersonResaValue"
                      v-model="nbPerson"
                      min="1"
                      max="100"
               >
-              <img src="../assets/Pictures/personne.png" alt="personne" className="ml-1.5  inline">
+              <img src="../assets/Pictures/personne.png" alt="personne" class="ml-1.5  inline">
             </div>
 
-            <div className="inputResa border rounded-lg flex justify-between">
+            <div class="inputResa border rounded-lg flex justify-between">
               <input type="text" placeholder="Code promotionnel" v-model="codePromo">
-              <img src="../assets/Pictures/promo_icon.png" alt="logo Promo" className="logoDiscount inline ml-8">
+              <img src="../assets/Pictures/promo_icon.png" alt="logo Promo" class="logoDiscount inline ml-8">
             </div>
           </div>
-          <div className="sm:w-1/2 space-y-4">
-            <div className="inputResa border rounded-lg flex justify-between">
-              <label htmlFor="ChamberResaValue" className=" NbChamber ">&nbsp;
+          <div class="sm:w-1/2 space-y-4">
+            <div class="inputResa border rounded-lg flex justify-between">
+              <label for="ChamberResaValue" class=" NbChamber ">&nbsp;
                 {{ this.lang_fr ? "Nombre de chambres : " : "Number of chambers : " }}</label>
-              <input className="NbChamber text-center "
+              <input class="NbChamber text-center "
                      type="number"
                      id="ChamberResaValue"
                      v-model="nbChamber"
                      min="1"
                      max="20"
               >
-              <img src="../assets/Pictures/Lit.png" alt="chambre" className="logoBed inline">
+              <img src="../assets/Pictures/Lit.png" alt="chambre" class="logoBed inline">
             </div>
-            <div className="inputResa border rounded-lg flex justify-between">
-              <label htmlFor="selectedChamber">&nbsp; {{
+            <div class="inputResa border rounded-lg flex justify-between">
+              <label for="selectedChamber">&nbsp; {{
                   this.lang_fr ? "Type de chambres : " : " Chamber Type : "
                 }}</label>
               <select id="selectedChamber" v-model="selectedChamberType">
@@ -69,125 +69,125 @@
         </section>
         <!--end section person chamber discount -->
 
-        <div className="sm:flex flex-column sm:flex-row bg-white justify-center items-center h-[10vh] p-[2vh]">
-          <h3 className="colorText text-center text-2xl sm:text-3xl">
+        <div class="sm:flex flex-column sm:flex-row bg-white justify-center items-center h-[10vh] p-[2vh]">
+          <h3 class="colorText text-center text-2xl sm:text-3xl">
             {{ this.lang_fr ? "Options supplémentaires" : "Additional options" }} </h3>
         </div>
 
         <!-- section choise Options -->
-        <section className="md:flex-wrap columns-1 bg-white m-auto justify-center ">
-          <div className="sm:flex flex-column sm:flex-row bg-white m-auto justify-center ">
-            <div className=" sm:w-1/2 space-y-4">
-              <div className="inputResa border rounded-lg flex justify-between">
-                <label htmlFor="NbDayFullboard">&nbsp; {{
+        <section class="md:flex-wrap columns-1 bg-white m-auto justify-center ">
+          <div class="sm:flex flex-column sm:flex-row bg-white m-auto justify-center ">
+            <div class=" sm:w-1/2 space-y-4">
+              <div class="inputResa border rounded-lg flex justify-between">
+                <label for="NbDayFullboard">&nbsp; {{
                     this.lang_fr ? "Pension complète : " : "Full board : "
                   }}</label>
-                <div className="">
-                  <input className="FullBoard text-center"
+                <div class="">
+                  <input class="FullBoard text-center"
                          type="number"
                          id="NbDayFullboard"
                          v-model="nbDayFullboard"
                          min="0"
                          max="100"
                   >
-                  <img src="../assets/Pictures/calendrier.png" alt="calendrier" className="logoOptions inline">
-                  <input className="FullBoard text-center"
+                  <img src="../assets/Pictures/calendrier.png" alt="calendrier" class="logoOptions inline">
+                  <input class="FullBoard text-center"
                          type="number"
                          id="NbPersonFullBoard"
                          v-model="nbPersonFullBoard"
                          min="0"
                          max="100"
                   >
-                  <img src="../assets/Pictures/personne.png" alt="Personne" className="logoOptions inline">
+                  <img src="../assets/Pictures/personne.png" alt="Personne" class="logoOptions inline">
                 </div>
               </div>
 
-              <div className="inputResa border rounded-lg flex justify-between">
-                <label htmlFor="NbBreakfast">&nbsp; {{ this.lang_fr ? "Petit Déjeuner : " : "Breakfast: " }}</label>
-                <div className="">
-                  <input className="FullBoard text-center"
+              <div class="inputResa border rounded-lg flex justify-between">
+                <label for="NbBreakfast">&nbsp; {{ this.lang_fr ? "Petit Déjeuner : " : "Breakfast: " }}</label>
+                <div class="">
+                  <input class="FullBoard text-center"
                          type="number"
                          id="NbBreakfast"
                          v-model="nbBreakfast"
                          min="0"
                          max="100"
                   >
-                  <img src="../assets/Pictures/calendrier.png" alt="calendrier" className="logoOptions inline">
-                  <input className="FullBoard text-center"
+                  <img src="../assets/Pictures/calendrier.png" alt="calendrier" class="logoOptions inline">
+                  <input class="FullBoard text-center"
                          type="number"
                          id="NbPersonBreakfast"
                          v-model="nbPersonBreakfast"
                          min="0"
                          max="100"
                   >
-                  <img src="../assets/Pictures/personne.png" alt="Personne" className="logoOptions inline">
+                  <img src="../assets/Pictures/personne.png" alt="Personne" class="logoOptions inline">
                 </div>
               </div>
 
-              <div className="inputResa border rounded-lg flex justify-between">
-                <label htmlFor="NbWeekTv">&nbsp; {{ this.lang_fr ? "Télévision: " : "Television : " }}</label>
-                <div className="">
-                  <input className="Breakfast text-center"
+              <div class="inputResa border rounded-lg flex justify-between">
+                <label for="NbWeekTv">&nbsp; {{ this.lang_fr ? "Télévision: " : "Television : " }}</label>
+                <div class="">
+                  <input class="Breakfast text-center"
                          type="number"
                          id="NbWeekTv"
                          v-model="nbWeekTv"
                          min="0"
                          max="20"
                   >
-                  <img src="../assets/Pictures/calendrier.png" alt="calendrier" className="logoOptions inline  mr-1">
+                  <img src="../assets/Pictures/calendrier.png" alt="calendrier" class="logoOptions inline  mr-1">
                 </div>
               </div>
             </div>
 
-            <div className=" sm:w-1/2 space-y-4">
-              <div className="inputResa border rounded-lg flex justify-between">
-                <label htmlFor="NbDayHalfBoard">&nbsp; {{ this.lang_fr ? "Demi pension : " : "Half board : " }}</label>
+            <div class=" sm:w-1/2 space-y-4">
+              <div class="inputResa border rounded-lg flex justify-between">
+                <label for="NbDayHalfBoard">&nbsp; {{ this.lang_fr ? "Demi pension : " : "Half board : " }}</label>
                 <div>
-                  <input className="HalfBoard text-center"
+                  <input class="HalfBoard text-center"
                          type="number"
                          id="NbDayHalfBoard"
                          v-model="nbDayHalfBoard"
                          min="0"
                          max="100"
                   >
-                  <img src="../assets/Pictures/calendrier.png" alt="calendrier" className="logoOptions inline">
-                  <input className="HaldBoard text-center"
+                  <img src="../assets/Pictures/calendrier.png" alt="calendrier" class="logoOptions inline">
+                  <input class="HaldBoard text-center"
                          type="number"
                          id="NbPersonHalfBoard"
                          v-model="nbPersonHalfBoard"
                          min="0"
                          max="100"
                   >
-                  <img src="../assets/Pictures/personne.png" alt="Personne" className="logoOptions  inline">
+                  <img src="../assets/Pictures/personne.png" alt="Personne" class="logoOptions  inline">
                 </div>
               </div>
 
-              <div className="inputResa border rounded-lg flex justify-between">
-                <label htmlFor="NbDayLaundryService">&nbsp;
+              <div class="inputResa border rounded-lg flex justify-between">
+                <label for="NbDayLaundryService">&nbsp;
                   {{ this.lang_fr ? "Service pressing: " : "Laundry service : " }}</label>
                 <div>
-                  <input className="laundryService text-center"
+                  <input class="laundryService text-center"
                          type="number"
                          id="NbDayLaundryService"
                          v-model="nbDayLaundryService"
                          min="0"
                          max="100"
                   >
-                  <img src="../assets/Pictures/calendrier.png" alt="calendrier" className="logoOptions inline">
-                  <input className="laundryService text-center"
+                  <img src="../assets/Pictures/calendrier.png" alt="calendrier" class="logoOptions inline">
+                  <input class="laundryService text-center"
                          type="number"
                          id="NbPersonLaundryService"
                          v-model="nbPersonlaundryService"
                          min="0"
                          max="100"
                   >
-                  <img src="../assets/Pictures/personne.png" alt="Personne" className="logoOptions  inline">
+                  <img src="../assets/Pictures/personne.png" alt="Personne" class="logoOptions  inline">
                 </div>
               </div>
-              <div className="inputResa border rounded-lg flex justify-between">
-                <label htmlFor="checkWifi"> &nbsp; {{ this.lang_fr ? "WIFI: " : "WIFI : " }}</label>
-                <div className="">
-                  <input className="WIFI text-center mr-3"
+              <div class="inputResa border rounded-lg flex justify-between">
+                <label For="checkWifi"> &nbsp; {{ this.lang_fr ? "WIFI: " : "WIFI : " }}</label>
+                <div class="">
+                  <input class="WIFI text-center mr-3"
                          type="checkbox"
                          id="checkWifi"
                          v-model="checkWifi"
@@ -200,35 +200,35 @@
         <!-- end section choise Options -->
 
         <!--start payment -->
-        <div className="sm:flex flex-column sm:flex-row bg-white justify-center items-center h-[10vh] p-[2vh]">
-          <h3 className="colorText text-center text-2xl sm:text-3xl">
+        <div class="sm:flex flex-column sm:flex-row bg-white justify-center items-center h-[10vh] p-[2vh]">
+          <h3 class="colorText text-center text-2xl sm:text-3xl">
             {{ this.lang_fr ? "Choix du paiement" : "Choise of Payment" }} </h3>
         </div>
-        <section className="payment md:flex-wrap columns-1 bg-white flex justify-around h-[10vh]  ">
-          <div className="">
-            <label htmlFor="paypal">&nbsp; {{ this.lang_fr ? "Payer avec : " : "Pay with " }}</label>
+        <section class="payment md:flex-wrap columns-1 bg-white flex justify-around h-[10vh]  ">
+          <div class="">
+            <label for="paypal">&nbsp; {{ this.lang_fr ? "Payer avec : " : "Pay with " }}</label>
             <input type="checkbox" id="paypal" v-model="checkPaypal"/>
             <img src="../assets/Pictures/paypal.png" alt="logo paypal "
-                 className="inline w-20 border border-black ml-20">
+                 class="inline w-20 border border-black ml-20">
           </div>
           <div>
-            <label htmlFor="CB">{{ this.lang_fr ? "Payer avec : " : "Pay with " }}</label>
+            <label for="CB">{{ this.lang_fr ? "Payer avec : " : "Pay with " }}</label>
             <input type="checkbox" id="CB" v-model="checkCB"/>
             <img src="../assets/Pictures/credit-car.png" alt=" logo credit card"
-                 className="inline w-20 border border-black ml-20">
+                 class="inline w-20 border border-black ml-20">
           </div>
         </section>
         <!--end payment -->
-        <div className="fontButton flex justify-around m-4">
+        <div class="fontButton flex justify-around m-4">
           <div>
             <button type="submit"
-                    className="text-white pr-2 pl-2 text-xl backgroundButton block m-auto rounded sm:text-3xl inline">
+                    class="text-white pr-2 pl-2 text-xl backgroundButtons block m-auto rounded sm:text-3xl inline">
               {{ this.lang_fr ? "Réserver" : "Book" }}
             </button>
           </div>
           <div>
             <button type="reset"
-                    className="text-white pr-2 pl-2 text-xl backgroundButton block m-auto  rounded sm:text-3xl inline">
+                    class="text-white pr-2 pl-2 text-xl backgroundButtons block m-auto  rounded sm:text-3xl inline">
               {{ this.lang_fr ? "Annuler" : "reset" }}
             </button>
           </div>
