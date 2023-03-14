@@ -4,18 +4,13 @@
       <div class="hautPage md:m-auto">
             <img src="" alt="Avatar" class="inline">
           <div class="justify-end flex flex-col ml-24 mt-12 items-start">
-            <p class="text-black text-2xl">Prénom </p>
-            <p class="text-black text-2xl underline">utilisateur@gmail.com</p>
+            <p class="text-black text-2xl">{{ store.firstname }} </p>
+            <p class="text-black text-2xl underline">{{ store.emailConnected }}</p>
           </div>
         <!-- A remplacer par les infos réelles de l'utilisateur depuis la base de données -->
       </div>
+      <NavbarUserProfilComponent v-bind:lang_fr="lang_fr" />
       <div class="md:w-4/5 md:m-auto">
-        <div class="md:flex md:flex-row space-x-16">
-          <h3 class="colorText text-center text-2xl sm:text-3xl"> {{ this.lang_fr ? "Mes informations" : "My informations" }} </h3>
-          <h3 class="colorText text-center text-2xl sm:text-3xl menu"> {{ this.lang_fr ? "Mes Réservations" : "My informations" }} </h3>
-          <h3 class="colorText text-center text-2xl sm:text-3xl menu"> {{ this.lang_fr ? "Mes Factures" : "My informations" }} </h3>
-          <h3 class="colorText text-center text-2xl sm:text-3xl menu"> {{ this.lang_fr ? "Mes Bonus Fidélité" : "My informations" }} </h3>
-        </div>
         <form class="w-full m-auto justify-center items-center flex flex-col md:items-start space-y-4 md:space-y-8 md:mt-16" v-on:submit.prevent="updating">
           <div class="userDesk">
             <label class="text-gray text-xs w-3/5 text-left pt-8"> {{ this.lang_fr ? "Votre Pseudo" : "Your pseudo" }}</label>
@@ -66,9 +61,12 @@
 <script>
 import axios from "axios";
 import router from "../../router"
+import NavbarUserProfilComponent from "@/components/NavbarUserProfilComponent.vue";
+import {store} from "@/store";
 import('../../assets/Style/main.css');
 import('../../assets/Style/userProfile.css');
 export default {
+  components: {NavbarUserProfilComponent},
 
   props: ['lang_fr'],
 
@@ -82,12 +80,15 @@ export default {
       Pseudo: '',
       email: '',
       password: '',
+
+      local: import.meta.env.VITE_URL_API,
+      store,
     }
   },
 
   methods: {
     updating() {
-      axios.put('/v1/users',
+      axios.put(this.local + '/v1/users',
           {
             firstname:this.firstName,
             lastname:this.lastName,

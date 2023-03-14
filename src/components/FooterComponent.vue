@@ -7,17 +7,17 @@
             L'artichaut
           </h1>
           <img
-            src="../assets/Pictures/Etoile.png"
+            src="../assets/Pictures/icon/Etoile.png"
             alt="Etoile"
             class="ml-4 md:ml-8 inline"
           />
           <img
-            src="../assets/Pictures/Etoile.png"
+            src="../assets/Pictures/icon/Etoile.png"
             alt="Etoile"
             class="ml-1 md:ml-8 inline"
           />
           <img
-            src="../assets/Pictures/Etoile.png"
+            src="../assets/Pictures/icon/Etoile.png"
             alt="Etoile"
             class="ml-1 md:ml-8 inline"
           />
@@ -26,7 +26,7 @@
         </article>
         <article class="w-1/2 md:w-1/2">
           <img
-            src="../assets/Pictures/articho-logo.png"
+            src="../assets/Pictures/icon/articho-logo.png"
             alt="Logo du site"
             class="md:w-1/3 ml-12 md:ml-20 w-1/2"
           />
@@ -103,13 +103,13 @@
           </h3>
           <a href="#"
             ><img
-              src="../assets/Pictures/facebook.png"
+              src="../assets/Pictures/icon/facebook.png"
               alt="Facebook"
               class="w-1/6 ml-20 md:ml-40 inline"
           /></a>
           <a href="#"
             ><img
-              src="../assets/Pictures/instagram.png"
+              src="../assets/Pictures/icon/instagram.png"
               alt="Instagram"
               class="w-1/6 ml-12 inline"
           /></a>

@@ -55,11 +55,10 @@ export default {
           })
           .then((result) => {
             localStorage.setItem('usertoken', result.data.acces_token);
+            localStorage.setItem('userId', result.data.user.id);
             store.token = result.data.acces_token;
-            store.user = result.data.user;
             store.pseudoConnected = result.data.user.pseudo;
             store.emailConnected = result.data.user.email;
-              console.log(store.token, 'token login');
                 this.emailLog = ''
                 this.passwordLog = ''
                 router.push({name: 'Reservation'})

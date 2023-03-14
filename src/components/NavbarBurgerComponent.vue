@@ -13,7 +13,9 @@
         <button v-on:click="$emit('changeFR')" class="languageButton"><img src="../assets/Pictures/icon/flag-eng.png" alt="" class="inline md:mr-2 md:h-12"></button>
       </div>
         <div >
-            <p v-if="store.token !== null||''||undefined "> {{ 'Bonjour ' + store.pseudoConnected}}</p>
+            <p v-if="store.token !== null||''||undefined "> {{ 'Bonjour ' + store.pseudoConnected}}
+              <a href="/userProfile" ><img src="../assets/Pictures/icon/Profil.png" alt="Profil" /></a>
+            </p>
 
             <p v-else></p>
         </div>
@@ -34,6 +36,7 @@
       <span></span>
       <ul id="menu">
         <li><a class="hover:border-b-2 hover:border-green" href="/">{{ this.lang_fr ? "Accueil" : "Home" }} </a></li>
+        <li><a class="hover:border-b-2 hover:border-green" href="/discounts">{{ this.lang_fr ? "Promotions" : "Discounts" }}</a></li>
         <!--<li><a class="hover:border-b-2 hover:border-green" href="/discounts">{{ this.lang_fr ? "Chambre" : "Room" }}</a></li>-->
         <li><a class="hover:border-b-2 hover:border-green" href="/Reservation">{{ this.lang_fr ? "Reserver" : "Book" }}</a></li>
         <li><a class="hover:border-b-2 hover:border-green" href="/Register-Login">{{ this.lang_fr ? "Me Connecter" : "Login" }}</a></li>
@@ -79,6 +82,8 @@ export  default {
       axios.post(this.local + '/logout', {}, { headers: {'Authorization': `Bearer ${store.token}`}})
           .then((res) => {
             localStorage.removeItem('usertoken');
+            localStorage.removeItem('userId');
+            store.userId = null;
             store.token = null ;
             console.log(res);
             console.log("Deconnecté");

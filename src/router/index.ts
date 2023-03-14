@@ -6,6 +6,9 @@ import FooterView from '@/views/FooterView.vue';
 import ReservationView from '@/views/ReservationView.vue';
 import CardActu from "@/components/CardsComponent/Actualite/CardActu.vue";
 import userProfileView from "@/views/UserProfileView.vue";
+import userProfileReservationView from "@/views/UserProfileReservationView.vue";
+import userProfileInvoiceView from "@/views/UserProfileInvoiceView.vue";
+import userProfileBonusView from "@/views/UserProfileBonusView.vue"
 import RegisterLogin from "@/components/RegisterLogin.vue";
 import ContactView from "@/views/ContactView.vue";
 import 'tw-elements';
@@ -65,6 +68,22 @@ const router = createRouter({
       path: '/userProfile',
       name: 'userProfile',
       component: userProfileView
+    },
+    {
+      path: '/userProfile/reservation',
+      name: 'userProfileResa',
+      component: userProfileReservationView
+    },
+
+    {
+      path: '/userProfile/invoices',
+      name: 'userProfileInvoice',
+      component: userProfileInvoiceView
+    },
+    {
+      path: '/userProfile/bonus',
+      name: 'userProfileBonus',
+      component: userProfileBonusView
     },
   ]
 });

@@ -8,7 +8,7 @@
 
       </div>
       <!--start formulaire-->
-      <form class="contentReservation" v-on:submit.prevent="store">
+      <form class="contentReservation" v-on:submit.prevent="storeResa">
         <h3 class="colorText text-center text-2xl sm:text-4xl"> {{ this.lang_fr ? "Réserver" : "Book" }} </h3>
         <section class="sm:flex flex-column items-center justify-around sm:flex-row bg-white m-auto">
           <div class="ml-4 familyText text-xl">
@@ -34,12 +34,12 @@
                      min="1"
                      max="100"
               >
-              <img src="../assets/Pictures/personne.png" alt="personne" class="ml-1.5  inline">
+              <img src="../assets/Pictures/icon/personne.png" alt="personne" class="ml-1.5  inline">
             </div>
 
             <div class="inputResa border rounded-lg flex justify-between">
               <input type="text" placeholder="Code promotionnel" v-model="codePromo">
-              <img src="../assets/Pictures/promo_icon.png" alt="logo Promo" class="logoDiscount inline ml-8">
+              <img src="../assets/Pictures/icon/promo_icon.png" alt="logo Promo" class="logoDiscount inline ml-8">
             </div>
           </div>
           <div class="sm:w-1/2 space-y-4">
@@ -53,7 +53,7 @@
                      min="1"
                      max="20"
               >
-              <img src="../assets/Pictures/Lit.png" alt="chambre" class="logoBed inline">
+              <img src="../assets/Pictures/icon/Lit.png" alt="chambre" class="logoBed inline">
             </div>
             <div class="inputResa border rounded-lg flex justify-between">
               <label for="selectedChamber">&nbsp; {{
@@ -98,7 +98,7 @@
                          min="0"
                          max="100"
                   >
-                  <img src="../assets/Pictures/personne.png" alt="Personne" class="logoOptions inline">
+                  <img src="../assets/Pictures/icon/personne.png" alt="Personne" class="logoOptions inline">
                 </div>
               </div>
 
@@ -120,7 +120,7 @@
                          min="0"
                          max="100"
                   >
-                  <img src="../assets/Pictures/personne.png" alt="Personne" class="logoOptions inline">
+                  <img src="../assets/Pictures/icon/personne.png" alt="Personne" class="logoOptions inline">
                 </div>
               </div>
 
@@ -158,7 +158,7 @@
                          min="0"
                          max="100"
                   >
-                  <img src="../assets/Pictures/personne.png" alt="Personne" class="logoOptions  inline">
+                  <img src="../assets/Pictures/icon/personne.png" alt="Personne" class="logoOptions  inline">
                 </div>
               </div>
 
@@ -181,11 +181,11 @@
                          min="0"
                          max="100"
                   >
-                  <img src="../assets/Pictures/personne.png" alt="Personne" class="logoOptions  inline">
+                  <img src="../assets/Pictures/icon/personne.png" alt="Personne" class="logoOptions  inline">
                 </div>
               </div>
               <div class="inputResa border rounded-lg flex justify-between">
-                <label For="checkWifi"> &nbsp; {{ this.lang_fr ? "WIFI: " : "WIFI : " }}</label>
+                <label for="checkWifi"> &nbsp; {{ this.lang_fr ? "WIFI: " : "WIFI : " }}</label>
                 <div class="">
                   <input class="WIFI text-center mr-3"
                          type="checkbox"
@@ -208,7 +208,7 @@
           <div class="">
             <label for="paypal">&nbsp; {{ this.lang_fr ? "Payer avec : " : "Pay with " }}</label>
             <input type="checkbox" id="paypal" v-model="checkPaypal"/>
-            <img src="../assets/Pictures/paypal.png" alt="logo paypal "
+            <img src="../assets/Pictures/icon/paypal.png" alt="logo paypal "
                  class="inline w-20 border border-black ml-20">
           </div>
           <div>
@@ -242,6 +242,7 @@
 <script>
 import axios from "axios";
 import router from "../router"
+import {store} from "@/store"
 import {ref} from "vue";
 
 import('../assets/Style/main.css');
@@ -255,6 +256,7 @@ export default {
       dataChambers: [],
       dataServices: [],
       dataTypeChambers: [],
+
       //URL pour les routes à atteindre
       local: import.meta.env.VITE_URL_API,
       //Données de la table réservation
@@ -269,6 +271,7 @@ export default {
       //A récupérer de la table discount
       codePromo: "",
       selectedChamberType: "Standard",
+
       //Info pour les services
       nbDayFullboard: 0,
       nbPersonFullBoard: 0,
@@ -280,6 +283,7 @@ export default {
       nbDayLaundryService: 0,
       nbPersonlaundryService: 0,
       checkWifi: false,
+
       //Les id pour les différents services
       idServicePensionComplete: 0,
       idServiceDemiPension: 0,
@@ -287,10 +291,12 @@ export default {
       idServicePressing: 0,
       idServiceTele: 0,
       idServiceWifi: 0,
+
       //Les informations pour la chambres
       idChambre: 0,
       idTypeChambre: 0,
       numeroChambre: 102,
+
       //Les variables pour les prix
       priceServicePensionComplete: 0,
       priceServiceDemiPension: 0,
@@ -301,9 +307,11 @@ export default {
       priceChamber: 0,
       priceTotalChamber: 0,
       priceTotalResa: 0,
+
       //Le calcul de la date
       dateDifference: 0,
       durationStay: 0,
+
       //Le numero de la facture
       nbInvoice: 0,
       checkPaypal: false,
@@ -312,6 +320,8 @@ export default {
       price: 120,
       numberPerson: 2,
       numberWeek: 1,
+
+      store,
     }
   },
   created() {
@@ -340,7 +350,7 @@ export default {
         })
   },
   methods: {
-    store() {
+    storeResa() {
       //On compte le nombre de service pris par le client
       // on récupère les id correspondants
       // On calcule le prix du service, et ce, pour chaque service
@@ -526,7 +536,7 @@ export default {
         price: this.priceTotalResa,
         number_invoices: this.nbInvoice++,
         fk_Reservation: this.idReservation,
-        fk_User: 2,
+        fk_User: store.userId,
       })
           .then((resultat) => {
             console.log("Facture : ", resultat);
