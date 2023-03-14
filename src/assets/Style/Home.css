@@ -12,6 +12,7 @@ body_home {
     background-size: cover;
     flex-direction: inherit;
   }
+
   main_home {
     width: 74vw;
     flex-direction: column;
@@ -85,6 +86,7 @@ body_home {
     width: 21vw;
   }
 }
+
 .randonne,
 .localisation,
 .restaurant,
@@ -97,6 +99,7 @@ body_home {
   align-items: center;
   margin-top: 4rem;
 }
+
 @media (min-width: 728px) {
   .randonne,
   .localisation,
@@ -208,11 +211,13 @@ p {
   display: flex;
   margin-top: 22vh;
 }
+
 @media (min-width: 728px) {
    .text_card{
   line-height: 1.25rem;
   }
 }
+
 @media (min-width: 728px) {
   .ico-rando,
   .ico-local,
